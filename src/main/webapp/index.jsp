@@ -7,6 +7,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-asdasd
+
+<table border="1" width="1000" height="300">
+		<tr>
+			<td align="right">
+				<jsp:include page="${loginPage }"></jsp:include>
+			</td>
+		</tr>
+		
+		<tr>
+		<td>
+			<a href="Menu1C">메뉴1</a>
+			<a href="Menu2C">메뉴2</a>
+			<a href="Menu3C">메뉴3</a>
+			<a href="Menu4C">메뉴4</a>
+		</td>
+		</tr>
+		<tr>
+		<td> <jsp:include page="${contentPage }"></jsp:include> </td>
+		</tr>
+		</table>
+		
 </body>
 </html>
