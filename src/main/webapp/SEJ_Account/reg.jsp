@@ -18,7 +18,7 @@
 <script type="text/javascript" src="js/validCheck.js"></script>
 </head>
 <body>
-	<form action="RegAccountController" name="myForm" method="post">
+	<form action="RegAccountController" name="myForm" method="post" onsubmit="return Regcall()">
 
 		<table border="1" id="regTbl" width="500px" height="600px">
 			<tr>
