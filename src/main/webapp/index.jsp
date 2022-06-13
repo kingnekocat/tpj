@@ -8,7 +8,11 @@
 </head>
 <body>
 
+
 <table border="1" width="1000" height="300">
+	<tr>
+		<td><a href="HomeController">홈메뉴</a></td>
+	</tr>
 		<tr>
 			<td align="right">
 				<jsp:include page="${loginPage }"></jsp:include>
