@@ -125,77 +125,50 @@ public class AccountDAO {
 
 
 
-
-
 	public static void regAccount(HttpServletRequest request) {
 		// 껍데기
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "insert into account_test values(?,?,?,?,?,?,?,?)";
+		String sql = "insert into account01 values (?,?,?,?,?,?,?,?)";
 		
 		try {
 			
 		con = DBManager.connect();
 		pstmt = con.prepareStatement(sql);
-		// lib
-		String path = request.getSession().getServletContext().getRealPath("fileFolder");
-		System.out.println(path);
 
-		// 이미 업로드 기능 처리 됨
-		MultipartRequest mr = new MultipartRequest(request, path, 20*1024*1024, "utf-8", 
-				new DefaultFileRenamePolicy());
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		String name = request.getParameter("name");
+		String nickName = request.getParameter("nickName");
+		String age = request.getParameter("age");
+		String gender = request.getParameter("gender");	
+		String region = request.getParameter("region");
+		String kakao = request.getParameter("kakao");
 		
-		String name = mr.getParameter("name");
-		String id = mr.getParameter("id");
-		String pw = mr.getParameter("pw");
-		String gender = mr.getParameter("gender");	// w , m
-		String addr = mr.getParameter("addr");
-		String[] interest = mr.getParameterValues("interest");
-		String txt = mr.getParameter("txt");
-		String img = mr.getFilesystemName("img");
-		String interest2 = "";
-		
-		
-		if(interest != null) {
-			for (String s : interest) {
-			System.out.println(s);
-			interest2 += s + "!";
-		}
-		} else {
-			interest2 = "관심사 없음";
-		}
-		
-		if (txt.length() == 0) {
-			txt = "...";
-		}
-		
-		
-		System.out.println(name);
 		System.out.println(id);
 		System.out.println(pw);
+		System.out.println(name);
+		System.out.println(nickName);
+		System.out.println(age);
 		System.out.println(gender);
-		System.out.println(addr);
-		System.out.println(interest);	// 배열		게임, 여행
-		System.out.println(interest2);	// 게임, 여행
-		System.out.println(txt);
-		System.out.println(img);
+		System.out.println(region);
+		System.out.println(kakao);
+
+		pstmt.setString(1, id);
+		pstmt.setString(2, pw);
+		pstmt.setString(3, name);
+		pstmt.setString(4, nickName);
+		pstmt.setString(5, age);
+		pstmt.setString(6, gender);
+		pstmt.setString(7, region);
+		pstmt.setString(8, kakao);
 		
-		pstmt.setString(1, name);
-		pstmt.setString(2, id);
-		pstmt.setString(3, pw);
-		pstmt.setString(4, gender);
-		pstmt.setString(5, addr);
-		pstmt.setString(6, interest2);
-		pstmt.setString(7, txt);
-		pstmt.setString(8, img);
 		
 	 	if (pstmt.executeUpdate()==1) {
 			System.out.println("가입 성공");
 		} 
-		
-		
 		
 		
 		} 
@@ -209,24 +182,6 @@ public class AccountDAO {
 		
 		
 	}
-
-
-//	public static int makeInterest(HttpServletRequest request) {
-//		
-//		Account a =	(Account) request.getSession().getAttribute("accountInfo");
-//		
-//		if (a != null) {
-////			 String interest = a.getA_interest();		// food!excer!
-////			 String [] interest2 = interest.split("!");
-//			 request.setAttribute("inter", interest2);
-//			 return 1;
-//		}
-//		return 0;
-//		
-//	}
-
-
-
 
 
 	public static void updateAccount(HttpServletRequest request) {
