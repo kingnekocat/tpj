@@ -13,12 +13,13 @@
 <table border="1" width="500" height="100">
 <c:forEach items="${menus }" var="m">
 	<tr>
-			<td>${m.m_title }</td>
+			<td onclick="location.href='Menu4DetailC?no=${m.m_no}'">${m.m_title }</td>
 			<td><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short" /> </td>
 	</tr>
 </c:forEach>
 	<tr>
-			<td><button>뒤로가기</button></td>
+			<td><button>글쓰기</button>
+			<button onclick="location.href='HomeController'">뒤로가기</button></td>
 	</tr>
 </table>
 

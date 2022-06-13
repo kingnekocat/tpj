@@ -31,7 +31,7 @@
 <table>
 <tr>
 <td><button onclick="location.href='Menu2UpdateC'">글쓰기</button></td>
-<td><button>뒤로가기</button></td>
+<td><button onclick="location.href='HomeController'">뒤로가기</button></td>
 </tr>
 </table>
 

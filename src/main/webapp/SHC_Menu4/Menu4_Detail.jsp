@@ -7,9 +7,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-
 <body>
-	<table border="1" width="500" height="300">
+
+<table border="1" width="500" height="300">
 			<tr>
 				<td>${menu.m_title }</td>
 				<td>${menu.m_nickname }</td>
@@ -26,6 +26,6 @@
 				</td>
 			</tr>
 	</table>
+	
 </body>
-
 </html>

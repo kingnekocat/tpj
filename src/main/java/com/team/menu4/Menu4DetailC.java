@@ -1,4 +1,4 @@
-package com.team.menu3;
+package com.team.menu4;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,14 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/Menu3DetailC")
-public class Menu3DetailC extends HttpServlet {
+@WebServlet("/Menu4DetailC")
+public class Menu4DetailC extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Menu3Dao.getMenu(request);
+		Menu4Dao.getMenu(request);
 		request.setAttribute("loginPage", "SEJ_Account/login.jsp");
-		request.setAttribute("contentPage", "SHC_Menu3/Menu3_Detail.jsp");
+		request.setAttribute("contentPage", "SHC_Menu4/Menu4_Detail.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 		
@@ -23,6 +23,7 @@ public class Menu3DetailC extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		
 		
 		

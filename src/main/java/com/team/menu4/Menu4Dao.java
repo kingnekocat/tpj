@@ -45,6 +45,45 @@ public class Menu4Dao {
 		
 	}
 
+	public static void getMenu(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			con = DBManager.connect();
+			String sql = "select * from menu4_01 where m_no = ?";
+			pstmt = con.prepareStatement(sql);
+			
+	    int no = Integer.parseInt(request.getParameter("no"));
+		pstmt.setInt(1, no);	
+			
+		rs = pstmt.executeQuery();
+		
+		Menu4 m = null;
+		
+		if(rs.next()) {
+			
+			m = new Menu4(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"));
+			request.setAttribute("menu", m);
+		}
+			
+			
+		
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt, null);
+		}
+		
+		
+		
+		
+		
+	}
+
 	
 	
 	

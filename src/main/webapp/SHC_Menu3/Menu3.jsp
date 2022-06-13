@@ -18,7 +18,10 @@
 	</tr>
 </c:forEach>
 	<tr>
-			<td><button>뒤로가기</button></td>
+			<td>
+			<button>글쓰기</button>
+			<button onclick="location.href='HomeController'">뒤로가기</button>
+			</td>
 	</tr>
 </table>
 
