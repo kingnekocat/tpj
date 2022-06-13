@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<table border="1" width="500" height="100">
+<table border="1" width="1000" height="100">
 <c:forEach items="${menus }" var="m">
 	<tr>
 			<td onclick="location.href='Menu4DetailC?no=${m.m_no}'">${m.m_title }</td>

@@ -22,7 +22,8 @@
 			</tr>
 			<tr>
 				<td><button>수정</button>
-				<button>삭제</button>
+				<button onclick="location.href='Menu3DelC?no=${menu.m_no}'">삭제</button>
+				<button onclick="location.href='Menu3C'">뒤로가기</button>
 				</td>
 			</tr>
 	</table>

@@ -23,6 +23,7 @@
 			<tr>
 				<td><button>수정</button>
 				<button>삭제</button>
+				<button onclick="location.href='Menu4C'">뒤로가기</button>
 				</td>
 			</tr>
 	</table>

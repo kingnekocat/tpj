@@ -43,6 +43,28 @@ public class Menu2Dao {
 		
 	}
 
+	public static void regMenu(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = DBManager.connect();
+			String sql = "";
+			pstmt = con.prepareStatement(sql);
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt, null);
+		}
+		
+		
+		
+		
+	}
+
 	
 	
 	
