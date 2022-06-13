@@ -12,7 +12,7 @@ public class UpdateAccountController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		AccountDAO.loginCheck(request);
-		request.setAttribute("contentPage", "account/update.jsp");
+		request.setAttribute("contentPage", "SEJ_Account/update.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

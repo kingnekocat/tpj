@@ -32,18 +32,24 @@
 			<td><input name="gender" value="${sessionScope.accountInfo.gender }"></td>
 		</tr>
 		<tr>
-			<td>지역</td>
-			<td>${sessionScope.accountInfo.region}</td>
-		</tr>
+				<td>지역</td>
+				<td><input list="region" name="region"> <datalist id="region"
+						style="width: 120px">
+						<option value="서울">서울</option>
+						<option value="경기">경기</option>
+						<option value="대전">대전</option>
+						<option value="대구">대구</option>
+						<option value="부산">부산</option>
+					</datalist></td>
+			</tr>
 		<tr>
 			<td>카카오톡 ID</td>
-			<td>${sessionScope.accountInfo.kakao}</td>
+			<td><input name="kakao" value="${sessionScope.accountInfo.kakao}"> </td>
 		</tr>
 
 		<tr>
 			<td colspan="2">
 				<button class="loginBtn" onclick="location.href='UpdateAccountController'">수정</button>
-				<button class="loginBtn">탈퇴</button>
 			</td>
 		</tr>
 
