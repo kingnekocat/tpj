@@ -18,6 +18,7 @@ public class AccountDAO {
 		HttpSession hs = req.getSession();
 		Account a = (Account) hs.getAttribute("accountInfo");
 		
+		
 		if (a == null) {
 			req.setAttribute("loginPage", "SEJ_Account/login.jsp");
 		}else {
@@ -87,6 +88,7 @@ public class AccountDAO {
 						}
 					} else {
 						request.setAttribute("r", "존재하지 않는 회원");
+						request.setAttribute("rr", "아이디와 비밀번호를 확인해주세요");
 					}
 					
 					

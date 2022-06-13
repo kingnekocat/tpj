@@ -13,7 +13,7 @@
 		</tr>
 		<tr>
 			<td>${sessionScope.accountInfo.id }
-				(${sessionScope.accountInfo.name }) 님 안녕하세요</td>
+				(${sessionScope.accountInfo.nickname }) 님 안녕하세요</td>
 		</tr>
 		<tr>
 			<td>
