@@ -9,12 +9,15 @@
 </head>
 <body>
 
-
+<table border="1">
 
 <c:forEach items="${rest }" var="r">
-${r.name } - ${r.food } - ${r.region }
-<hr>
+<tr>
+<td onclick="location.href='Menu1DC2?nono=${r.num}'">${r.name }</td> <td>${r.food }</td> <td>${r.region }</td>
+</tr>
 </c:forEach>
+</table>
+
 
 </body>
 </html>

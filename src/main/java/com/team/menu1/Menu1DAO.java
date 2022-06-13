@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.team.menu1.Menu1B;
 import com.team.main.DBManager;
 
 public class Menu1DAO {
@@ -56,5 +57,40 @@ public class Menu1DAO {
 			DBManager.close(con, pstmt, null);
 	}
 
+	}
+
+	public static void ViewDetail(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+	
+			try {
+				con = DBManager.connect();
+				
+				String sql = "select * from tpj_restaurant where tpjr_num=?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, Integer.parseInt(request.getParameter("nono")));
+				rs = pstmt.executeQuery();
+				
+				
+			Menu1B rest = null;
+			if (rs.next()) {
+				// bean
+				rest = new Menu1B();
+				rest.setNum(rs.getInt("tpjr_num"));
+				rest.setName(rs.getString("tpjr_name"));
+				rest.setFood(rs.getString("tpjr_food"));
+				rest.setRegion(rs.getString("tpjr_region"));
+				request.setAttribute("rest", rest);
+				}
+					
+			
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				DBManager.close(con, pstmt, null);
+				
+			}		
 	}
 }
