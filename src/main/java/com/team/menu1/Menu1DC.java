@@ -7,13 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/Menu1C")
-public class Menu1C extends HttpServlet {
+@WebServlet("/Menu1DC")
+public class Menu1DC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		request.setAttribute("contentPage", "JYS_Menu1/menu1.jsp");
-		request.setAttribute("loginPage", "SEJ_Account/login.jsp");
+		Menu1DAO.ViewGenreDetail(request);
+		request.setAttribute("contentPage", "JYS_Menu1/menu1_detail.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
+	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

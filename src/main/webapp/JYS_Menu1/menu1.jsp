@@ -8,5 +8,16 @@
 </head>
 <body>
 
+<form action="Menu1DC">
+<table>
+<tr>
+<td><button name="gen" value="1">한식</button></td>
+<td><button name="gen" value="2">중식</button></td>
+<td><button name="gen" value="3">일식</button></td>
+<td><button name="gen" value="4">양식</button></td>
+</tr>
+</table>
+</form>
+
 </body>
 </html>
