@@ -15,6 +15,9 @@
 				<td>${menu.m_nickname }</td>
 			</tr>
 			<tr>
+				<td>${menu.m_img }</td>
+			</tr>
+			<tr>
 				<td>${menu.m_txt }</td>
 			</tr>
 			<tr>

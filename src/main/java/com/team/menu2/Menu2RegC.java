@@ -8,19 +8,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/Menu2UpdateC")
-public class Menu2UpdateC extends HttpServlet {
+@WebServlet("/Menu2RegC")
+public class Menu2RegC extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Menu2Dao.getMenu(request);
 		request.setAttribute("loginPage", "SEJ_Account/login.jsp");
-		request.setAttribute("contentPage", "SHC_Menu2/Menu2_Update.jsp");
+		request.setAttribute("contentPage", "SHC_Menu2/Menu2_Reg.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
+		
+		
 	}
 
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
 		
 		
 		

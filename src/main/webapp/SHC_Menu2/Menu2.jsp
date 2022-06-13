@@ -17,20 +17,23 @@
 				<td>${m.m_nickname }</td>
 			</tr>
 			<tr>
-				<td>${m.m_img }</td>
+				<td colspan="2" >${m.m_img }</td>
 			</tr>
 			<tr>
-				<td>${m.m_txt }</td>
+				<td colspan="2" >${m.m_txt }</td>
 			</tr>
 			<tr>
-				<td><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short"/> </td>
+				<td><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short"/> 
+				</td>
+				<td><button onclick="location.href='Menu2UpdateC?no=${m.m_no}'">수정</button>
+				<button onclick="location.href='Menu2DelC?no=${m.m_no}'">삭제</button></td>
 			</tr>
 	</table>
 </c:forEach>
 
 <table>
 <tr>
-<td><button onclick="location.href='Menu2UpdateC'">글쓰기</button></td>
+<td><button onclick="location.href='Menu2RegC'">글쓰기</button></td>
 <td><button onclick="location.href='HomeController'">뒤로가기</button></td>
 </tr>
 </table>
