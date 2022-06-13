@@ -1,7 +1,6 @@
-package com.team.main;
+package com.team.account;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,20 +9,26 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.team.account.AccountDAO;
 
-
-@WebServlet("/HomeController")
-public class HomeController extends HttpServlet {
-	
+@WebServlet("/LoginController")
+public class LoginController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	
+		// 로그아웃 하는 일
+		AccountDAO.logOut(request);
 		AccountDAO.loginCheck(request);
 		request.setAttribute("contentPage", "home.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
 	}
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	
+		// 로그인 하는 일
+		AccountDAO.login(request);
+		// 가는 곳
+		AccountDAO.loginCheck(request);
+		request.setAttribute("contentPage", "home.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 }
