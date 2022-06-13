@@ -4,12 +4,12 @@ import java.util.Date;
 
 public class Menu2 {
 
-	int m_no; 
-	String m_title; 
-	String m_nickname; 
-	String m_txt; 
-	String m_img; 
-	Date m_date ;
+	private int m_no; 
+	private String m_title; 
+	private String m_nickname; 
+	private String m_txt; 
+	private String m_img; 
+	private Date m_date ;
 	
 	public Menu2() {
 		// TODO Auto-generated constructor stub
