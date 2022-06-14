@@ -15,6 +15,7 @@
 <td><button name="gen" value="2">중식</button></td>
 <td><button name="gen" value="3">일식</button></td>
 <td><button name="gen" value="4">양식</button></td>
+<td><button name="gen" value="region">지역별</button></td>
 </tr>
 </table>
 </form>

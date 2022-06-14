@@ -28,12 +28,19 @@ public class Menu1DAO {
 
 		try {
 			
-			String sql = "select * from tpj_restaurant where tpjr_food=?";
 			con = DBManager.connect();
-			pstmt = con.prepareStatement(sql);
-			
 			String gen = request.getParameter("gen");
-			pstmt.setString(1, gen);
+			
+			if (gen.equals("region")) {
+			String	sql = "select * from tpj_restaurant order by tpjr_region";
+			pstmt = con.prepareStatement(sql);
+			} else {
+				String sql = "select * from tpj_restaurant where tpjr_food=?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, gen);
+				
+			}
+			
 			
 			rs = pstmt.executeQuery();
 			
@@ -57,6 +64,7 @@ public class Menu1DAO {
 			DBManager.close(con, pstmt, null);
 	}
 
+		
 	}
 
 	public static void ViewDetail(HttpServletRequest request) {
