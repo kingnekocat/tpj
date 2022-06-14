@@ -15,7 +15,7 @@
 				<td>${menu.m_nickname }</td>
 			</tr>
 			<tr>
-				<td>${menu.m_img }</td>
+				<td><img src="img/${menu.m_img }" width="300" height="200"></td>
 			</tr>
 			<tr>
 				<td>${menu.m_txt }</td>
@@ -25,7 +25,7 @@
 			</tr>
 			<tr>
 				<td><button>수정</button>
-				<button>삭제</button>
+				<button onclick="deleteMenu(${menu.m_no})">삭제</button>
 				<button onclick="location.href='Menu4C'">뒤로가기</button>
 				</td>
 			</tr>
