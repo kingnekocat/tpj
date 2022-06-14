@@ -240,6 +240,42 @@ public class AccountDAO {
 		}
 		
 	}
+
+
+
+
+
+	public static void deleteAccount(HttpServletRequest request) {
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "delete ACCOUNT01 where id = ?";
+		
+		try {
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			String id = request.getParameter("id");
+			
+			System.out.println(id);
+			
+			pstmt.setString(1, id);
+			
+			if (pstmt.executeUpdate()==1) {
+				System.out.println("Ε»Επ ΌΊ°ψ!");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+		
+		
+		
+		
+	}
 	
 	
 	

@@ -17,3 +17,5 @@ update account01
 set name = '하이', pw = '1234', nickname = '바이', gender = '여', 
 region = '경기', kakao = 'bye'
 where id = 'sdfff';
+
+delete ACCOUNT01 where id = 'aaaaa';
