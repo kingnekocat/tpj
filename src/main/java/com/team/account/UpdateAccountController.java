@@ -17,7 +17,16 @@ public class UpdateAccountController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		request.setCharacterEncoding("utf-8");
+		
+		// 수정하는 일
+		AccountDAO.updateAccount(request);
+		AccountDAO.login(request);
+		AccountDAO.loginCheck(request);
+		request.setAttribute("contentPage", "SEJ_Account/info.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
+		
 	}
 
 }

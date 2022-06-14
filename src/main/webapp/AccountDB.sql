@@ -12,3 +12,8 @@ create table account01(
 insert into account01 values ('1','2','3','4','5','6','7','8');
 
 select * from ACCOUNT01;
+
+update account01
+set name = '하이', pw = '1234', nickname = '바이', gender = '여', 
+region = '경기', kakao = 'bye'
+where id = 'sdfff';

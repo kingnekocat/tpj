@@ -189,15 +189,10 @@ public class AccountDAO {
 		// 껍데기
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "update account_test\r\n"
-				+ "set a_name = ?,\r\n"
-				+ "a_pw = ?,\r\n"
-				+ "a_gender = ?,\r\n"
-				+ "a_addr = ?,\r\n"
-				+ "a_interest = ?,\r\n"
-				+ "a_introduce = ?\r\n"
-//				+ "a_img = ?\r\n"
-				+ "where a_id = ?";
+		String sql = "update account01\r\n"
+				+ "set name = ?, pw = ?, nickname = ?, gender = ?, \r\n"
+				+ "region = ?, kakao = ?\r\n"
+				+ "where id = ?";
 		
 		try {
 			
@@ -206,43 +201,29 @@ public class AccountDAO {
 			
 			String name = request.getParameter("name");
 			String pw = request.getParameter("pw");
+			String nickname = request.getParameter("nickname");
 			String gender = request.getParameter("gender");
-			String addr = request.getParameter("addr");
-			String interest = request.getParameter("interest"); //food! excer!
-			String[] interest2 = request.getParameterValues("interest2"); // 다시 선택함
-			String introduce = request.getParameter("introduce");
+			String region = request.getParameter("region");
+			String kakao = request.getParameter("kakao");
 			String id = request.getParameter("id");
 			//Account aa = (Account) request.getSession().getAttribute("accountInfo");
 			
 			
-			String interest3 = "";
 			
-			if(interest != null) {
-				for (String s : interest2) {
-				System.out.println(s);
-				interest3 += s + "!";
-			}
-			} else {
-				interest3 = interest;
-			}
-			
-			if (introduce.length() == 0) {
-				introduce = "...";
-			}
 			System.out.println(name);
 			System.out.println(pw);
+			System.out.println(nickname);
 			System.out.println(gender);
-			System.out.println(addr);
-			System.out.println(interest);
-			System.out.println(introduce);
+			System.out.println(region);
+			System.out.println(kakao);
 			System.out.println(id);
 			
 			pstmt.setString(1, name);
 			pstmt.setString(2, pw);
-			pstmt.setString(3, gender);
-			pstmt.setString(4, addr);
-			pstmt.setString(5, interest3);
-			pstmt.setString(6, introduce);
+			pstmt.setString(3, nickname);
+			pstmt.setString(4, gender);
+			pstmt.setString(5, region);
+			pstmt.setString(6, kakao);
 			pstmt.setString(7, id);
 			
 			request.setAttribute("iddd", id);

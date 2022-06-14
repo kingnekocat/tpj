@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<form action="UpdateAccountController?id=${sessionScope.accountInfo.id }" name="updateForm" method="post">
 <table id="regTbl" border="1" width="500px" height="600px">
 		<tr>
 			<td colspan="2">정보수정</td>
@@ -20,6 +21,10 @@
 			<td>${sessionScope.accountInfo.id }</td>
 		</tr>
 		<tr>
+			<td>PW</td>
+			<td><input name="pw" value="${sessionScope.accountInfo.pw }"></td>
+		</tr>
+		<tr>
 			<td>닉네임</td>
 			<td><input name="nickname" value="${sessionScope.accountInfo.nickname }"></td>
 		</tr>
@@ -28,8 +33,9 @@
 			<td>${sessionScope.accountInfo.age }</td>
 		</tr>
 		<tr>
-			<td>성별</td>
-			<td><input name="gender" value="${sessionScope.accountInfo.gender }"></td>
+				<td>성별</td>
+				<td>남<input checked="checked" type="radio" name="gender"
+					value="남"> 여<input type="radio" name="gender" value="여"></td>
 		</tr>
 		<tr>
 				<td>지역</td>
@@ -49,11 +55,12 @@
 
 		<tr>
 			<td colspan="2">
-				<button class="loginBtn" onclick="location.href='UpdateAccountController'">수정</button>
+				<button class="loginBtn">수정</button>
 			</td>
 		</tr>
 
 
 	</table>
+	</form>
 </body>
 </html>
