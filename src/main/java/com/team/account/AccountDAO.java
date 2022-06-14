@@ -85,6 +85,7 @@ public class AccountDAO {
 							
 							} else {
 								request.setAttribute("r", "패스워드 오류");
+								request.setAttribute("rr", "아이디와 비밀번호를 확인해주세요");
 						}
 					} else {
 						request.setAttribute("r", "존재하지 않는 회원");
