@@ -24,7 +24,7 @@
 				<td><fmt:formatDate value="${menu.m_date }" type="both" timeStyle="short" dateStyle="short" /> </td>
 			</tr>
 			<tr>
-				<td><button>수정</button>
+				<td><button onclick="location.href='Menu4UpdateC?no=${menu.m_no }'">수정</button>
 				<button onclick="deleteMenu(${menu.m_no})">삭제</button>
 				<button onclick="location.href='Menu4C'">뒤로가기</button>
 				</td>

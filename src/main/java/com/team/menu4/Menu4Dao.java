@@ -58,8 +58,8 @@ public class Menu4Dao {
 			String sql = "select * from menu4_01 where m_no = ?";
 			pstmt = con.prepareStatement(sql);
 			
-	    int no = Integer.parseInt(request.getParameter("no"));
-		pstmt.setInt(1, no);	
+	    String no = request.getParameter("no");
+		pstmt.setString(1, no);	
 			
 		rs = pstmt.executeQuery();
 		
@@ -160,6 +160,47 @@ public class Menu4Dao {
 		
 		
 	}
+
+	public static void updateMenu(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			request.setCharacterEncoding("utf-8");
+			con = DBManager.connect();
+			String sql = "update menu4_01 set m_title = ?, m_txt =?  where m_no = ?";
+			pstmt = con.prepareStatement(sql);
+			
+			String title = request.getParameter("title");	
+			String txt = request.getParameter("txt");	
+			String no = request.getParameter("no");
+			
+			pstmt.setString(1, title);
+			pstmt.setString(2, txt);
+			pstmt.setString(3, no);
+			
+			
+			if(pstmt.executeUpdate()==1) {
+				request.setAttribute("r", "수정 성공");
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("r", "수정 실패");
+		}finally {
+			DBManager.close(con, pstmt, null);
+		}
+		
+		
+	}
+		
+		
+		   
+			
+		   
+			
 
 	
 	
