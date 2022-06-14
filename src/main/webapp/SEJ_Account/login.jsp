@@ -9,6 +9,7 @@
 <script type="text/javascript" src="js/validCheck.js"></script>
 </head>
 <body>
+
 	<form action="LoginController" name="loginForm" method="post"
 		onsubmit="return loginCall();">
 		<table id="loginAreaTbl">
@@ -34,5 +35,7 @@
 
 
 	</form>
+
+
 </body>
 </html>
