@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import com.team.menu1.Menu1B;
 import com.team.main.DBManager;
@@ -25,7 +27,7 @@ public class Menu1DAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-
+		
 		try {
 			
 			con = DBManager.connect();
@@ -34,7 +36,11 @@ public class Menu1DAO {
 			if (gen.equals("region")) {
 			String	sql = "select * from tpj_restaurant order by tpjr_region";
 			pstmt = con.prepareStatement(sql);
-			} else {
+			} else if (gen.equals("Áö¿ª1")) {
+				String	sql = "select * from tpj_restaurant where tpjr_region=?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, gen);
+			}else {
 				String sql = "select * from tpj_restaurant where tpjr_food=?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, gen);

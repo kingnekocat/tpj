@@ -9,6 +9,6 @@ create table account01(
 	kakao varchar2 (30 char) not null
 );
 
-insert into account01 values ('1','2','3','4','5','6','7','8');
+insert into account01 values ('3','2','3','4','5','6','Áö¿ª1','8');
 
 select * from ACCOUNT01;
