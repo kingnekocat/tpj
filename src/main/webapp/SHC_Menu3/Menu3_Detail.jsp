@@ -16,6 +16,7 @@
 			</tr>
 			<tr>
 				<td>${menu.m_txt }</td>
+				<td>${menu.m_kakao }</td>
 			</tr>
 			<tr>
 				<td><fmt:formatDate value="${menu.m_date }" type="both" timeStyle="short" dateStyle="short" /> </td>

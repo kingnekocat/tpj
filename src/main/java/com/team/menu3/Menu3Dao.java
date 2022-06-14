@@ -7,6 +7,9 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.team.account.Account;
 import com.team.menu2.DBManager;
 
 public class Menu3Dao {
@@ -75,6 +78,48 @@ public class Menu3Dao {
 			DBManager.close(con, pstmt, null);
 		}
 		
+		
+		
+		
+	}
+
+	public static void updateMenu(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			request.setCharacterEncoding("utf-8");
+			con = DBManager.connect();
+			String sql = "insert into menu3_01 values(menu3_01_seq.nextval,?,?,?,?,sysdate)";
+			pstmt = con.prepareStatement(sql);
+			
+			String title = request.getParameter("title");	
+			String txt = request.getParameter("txt");	
+			
+			Account a = (Account)request.getSession().getAttribute("accountInfo");
+			String nickname = a.getNickname();
+			String kakao = a.getKakao();
+			
+			pstmt.setString(1, title);
+			pstmt.setString(2, nickname);
+			pstmt.setString(3, txt);
+			pstmt.setString(4, kakao);
+		   
+			
+		   
+			
+		if(pstmt.executeUpdate()==1) {
+			request.setAttribute("r", "등록성공");
+		}
+		   
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("r", "등록실패");
+		}finally {
+			DBManager.close(con, pstmt, null);
+		}
 		
 		
 		

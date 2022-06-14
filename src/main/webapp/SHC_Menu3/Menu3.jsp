@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+${r }
 <table border="1" width="1000" height="100">
 <c:forEach items="${menus }" var="m">
 	<tr>
@@ -19,7 +19,7 @@
 </c:forEach>
 	<tr>
 			<td>
-			<button>글쓰기</button>
+			<button onclick="location.href='Menu3RegC'" >글쓰기</button>
 			<button onclick="location.href='HomeController'">뒤로가기</button>
 			</td>
 	</tr>

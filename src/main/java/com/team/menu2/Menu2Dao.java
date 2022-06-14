@@ -123,6 +123,79 @@ public class Menu2Dao {
 		
 	}
 
+	public static void deleteMenu(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = DBManager.connect();
+			String sql = "delete menu2_01 where m_no = ?";
+			pstmt = con.prepareStatement(sql);
+			
+			String no = request.getParameter("no");
+			pstmt.setString(1, no);
+			
+			if(pstmt.executeUpdate()==1) {
+				System.out.println("삭제성공");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("서버에러");
+		}finally {
+			DBManager.close(con, pstmt, null);
+		}
+		
+		
+		
+		
+		
+		
+	}
+
+	public static void updateMenu(HttpServletRequest request) {
+		
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			
+			con = DBManager.connect();
+			String sql = "update menu2_01 set m_title = ?, m_txt =?, m_img =? where m_no = ?";
+			pstmt = con.prepareStatement(sql);
+			
+			String path = request.getServletContext().getRealPath("img");
+			MultipartRequest mr = new MultipartRequest(request, path, 31457280, "utf-8",
+			new DefaultFileRenamePolicy());	
+			
+			String title = mr.getParameter("title");
+			String txt = mr.getParameter("txt");
+			String img = mr.getFilesystemName("file2");
+			String img2 = mr.getFilesystemName("file");
+			String no = mr.getParameter("no");
+			
+			
+			
+			
+			
+			if(pstmt.executeUpdate()==1) {
+				System.out.println("삭제성공");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("서버에러");
+		}finally {
+			DBManager.close(con, pstmt, null);
+		}
+		
+		
+		
+		
+	}
+
 	
 	
 	

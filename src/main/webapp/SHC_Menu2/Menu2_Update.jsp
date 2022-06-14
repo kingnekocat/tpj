@@ -9,13 +9,15 @@
 </head>
 <body>
 
-<table border="1" width="500" height="150">
+<form action="Menu2UpdateC?no=${param.no }" method="post" enctype="multipart/form-data"></form>
+	<table border="1" width="500" height="150">
 			<tr>
 				<td><input name="title" value="${menu.m_title }" ></td>
 				<td>${menu.m_nickname }</td>
 			</tr>
 			<tr>
-				<td colspan="2" >${menu.m_img }</td>
+				<td><img src="img/${menu.m_img }" width="300" height="200">  </td>
+				<td><input type="file" name="file2"></td>
 			</tr>
 			<tr>
 				<td colspan="2" ><textarea name="txt">${menu.m_txt }</textarea>  </td>
@@ -23,10 +25,10 @@
 			<tr>
 				<td><fmt:formatDate value="${menu.m_date }" type="both" dateStyle="short" timeStyle="short"/> 
 				</td>
-				<td><button onclick="location.href='Menu2UpdateC?no=${m.m_no}'">수정</button>
-				<button onclick="location.href='Menu2DelC?no=${m.m_no}'">삭제</button></td>
+				<td><button>수정하기</button>
 			</tr>
 	</table>
+</form>
 	
 </body>
 </html>
