@@ -5,9 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/update.js"></script>
+<script type="text/javascript" src="js/validCheck.js"></script>
 </head>
 <body>
-<form action="UpdateAccountController?id=${sessionScope.accountInfo.id }" name="updateForm" method="post">
+<form action="UpdateAccountController?id=${sessionScope.accountInfo.id }" name="updateForm" method="post"
+onsubmit="return UpdateCall()">
 <table id="regTbl" border="1" width="500px" height="600px">
 		<tr>
 			<td colspan="2">정보수정</td>
@@ -22,7 +25,11 @@
 		</tr>
 		<tr>
 			<td>PW</td>
-			<td><input name="pw" value="${sessionScope.accountInfo.pw }"></td>
+			<td><input type=password name="pw"></td>
+		</tr>
+		<tr>
+			<td>PW확인</td>
+			<td><input type=password name="pw2" placeholder="비번 재확인"></td>
 		</tr>
 		<tr>
 			<td>닉네임</td>

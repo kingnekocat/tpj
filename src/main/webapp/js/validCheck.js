@@ -36,7 +36,7 @@ function lessThan(input, length){
 
 function containKR(input){
 	
-	let ok = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM@._";
+	let ok = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM@._^0123456789";
 	
 	for(let i=0; i < input.value.length; i++){
 		

@@ -9,11 +9,8 @@
 <body>
 	<table id="loginAreaTbl">
 		<tr>
-			<td>${r }</td>
-		</tr>
-		<tr>
 			<td>${sessionScope.accountInfo.id }
-				(${sessionScope.accountInfo.nickname }) 님 안녕하세요</td>
+				(${sessionScope.accountInfo.nickname }) 님 환영합니다!</td>
 		</tr>
 		<tr>
 			<td>
