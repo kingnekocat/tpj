@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form action="Menu2UpdateC?no=${param.no }" method="post" enctype="multipart/form-data"></form>
+<form action="Menu2UpdateC?no=${menu.m_no }" method="post">
 	<table border="1" width="500" height="150">
 			<tr>
 				<td><input name="title" value="${menu.m_title }" ></td>
@@ -17,7 +17,6 @@
 			</tr>
 			<tr>
 				<td><img src="img/${menu.m_img }" width="300" height="200">  </td>
-				<td><input type="file" name="file2"></td>
 			</tr>
 			<tr>
 				<td colspan="2" ><textarea name="txt">${menu.m_txt }</textarea>  </td>
