@@ -18,6 +18,12 @@
 <td><button name="gen" value="region">지역별</button></td>
 <td><button name="gen" value="${sessionScope.accountInfo.region }">사용자와 가까운 지역별</button></td>
 </tr>
+
+<tr>
+<td>
+<button type="button" onclick="location.href='Menu1UpC'">가게 등록</button>
+</td>
+</tr>
 </table>
 </form>
 

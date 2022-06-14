@@ -14,6 +14,9 @@
 <h3>상세 페이지</h3>
 </td>
 </tr>
+<tr>
+<td colspan="2"><img src="fileFolder/${rest.img }"></td>
+</tr>
 
 <tr>
 <td> 가게 이름</td>
