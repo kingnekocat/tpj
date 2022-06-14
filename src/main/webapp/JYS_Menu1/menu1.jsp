@@ -8,6 +8,8 @@
 </head>
 <body>
 
+${r }
+
 <form action="Menu1DC">
 <table>
 <tr>

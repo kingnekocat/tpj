@@ -38,6 +38,7 @@
 <td class="d_td3" colspan="2">
 <a href="Menu1C"> 목록으로 </a> 
 <span onclick="history.back()"> 목록으로(js) </span>
+<button onclick="location.href='Menu1DelC?no=${rest.num }'">가게 정보 삭제</button>
 </td>
 </tr>
 

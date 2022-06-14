@@ -167,5 +167,30 @@ public class Menu1DAO {
 			
 			
 		}
+	
+	public static void delRest(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = DBManager.connect();
+			String sql = "delete team_restaurant where tr_num=?";
+			pstmt = con.prepareStatement(sql);
+			
+			int no = Integer.parseInt(request.getParameter("no"));
+			pstmt.setInt(1, no);
+			
+			if(pstmt.executeUpdate() == 1) {
+				request.setAttribute("r", "삭제 성공");
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+
+}
 		
 	}

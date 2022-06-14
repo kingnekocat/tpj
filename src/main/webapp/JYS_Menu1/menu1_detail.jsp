@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <table border="1">
 <tr>
 <td> 가게 이름 </td><td> 메뉴 </td><td> 지역 </td><td> 소개 </td>
