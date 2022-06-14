@@ -7,13 +7,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.team.account.AccountDAO;
+
 
 @WebServlet("/Menu2RegC")
 public class Menu2RegC extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setAttribute("loginPage", "SEJ_Account/login.jsp");
+		AccountDAO.loginCheck(request);
 		request.setAttribute("contentPage", "SHC_Menu2/Menu2_Reg.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		

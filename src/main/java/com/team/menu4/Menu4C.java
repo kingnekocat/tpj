@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.team.account.AccountDAO;
 import com.team.menu3.Menu3Dao;
 
 
@@ -17,7 +18,7 @@ public class Menu4C extends HttpServlet {
 		
 		
 		Menu4Dao.getAllmenu(request);
-		request.setAttribute("loginPage", "SEJ_Account/login.jsp");
+		AccountDAO.loginCheck(request);
 		request.setAttribute("contentPage", "SHC_Menu4/Menu4.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		

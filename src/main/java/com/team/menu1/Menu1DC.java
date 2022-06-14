@@ -7,9 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.team.account.AccountDAO;
+
 @WebServlet("/Menu1DC")
 public class Menu1DC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		AccountDAO.loginCheck(request);
 		Menu1DAO.ViewGenreDetail(request);
 		request.setAttribute("contentPage", "JYS_Menu1/menu1_detail.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);

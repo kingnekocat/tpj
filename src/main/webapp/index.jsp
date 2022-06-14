@@ -13,7 +13,11 @@
 	<tr>
 		<td><a href="HomeController">홈메뉴</a></td>
 	</tr>
-		
+		<tr>
+			<td align="right">
+				<jsp:include page="${loginPage }"></jsp:include>
+			</td>
+		</tr>
 		<tr>
 		<td>
 			<a href="Menu1C">메뉴1</a>

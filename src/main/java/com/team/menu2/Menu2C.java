@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.team.account.AccountDAO;
+
 
 @WebServlet("/Menu2C")
 public class Menu2C extends HttpServlet {
@@ -15,7 +17,7 @@ public class Menu2C extends HttpServlet {
 		
 		
 		Menu2Dao.getAllmenu2(request);
-		request.setAttribute("loginPage", "SEJ_Account/login.jsp");
+		AccountDAO.loginCheck(request);
 		request.setAttribute("contentPage", "SHC_Menu2/Menu2.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
