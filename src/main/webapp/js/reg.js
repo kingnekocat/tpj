@@ -22,7 +22,7 @@ function Regcall(){
 	 notContains(pw, "QWERTYUIOPASDFGHJKLZXCVBNM")||
 	 notContains(pw, "qwertyuiopasdfghjklzxcvbnm")||
 	 notContains(pw, "~!@#$%^&*")){
-		alert('비번을 올바르게 입력하세요');
+		alert('비밀번호에는 영어 대·소문자, 특수문자가\n포함되어야 합니다.');
 		pw.focus();
 		pw.value = "";
 		return false;

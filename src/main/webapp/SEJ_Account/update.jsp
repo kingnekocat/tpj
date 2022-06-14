@@ -24,11 +24,11 @@ onsubmit="return UpdateCall()">
 			<td>${sessionScope.accountInfo.id }</td>
 		</tr>
 		<tr>
-			<td>PW</td>
+			<td>새 비밀번호</td>
 			<td><input type=password name="pw"></td>
 		</tr>
 		<tr>
-			<td>PW확인</td>
+			<td>새 비밀번호 확인</td>
 			<td><input type=password name="pw2" placeholder="비번 재확인"></td>
 		</tr>
 		<tr>

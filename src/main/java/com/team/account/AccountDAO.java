@@ -206,9 +206,12 @@ public class AccountDAO {
 			String region = request.getParameter("region");
 			String kakao = request.getParameter("kakao");
 			String id = request.getParameter("id");
-			//Account aa = (Account) request.getSession().getAttribute("accountInfo");
 			
+			Account a = (Account) request.getSession().getAttribute("accountInfo");
 			
+			if (pw.length() == 0) {
+				pw = a.getPw();
+			}
 			
 			System.out.println(name);
 			System.out.println(pw);
@@ -273,6 +276,50 @@ public class AccountDAO {
 		}
 		
 		
+		
+		
+	}
+
+
+
+
+
+	public static void passwordCheck(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select pw from ACCOUNT01 where id = ?";
+		
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			Account a = (Account)request.getSession().getAttribute("accountInfo");
+			String id = a.getId();
+			pstmt.setString(1, id);
+			
+			String pw = request.getParameter("pw");
+			System.out.println(id);
+			System.out.println(pw);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				if (pw.equals(rs.getString("pw"))) {
+					request.setAttribute("contentPage", "SEJ_Account/info.jsp");
+				} else {
+					request.setAttribute("wrong", "비밀번호를 다시 확인해주세요");
+					request.setAttribute("contentPage", "SEJ_Account/pwCheck.jsp");
+				}
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
 		
 		
 	}
