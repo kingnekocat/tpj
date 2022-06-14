@@ -10,10 +10,13 @@
 <body>
 
 <table border="1">
+<tr>
+<td> 가게 이름 </td><td> 메뉴 </td><td> 지역 </td><td> 소개 </td>
+</tr>
 
 <c:forEach items="${rest }" var="r">
 <tr>
-<td onclick="location.href='Menu1DC2?nono=${r.num}'">${r.name }</td> <td>${r.food }</td> <td>${r.region }</td>
+<td onclick="location.href='Menu1DC2?nono=${r.num}'">${r.name }</td> <td>${r.food }</td> <td>${r.region }</td> <td>${r.inform }</td>
 </tr>
 </c:forEach>
 </table>

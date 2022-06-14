@@ -10,5 +10,6 @@ create table account01(
 );
 
 insert into account01 values ('3','2','3','4','5','6','지역1','8');
+insert into account01 values ('4','5','3','4','5','6','서울','8');
 
 select * from ACCOUNT01;

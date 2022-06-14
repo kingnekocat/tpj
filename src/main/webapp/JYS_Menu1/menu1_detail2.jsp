@@ -28,6 +28,10 @@
 <td>${rest.region }</td>
 </tr>
 <tr>
+<td> 소개</td>
+<td>${rest.inform }</td>
+</tr>
+<tr>
 <td class="d_td3" colspan="2">
 <a href="Menu1C"> 목록으로 </a> 
 <span onclick="history.back()"> 목록으로(js) </span>

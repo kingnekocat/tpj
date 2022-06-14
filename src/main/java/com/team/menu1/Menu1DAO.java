@@ -34,21 +34,22 @@ public class Menu1DAO {
 			con = DBManager.connect();
 			String gen = request.getParameter("gen");
 			
+			
+			
 			Account a = (Account)request.getSession().getAttribute("accountInfo");
-	        String hsregion = a.getRegion();
-			
-			
+			String hsregion = a.getRegion();
+
 //			System.out.println(hsregion);
 			
 			if (gen.equals("region")) {
-			String	sql = "select * from tpj_restaurant order by tpjr_region";
+			String	sql = "select * from team_restaurant order by tr_region";
 			pstmt = con.prepareStatement(sql);
 			} else if (gen.equals(hsregion)) {
-				String	sql = "select * from tpj_restaurant where tpjr_region=?";
+				String	sql = "select * from team_restaurant where tr_region=?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, gen);
 			}else {
-				String sql = "select * from tpj_restaurant where tpjr_food=?";
+				String sql = "select * from team_restaurant where tr_food=?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, gen);
 				
@@ -61,10 +62,11 @@ public class Menu1DAO {
 		Menu1B r = null;
 		while (rs.next()) {
 			r = new Menu1B();
-			r.setNum(rs.getInt("tpjr_num"));
-			r.setName(rs.getString("tpjr_name"));
-			r.setFood(rs.getString("tpjr_food"));
-			r.setRegion(rs.getString("tpjr_region"));
+			r.setNum(rs.getInt("tr_num"));
+			r.setName(rs.getString("tr_name"));
+			r.setFood(rs.getString("tr_food"));
+			r.setRegion(rs.getString("tr_region"));
+			r.setInform(rs.getString("tr_information"));
 				rest.add(r);
 			}
 				
@@ -88,7 +90,7 @@ public class Menu1DAO {
 			try {
 				con = DBManager.connect();
 				
-				String sql = "select * from tpj_restaurant where tpjr_num=?";
+				String sql = "select * from team_restaurant where tr_num=?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setInt(1, Integer.parseInt(request.getParameter("nono")));
 				rs = pstmt.executeQuery();
@@ -98,10 +100,11 @@ public class Menu1DAO {
 			if (rs.next()) {
 				// bean
 				rest = new Menu1B();
-				rest.setNum(rs.getInt("tpjr_num"));
-				rest.setName(rs.getString("tpjr_name"));
-				rest.setFood(rs.getString("tpjr_food"));
-				rest.setRegion(rs.getString("tpjr_region"));
+				rest.setNum(rs.getInt("tr_num"));
+				rest.setName(rs.getString("tr_name"));
+				rest.setFood(rs.getString("tr_food"));
+				rest.setRegion(rs.getString("tr_region"));
+				rest.setInform(rs.getString("tr_information"));
 				request.setAttribute("rest", rest);
 				}
 					
