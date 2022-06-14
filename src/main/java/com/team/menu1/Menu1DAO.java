@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
 import com.team.menu1.Menu1B;
+import com.team.account.Account;
 import com.team.main.DBManager;
 
 public class Menu1DAO {
@@ -33,10 +34,16 @@ public class Menu1DAO {
 			con = DBManager.connect();
 			String gen = request.getParameter("gen");
 			
+			Account a = (Account)request.getSession().getAttribute("accountInfo");
+	        String hsregion = a.getRegion();
+			
+			
+//			System.out.println(hsregion);
+			
 			if (gen.equals("region")) {
 			String	sql = "select * from tpj_restaurant order by tpjr_region";
 			pstmt = con.prepareStatement(sql);
-			} else if (gen.equals("Áö¿ª1")) {
+			} else if (gen.equals(hsregion)) {
 				String	sql = "select * from tpj_restaurant where tpjr_region=?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, gen);
