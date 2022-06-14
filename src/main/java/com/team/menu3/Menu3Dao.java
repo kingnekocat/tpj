@@ -124,6 +124,38 @@ public class Menu3Dao {
 		
 		
 	}
+
+	public static void deleteMenu(HttpServletRequest request) {
+		
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = DBManager.connect();
+			String sql = "delete menu3_01 where m_no = ?";
+			pstmt = con.prepareStatement(sql);
+			
+			String no = request.getParameter("no");
+			pstmt.setString(1, no);
+			
+			if(pstmt.executeUpdate()==1) {
+				System.out.println("삭제성공");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("서버에러");
+		}finally {
+			DBManager.close(con, pstmt, null);
+		}
+		
+		
+		
+	}
+		
+	
+	
 		
 		
 		

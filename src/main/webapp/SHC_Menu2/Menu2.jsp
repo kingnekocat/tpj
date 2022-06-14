@@ -26,7 +26,7 @@
 				<td><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short"/> 
 				</td>
 				<td><button onclick="location.href='Menu2UpdateC?no=${m.m_no}'">수정</button>
-				<button onclick="location.href='Menu2DelC?no=${m.m_no}'">삭제</button></td>
+				<button onclick="deleteMenu2(${m.m_no})">삭제</button></td>
 			</tr>
 	</table>
 </c:forEach>
