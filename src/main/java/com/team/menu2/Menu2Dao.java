@@ -7,6 +7,10 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.team.account.Account;
+
 public class Menu2Dao {
 
 	public static void getAllmenu2(HttpServletRequest request) {
@@ -48,13 +52,33 @@ public class Menu2Dao {
 		
 		try {
 			con = DBManager.connect();
-			String sql = "insert into menu2_01 values(menu2_01_seq.nextval,'제목?','닉네임1','내용?','사진?',sysdate)";
+			String sql = "insert into menu2_01 values(menu2_01_seq.nextval,?,?,?,?,sysdate)";
 			pstmt = con.prepareStatement(sql);
 			
+			String path = request.getServletContext().getRealPath("img");
+			MultipartRequest mr = new MultipartRequest(request, path, 31457280, "utf-8",
+			new DefaultFileRenamePolicy());	
 			
+			
+		   String title = mr.getParameter("title");
+		   String txt = mr.getParameter("txt");
+		   String img = mr.getFilesystemName("file");
+		   Account a = (Account)request.getSession().getAttribute("accountInfo");
+		   String nickname = a.getNickname();
+			
+		   pstmt.setString(1, title);
+		   pstmt.setString(2, nickname);
+		   pstmt.setString(3, txt);
+		   pstmt.setString(4, img);
+			
+		if(pstmt.executeUpdate()==1) {
+			request.setAttribute("r", "등록성공");
+		}
+		   
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			request.setAttribute("r", "등록실패");
 		}finally {
 			DBManager.close(con, pstmt, null);
 		}

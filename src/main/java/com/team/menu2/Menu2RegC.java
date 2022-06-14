@@ -27,9 +27,10 @@ public class Menu2RegC extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		
-		
-		
+		AccountDAO.loginCheck(request);
+		Menu2Dao.regMenu(request);
+		request.setAttribute("contentPage", "SHC_Menu2/Menu2.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 }

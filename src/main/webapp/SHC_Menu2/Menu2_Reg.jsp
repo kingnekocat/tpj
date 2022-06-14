@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<form action="">
+${r }
+<form action="Menu2RegC" method="post" enctype="multipart/form-data">
 	<table border="1" width="500" height="300">
 
 		<tr>
@@ -20,6 +20,9 @@
 		<tr>
 			<td>사진
 			<input type="file" name="file" ></td>
+		</tr>
+		<tr>
+			<td><button>등록하기</button></td>
 		</tr>
 
 	</table>

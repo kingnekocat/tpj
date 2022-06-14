@@ -17,7 +17,7 @@
 				<td>${m.m_nickname }</td>
 			</tr>
 			<tr>
-				<td colspan="2" >${m.m_img }</td>
+				<td colspan="2" ><img src="img/${m.m_img }" width="300" height="200"></td>
 			</tr>
 			<tr>
 				<td colspan="2" >${m.m_txt }</td>
