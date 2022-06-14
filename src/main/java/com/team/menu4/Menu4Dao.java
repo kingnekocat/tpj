@@ -7,8 +7,7 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.team.main.DBManager;
-import com.team.menu3.Menu3;
+import com.team.menu2.DBManager;
 
 public class Menu4Dao {
 

@@ -7,9 +7,6 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.team.main.DBManager;
-import com.team.menu3.Menu3;
-
 public class Menu2Dao {
 
 	public static void getAllmenu2(HttpServletRequest request) {

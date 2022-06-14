@@ -1,4 +1,4 @@
-package com.team.main;
+package com.team.menu2;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
