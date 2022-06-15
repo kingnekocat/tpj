@@ -15,7 +15,7 @@
 
 <c:forEach items="${rest }" var="r">
 <tr>
-<td onclick="location.href='Menu1DC2?nono=${r.num}'">${r.name }</td> <td>${r.food }</td> <td>${r.region }</td> <td>${r.inform }</td>
+<td onclick="location.href='Menu1DC2?no=${r.num}'">${r.name }</td> <td>${r.food }</td> <td>${r.region }</td> <td>${r.inform }</td>
 </tr>
 </c:forEach>
 </table>

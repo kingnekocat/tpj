@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<form action="Menu1UpC" method="post" onsubmit="return call()" enctype="multipart/form-data">
+<form action="Menu1UpdateC" method="post" onsubmit="return call()" enctype="multipart/form-data">
 <table border="1">
 <tr>
 <td colspan="2">가게 정보 등록</td>
@@ -48,12 +47,9 @@
 
 
 <tr>
-<td colspan="2"><button>등록</button></td>
+<td colspan="2"><button value="${rest.num }" name="no">수정</button></td>
 </tr>
-
-
 </table>
 </form>
-
 </body>
 </html>

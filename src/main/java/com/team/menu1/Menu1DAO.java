@@ -1,6 +1,9 @@
 package com.team.menu1;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -96,7 +99,7 @@ public class Menu1DAO {
 				
 				String sql = "select * from team_restaurant where tr_num=?";
 				pstmt = con.prepareStatement(sql);
-				pstmt.setInt(1, Integer.parseInt(request.getParameter("nono")));
+				pstmt.setInt(1, Integer.parseInt(request.getParameter("no")));
 				rs = pstmt.executeQuery();
 				
 				
@@ -192,5 +195,53 @@ public class Menu1DAO {
 		}
 
 }
+
+	public static void updateRest(HttpServletRequest request) throws IOException {
+		Account a = (Account) request.getSession().getAttribute("accountInfo");
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = "update team_restaurant set tr_name=?, tr_food=?, tr_region=?, tr_information=?, tr_img=? where tr_num =?";
+
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			String path = request.getSession().getServletContext().getRealPath("fileFolder");
+			System.out.println(path);
+			MultipartRequest mr;
+			mr = new MultipartRequest(request, path, 20*1024*1024, "utf-8", new DefaultFileRenamePolicy());
+			
+			
+			String name = mr.getParameter("name");
+			String food = mr.getParameter("genre");
+			String region = mr.getParameter("region");
+			String inform = mr.getParameter("inform");
+			String img = mr.getFilesystemName("img");			
+			int num = Integer.parseInt(mr.getParameter("no"));
+			
+			pstmt.setString(1, name);
+			pstmt.setString(2, food);
+			pstmt.setString(3, region);
+			pstmt.setString(4, inform);
+			pstmt.setString(5, img);
+			pstmt.setInt(6, num);
+			
+			
+				
+				
+				if (pstmt.executeUpdate() == 1) {
+					System.out.println("수정성공");
+				} 
+				
+				
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+			
+		}		
+	}
 		
 	}

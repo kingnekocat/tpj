@@ -39,6 +39,7 @@
 <a href="Menu1C"> 목록으로 </a> 
 <span onclick="history.back()"> 목록으로(js) </span>
 <button onclick="location.href='Menu1DelC?no=${rest.num }'">가게 정보 삭제</button>
+<button onclick="location.href='Menu1UpdateC?no=${rest.num }'">가게 정보 수정</button>
 </td>
 </tr>
 
