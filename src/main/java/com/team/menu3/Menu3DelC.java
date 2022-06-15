@@ -18,7 +18,7 @@ public class Menu3DelC extends HttpServlet {
 		AccountDAO.loginCheck(request);
 		Menu3Dao.deleteMenu(request);
 		Menu3Dao.getAllmenu(request);
-		request.setAttribute("contentPage", "SHC_Menu4/Menu4.jsp");
+		request.setAttribute("contentPage", "SHC_Menu3/Menu3.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}

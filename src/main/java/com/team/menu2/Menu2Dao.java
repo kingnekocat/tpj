@@ -66,6 +66,8 @@ public class Menu2Dao {
 		   Account a = (Account)request.getSession().getAttribute("accountInfo");
 		   String nickname = a.getNickname();
 			
+		   
+		   
 		   pstmt.setString(1, title);
 		   pstmt.setString(2, nickname);
 		   pstmt.setString(3, txt);
