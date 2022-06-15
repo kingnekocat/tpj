@@ -22,13 +22,6 @@ import com.team.main.DBManager;
 
 public class Menu1DAO {
 
-	public static void ViewGenre(HttpServletRequest request) {
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		
-		
-	}
 
 	public static void ViewGenreDetail(HttpServletRequest request) {
 		Connection con = null;

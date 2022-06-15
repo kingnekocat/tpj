@@ -4,11 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
 import com.team.account.Account;
 import com.team.main.DBManager;
+import com.team.menu1.Menu1B;
 
 public class frinedlistDAO {
 
@@ -21,7 +23,6 @@ public static void FriendListCreate(HttpServletRequest request) {
 	
 	try {
 		con = DBManager.connect();
-		String gen = request.getParameter("gen");
 		
 		String sql = "create table frinedlist_?(\r\n"
 				+ "	f_myid varchar2 (30 char) primary key,\r\n"
@@ -46,11 +47,50 @@ public static void FriendListCreate(HttpServletRequest request) {
 		DBManager.close(con, pstmt, null);
 		
 	}		
+}
+
+public static void ViewFriendList(HttpServletRequest request) {
 	
+	Connection con = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	Account a = (Account)request.getSession().getAttribute("accountInfo");
 	
-	
-	
+	try {
+		con = DBManager.connect();
+		
+		String	sql = "select * from friendlist_?";
+		pstmt = con.prepareStatement(sql);
+		
+		String myId = a.getId();
+		
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, myId);
+		rs = pstmt.executeQuery();
+		
+		ArrayList<FriendB> fl = new ArrayList<FriendB>();
+		FriendB f = null;
+		while (rs.next()) {
+			f = new FriendB();
+			f.setId(rs.getString(""));
+			f.setNickname(rs.getString(""));
+			f.setRegion(rs.getString(""));
+			f.setGender(rs.getString(""));
+			f.setAge(rs.getString(""));
+			f.setKakao(rs.getString(""));
+				fl.add(f);
+			}
+				
+			request.setAttribute("friend", fl);
+		
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}finally {
+		DBManager.close(con, pstmt, null);
+		
+	}		
 	
 }
-	
+
 }
