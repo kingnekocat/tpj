@@ -45,8 +45,8 @@
 				<td><input name="nickName" placeholder="필수"></td>
 			</tr>
 			<tr>
-				<td>나이</td>
-				<td><input name="age" placeholder="필수"></td>
+				<td>생년월일(8자리)</td>
+				<td><input name="age" placeholder="필수" maxlength="8"></td>
 			</tr>
 			<tr>
 				<td>성별</td>

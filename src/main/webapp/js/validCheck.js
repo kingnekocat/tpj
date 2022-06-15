@@ -92,6 +92,9 @@ function isNotNumber(input){
 	return isNaN(input.value);
 }
 
+function ageLengthCheck(input){
+	return input.value.length < 8;
+}
 
 
 

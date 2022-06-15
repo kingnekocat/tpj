@@ -3,6 +3,8 @@ package com.team.account;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -32,11 +34,11 @@ public class AccountDAO {
 	
 
 	public static void login(HttpServletRequest request) {
-		// 1. °ª
+		// 1. ê°’
 				String userId = request.getParameter("id");
 				String userPw = request.getParameter("pw");
 			
-			// ¾÷µ« ±â´ÉÀÌ ¼öÇàµÇ¸é °ªÀÌ ½Ç·ÁÀÖ°í, ¾Æ´Ï¸é °ªÀÌ ¾øÀ»²¨
+			// ì—…ëƒ ê¸°ëŠ¥ì´ ìˆ˜í–‰ë˜ë©´ ê°’ì´ ì‹¤ë ¤ìˆê³ , ì•„ë‹ˆë©´ ê°’ì´ ì—†ì„êº¼
 			String iddd = (String) request.getAttribute("iddd");
 			String pwww = (String) request.getAttribute("pwww");
 			
@@ -45,7 +47,7 @@ public class AccountDAO {
 				userPw = pwww;
 			}
 				
-				// 2. db¶û ºñ±³
+				// 2. dbë‘ ë¹„êµ
 				
 				Connection con = null;
 				PreparedStatement pstmt = null;
@@ -62,7 +64,7 @@ public class AccountDAO {
 					if (rs.next()) {
 						
 						if (userPw.equals(rs.getString("pw"))) {
-							request.setAttribute("r", "·Î±×ÀÎ ¼º°ø");
+							request.setAttribute("r", "ë¡œê·¸ì¸ ì„±ê³µ");
 							// id, name
 							Account a = new Account();
 							a.setId(rs.getString("id"));
@@ -76,20 +78,20 @@ public class AccountDAO {
 							
 							
 							
-							// ¼¼¼Ç ½á¾ßÁö
+							// ì„¸ì…˜ ì¨ì•¼ì§€
 							HttpSession hs = request.getSession();
 							hs.setAttribute("accountInfo", a);
-							hs.setMaxInactiveInterval(60*5);		// 5ºĞ À¯Áö
-							//hs.setMaxInactiveInterval(10);		// 10ÃÊ
+							hs.setMaxInactiveInterval(60*5);		// 5ë¶„ ìœ ì§€
+							//hs.setMaxInactiveInterval(10);		// 10ì´ˆ
 							
 							
 							} else {
-								request.setAttribute("r", "ÆĞ½º¿öµå ¿À·ù");
-								request.setAttribute("rr", "¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä");
+								request.setAttribute("r", "íŒ¨ìŠ¤ì›Œë“œ ì˜¤ë¥˜");
+								request.setAttribute("rr", "ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”");
 						}
 					} else {
-						request.setAttribute("r", "Á¸ÀçÇÏÁö ¾Ê´Â È¸¿ø");
-						request.setAttribute("rr", "¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä");
+						request.setAttribute("r", "ì¡´ì¬í•˜ì§€ ì•ŠëŠ” íšŒì›");
+						request.setAttribute("rr", "ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”");
 					}
 					
 					
@@ -106,14 +108,14 @@ public class AccountDAO {
 
 	public static void logOut(HttpServletRequest request) {
 		
-		// ·Î±×¾Æ¿ô ÇÏ´Â ÀÏ
-		// ¼¼¼ÇÀ» Á×ÀÌÀÚ.
+		// ë¡œê·¸ì•„ì›ƒ í•˜ëŠ” ì¼
+		// ì„¸ì…˜ì„ ì£½ì´ì.
 		
 		HttpSession hs = request.getSession();
 //		hs.setAttribute("accountInfo", null);
 		hs.removeAttribute("accountInfo");
 //		hs.invalidate();
-		// ¾ÖÃÊ¿¡ ¸¸µé¾îÁøÀûÀÌ ¾øÀ» ¶§, ¼³Á¤ÇÑ ½Ã°£ÀÌ ¸¸·áµÇ¸é, 
+		// ì• ì´ˆì— ë§Œë“¤ì–´ì§„ì ì´ ì—†ì„ ë•Œ, ì„¤ì •í•œ ì‹œê°„ì´ ë§Œë£Œë˜ë©´, 
 		
 		
 		
@@ -127,7 +129,7 @@ public class AccountDAO {
 
 
 	public static void regAccount(HttpServletRequest request) {
-		// ²®µ¥±â
+		// ê»ë°ê¸°
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -147,12 +149,33 @@ public class AccountDAO {
 		String gender = request.getParameter("gender");	
 		String region = request.getParameter("region");
 		String kakao = request.getParameter("kakao");
+		int KoreanAge = 0; // í•œêµ­ ë‚˜ì´
+		
+		if (age != null) {
+			String today = "";
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+			today = formatter.format(new Date()); // ì‹œìŠ¤í…œ ë‚ ì§œë¥¼ ê°€ì ¸ì™€ì„œ yyyyMMdd í˜•íƒœë¡œ ë³€í™˜
+			
+			// today yyyyMMddÂ Â Â Â Â Â Â 
+			int todayYear = Integer.parseInt(today.substring(0, 4));
+			int todayMonth = Integer.parseInt(today.substring(4, 6));
+			int todayDay = Integer.parseInt(today.substring(6, 8));
+			int ageYear = Integer.parseInt(age.substring(0, 4));
+			int ageMonth = Integer.parseInt(age.substring(4, 6));
+			int ageDay = Integer.parseInt(age.substring(6, 8));
+			
+			
+			KoreanAge = todayYear - ageYear;
+			KoreanAge += 1;
+			
+		}
+		
 		
 		System.out.println(id);
 		System.out.println(pw);
 		System.out.println(name);
 		System.out.println(nickName);
-		System.out.println(age);
+		System.out.println(KoreanAge);
 		System.out.println(gender);
 		System.out.println(region);
 		System.out.println(kakao);
@@ -161,14 +184,14 @@ public class AccountDAO {
 		pstmt.setString(2, pw);
 		pstmt.setString(3, name);
 		pstmt.setString(4, nickName);
-		pstmt.setString(5, age);
+		pstmt.setInt(5, KoreanAge);
 		pstmt.setString(6, gender);
 		pstmt.setString(7, region);
 		pstmt.setString(8, kakao);
 		
 		
 	 	if (pstmt.executeUpdate()==1) {
-			System.out.println("°¡ÀÔ ¼º°ø");
+			System.out.println("ê°€ì… ì„±ê³µ");
 		} 
 		
 		
@@ -186,7 +209,7 @@ public class AccountDAO {
 
 
 	public static void updateAccount(HttpServletRequest request) {
-		// ²®µ¥±â
+		// ê»ë°ê¸°
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = "update account01\r\n"
@@ -233,7 +256,7 @@ public class AccountDAO {
 			request.setAttribute("pwww", pw);
 			
 			if (pstmt.executeUpdate()==1) {
-				System.out.println("¼öÁ¤ ¼º°ø!");
+				System.out.println("ìˆ˜ì • ì„±ê³µ!");
 			}
 			
 		} catch (Exception e) {
@@ -266,7 +289,7 @@ public class AccountDAO {
 			pstmt.setString(1, id);
 			
 			if (pstmt.executeUpdate()==1) {
-				System.out.println("Å»Åğ ¼º°ø!");
+				System.out.println("íƒˆí‡´ ì„±ê³µ!");
 			}
 			
 		} catch (Exception e) {
@@ -309,7 +332,7 @@ public class AccountDAO {
 				if (pw.equals(rs.getString("pw"))) {
 					request.setAttribute("contentPage", "SEJ_Account/info.jsp");
 				} else {
-					request.setAttribute("wrong", "ºñ¹Ğ¹øÈ£¸¦ ´Ù½Ã È®ÀÎÇØÁÖ¼¼¿ä");
+					request.setAttribute("wrong", "ë¹„ë°€ë²ˆí˜¸ë¥¼ ë‹¤ì‹œ í™•ì¸í•´ì£¼ì„¸ìš”");
 					request.setAttribute("contentPage", "SEJ_Account/pwCheck.jsp");
 				}
 			}

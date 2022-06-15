@@ -48,8 +48,22 @@ function Regcall(){
 		return false;
 	}
 	if(isEmpty(age)){
-		alert('나이를 입력하세요');
+		alert('생년월일을 입력하세요');
 		age.focus();
+		
+		return false;
+	}
+	if(isNotNumber(age)){
+		alert('숫자만 입력 가능합니다');
+		age.focus();
+		age.value = "";
+		
+		return false;
+	}
+	if(ageLengthCheck(age)){
+		alert('여덟자리 모두 입력해주세요');
+		age.focus();
+		age.value = "";
 		
 		return false;
 	}
@@ -67,12 +81,30 @@ function Regcall(){
 	}
 	
 	
+	
 	return true;
 	
 	
 	
 	
-	
-	
-	
+}
+
+function calcAge() {
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = (date.getMonth() + 1);
+    var day = date.getDate();
+    let birth = document.myForm.age;
+    
+    if (month < 10) month = '0' + month;
+    if (day < 10) day = '0' + day;
+    
+    var monthDay = month + day;
+    birth = birth.replace('-', '').replace('-', '');
+    
+    var birthdayy = birth.substr(0, 4);
+    var birthdaymd = birth.substr(4, 4);
+    var age = monthDay < birthdaymd ? year - birthdayy - 1 : year - birthdayy;
+    
+    return age;
 }
