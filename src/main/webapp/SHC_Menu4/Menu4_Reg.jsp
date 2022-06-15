@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="Menu4RegC" method="post" enctype="multipart/form-data">
+<form action="Menu4RegC" method="post" enctype="multipart/form-data" name="menuform" onsubmit="return menuCall();">
 	<table border="1" width="500" height="300">
 
 		<tr>
