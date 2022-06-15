@@ -24,6 +24,7 @@
 			<a href="Menu2C">메뉴2</a>
 			<a href="Menu3C">메뉴3</a>
 			<a href="Menu4C">메뉴4</a>
+			<a href="TestC">테스트</a>
 		</td>
 		</tr>
 		<tr>
