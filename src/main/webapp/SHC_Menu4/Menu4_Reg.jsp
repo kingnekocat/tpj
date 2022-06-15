@@ -15,10 +15,10 @@
 			<td><input name="title" placeholder="글 제목을 입력해주세요"></td>
 		</tr>
 		<tr>
-			<td><input type="file" name="file"></td>
+			<td><textarea name="txt" placeholder="내용을 입력해주세요" ></textarea> </td>
 		</tr>
 		<tr>
-			<td><textarea name="txt" placeholder="내용을 입력해주세요" ></textarea> </td>
+			<td><input type="file" name="file"></td>
 		</tr>
 		<tr>
 			<td><button>등록하기</button></td>

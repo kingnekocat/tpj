@@ -5,7 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="js/menu4.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/menuCheck.js"></script>
+<script type="text/javascript" src="js/menuValid.js"></script>
 </head>
 <body>
 
