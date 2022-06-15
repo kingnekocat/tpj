@@ -16,7 +16,7 @@
 
 <tr>
 <td>가게 이름</td>
-<td><input name="name" placeholder="필수"></td>
+<td><input name="name" placeholder="필수" required></td>
 </tr>
 <tr>
 <td>음식 종류</td>
@@ -39,7 +39,7 @@
 </tr>
 <tr>
 <td>소개</td>
-<td><textarea name="inform" ></textarea></td>
+<td><textarea name="inform" placeholder="필수" required></textarea></td>
 </tr>
 <tr>
 <td>사진</td>
