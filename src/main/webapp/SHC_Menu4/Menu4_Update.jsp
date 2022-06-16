@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +14,18 @@
 			<tr>
 				<td><input name="title" value="${menu.m_title }"></td>
 			</tr>
+			<c:choose>
+			<c:when test="${menu.m_img eq '사진없음' }">
 			<tr>
-				<td><img src="img/${menu.m_img }" width="300" height="200"></td>
+				<td colspan="2" ></td>
 			</tr>
+			</c:when>
+			<c:otherwise>
+			<tr>
+				<td colspan="2" ><img src="img/${menu.m_img }" width="300" height="200"></td>
+			</tr>
+			</c:otherwise>
+			</c:choose>
 			<tr>
 				<td><textarea name="txt"> ${menu.m_txt }</textarea></td>
 			</tr>
