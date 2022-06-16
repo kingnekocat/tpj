@@ -176,16 +176,30 @@ public class Menu4Dao {
 		try {
 			request.setCharacterEncoding("utf-8");
 			con = DBManager.connect();
-			String sql = "update menu4_01 set m_title = ?, m_txt =?  where m_no = ?";
+			String sql = "update menu4_01 set m_title = ?, m_txt =?, m_img = ? where m_no = ?";
 			pstmt = con.prepareStatement(sql);
 			
-			String title = request.getParameter("title");	
-			String txt = request.getParameter("txt");	
-			String no = request.getParameter("no");
+			String path = request.getServletContext().getRealPath("img");
+			MultipartRequest mr = new MultipartRequest(request, path, 31457280, "utf-8",
+			new DefaultFileRenamePolicy());	
+			
+			String title = mr.getParameter("title");	
+			String txt = mr.getParameter("txt");	
+			String no = mr.getParameter("no");
+			String img = mr.getParameter("file");
+			String img2 = mr.getFilesystemName("file2");
+			String img3 = "";
+			
+			if(img2 == null) {
+				img3 = img;
+			}else {
+				img3 = img2;
+			}
 			
 			pstmt.setString(1, title);
 			pstmt.setString(2, txt);
-			pstmt.setString(3, no);
+			pstmt.setString(3, img3);
+			pstmt.setString(4, no);
 			
 			
 			if(pstmt.executeUpdate()==1) {

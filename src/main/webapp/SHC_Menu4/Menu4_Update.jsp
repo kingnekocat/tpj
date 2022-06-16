@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form action="Menu4UpdateC?no=${menu.m_no }" method="post">
+<form action="Menu4UpdateC?no=${menu.m_no }" method="post" enctype="multipart/form-data">
 <table border="1" width="500" height="300">
 			<tr>
 				<td><input name="title" value="${menu.m_title }"></td>
@@ -28,6 +28,8 @@
 			</c:choose>
 			<tr>
 				<td><textarea name="txt"> ${menu.m_txt }</textarea></td>
+				<td><input type="file" name="file2"></td>
+				<td><input type="hidden" name="file" value="${menu.m_img }"></td>
 			</tr>
 			<tr>
 				<td><button>수정</button>
