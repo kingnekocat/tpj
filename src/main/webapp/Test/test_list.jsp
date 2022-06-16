@@ -15,9 +15,9 @@
 </td>
 </tr>
 
-<c:forEach items="${fl }" var="r">
+<c:forEach items="${fl }" var="f">
 <tr>
-<td>${r.id }</td>
+<td>${f.yourid }</td>
 </tr>
 </c:forEach>
 

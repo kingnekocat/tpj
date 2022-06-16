@@ -61,7 +61,7 @@ public static void ViewFriendList(HttpServletRequest request) {
 	try {
 		con = DBManager.connect();
 		
-		String	sql = "select * from friendlist_?";
+		String	sql = "select * from friendlist where f_myid=?";
 		pstmt = con.prepareStatement(sql);
 		
 		String myId = a.getId();
@@ -74,13 +74,10 @@ public static void ViewFriendList(HttpServletRequest request) {
 		FriendB f = null;
 		while (rs.next()) {
 			f = new FriendB();
-			f.setId(rs.getString("id"));
-			f.setNickname(rs.getString("nickname"));
-			f.setRegion(rs.getString("region"));
-			f.setGender(rs.getString("gender"));
-			f.setAge(rs.getString("age"));
-			f.setKakao(rs.getString("kakao"));
-				fl.add(f);
+			f.setNum(rs.getInt("f_num"));
+			f.setMyid(rs.getString("f_myid"));
+			f.setYourid(rs.getString("f_yourid"));
+			fl.add(f);
 			}
 				
 			request.setAttribute("friend", fl);
@@ -100,7 +97,7 @@ public static void addFriend(HttpServletRequest request) {
 	Connection con = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
-	String sql = "insert into frinedlist_? values(?, ?, aa, bb, cc, dd, ee)";
+	String sql = "insert into friendlist values(friendlist_seq.nextval, ?, ?)";
 	Account a = (Account)request.getSession().getAttribute("accountInfo");
 	
 	
@@ -110,21 +107,14 @@ public static void addFriend(HttpServletRequest request) {
 
 		String myId = a.getId();
 		
-		String id = request.getParameter("no");
+		String yourid = request.getParameter("no");
 		
 		
 		pstmt.setString(1, myId);
-		pstmt.setString(2, myId);
-		pstmt.setString(3, id);
-//		pstmt.setString(3, nickname);
-//		pstmt.setString(4, age);
-//		pstmt.setString(5, gender);
-//		pstmt.setString(6, region);
-//		pstmt.setString(7, kakao);
-
+		pstmt.setString(2, yourid);
 		
 		if (pstmt.executeUpdate() == 1) {
-			System.out.println("积己己傍");
+			System.out.println("眠啊己傍");
 		} 
 		
 	} catch (SQLException e) {

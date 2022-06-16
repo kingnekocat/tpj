@@ -12,14 +12,11 @@
 
 <table border="1">
 
-<tr>
-<td onclick="location.href='TestCreateC'">친구목록생성</td>
-</tr>
 
 <c:forEach items="${id }" var="r">
 <tr>
 <td onclick="location.href='TestAddC?no=${r.id}'">친구추가 ${r.id }</td>
-<td onclick="location.href='TestViewC'">친구보기</td>
+<td onclick="location.href='TestViewC'">친구목록보기</td>
 </tr>
 </c:forEach>
 </table>

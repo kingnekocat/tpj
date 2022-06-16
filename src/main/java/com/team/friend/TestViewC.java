@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.team.account.AccountDAO;
 
-@WebServlet("/TestC2")
+@WebServlet("/TestViewC")
 public class TestViewC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AccountDAO.loginCheck(request);
