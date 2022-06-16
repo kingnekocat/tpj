@@ -125,4 +125,54 @@ public static void addFriend(HttpServletRequest request) {
 	
 }
 
+
+public static void YourDetail(HttpServletRequest request) {
+	Connection con = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	
+	try {
+		
+		con = DBManager.connect();
+		String gen = request.getParameter("gen");
+		
+		
+		
+		Account a = (Account)request.getSession().getAttribute("accountInfo");
+
+			String	sql = "select * from account01 where id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, request.getParameter("no"));
+		
+		
+		rs = pstmt.executeQuery();
+		
+	ArrayList<Account> yourac = new ArrayList<Account>();
+	Account ac = null;
+	while (rs.next()) {
+		ac = new Account();
+		ac.setId(rs.getString("id"));
+		ac.setPw(rs.getString("pw"));
+		ac.setName(rs.getString("name"));
+		ac.setNickname(rs.getString("nickname"));
+		ac.setAge(rs.getInt("age"));
+		ac.setGender(rs.getString("gender"));
+		ac.setRegion(rs.getString("region"));
+		ac.setKakao(rs.getString("kakao"));
+			yourac.add(ac);
+		}
+		
+		
+		request.setAttribute("ac", ac);
+	
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} finally {
+		DBManager.close(con, pstmt, null);
+}
+
+
+}
+
 }
