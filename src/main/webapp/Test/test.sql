@@ -8,4 +8,5 @@ create table frinedlist_?(\r\n"
 				+ "	f_kakao varchar2 (30 char) not null\r\n"
 				
 				
+				
 select * from friendlist_4;

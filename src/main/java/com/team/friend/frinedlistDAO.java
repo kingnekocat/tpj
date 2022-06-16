@@ -34,7 +34,7 @@ public static void FriendListCreate(HttpServletRequest request) {
 				+ "	f_gender varchar2 (3 char) not null,\r\n"
 				+ "	f_region varchar2 (30 char) not null,\r\n"
 				+ "	f_kakao varchar2 (30 char) not null\r\n"
-				+ ");";
+				+ ")";
 		
 		String myId = a.getId();
 		
