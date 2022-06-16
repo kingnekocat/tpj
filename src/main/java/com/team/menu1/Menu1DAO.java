@@ -212,13 +212,23 @@ public class Menu1DAO {
 			String region = mr.getParameter("region");
 			String inform = mr.getParameter("inform");
 			String img = mr.getFilesystemName("img");			
+			String img2 = mr.getParameter("img2");
 			int num = Integer.parseInt(mr.getParameter("no"));
+			
+			if (img==null) {
+				pstmt.setString(5, img2);
+				
+			} else {
+				
+				pstmt.setString(5, img);
+			}
+			
+			
 			
 			pstmt.setString(1, name);
 			pstmt.setString(2, food);
 			pstmt.setString(3, region);
 			pstmt.setString(4, inform);
-			pstmt.setString(5, img);
 			pstmt.setInt(6, num);
 			
 			

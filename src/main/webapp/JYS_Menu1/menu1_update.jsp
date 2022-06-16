@@ -43,6 +43,7 @@
 <tr>
 <td>사진</td>
 <td><input type="file" name="img"></input></td>
+<td><input type="hidden" name="img2" value="${rest.img }"></td>
 </tr>
 
 
