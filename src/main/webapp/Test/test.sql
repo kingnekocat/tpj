@@ -1,7 +1,7 @@
 create table friendlist (
-	f_num number(3) primary key,
+	f_num number(3) not null,
 	f_myid varchar2 (30 char) not null,
-	f_yourid varchar2 (30 char) not null
+	f_yourid varchar2 (30 char) primary key not null
 )
 				
 create sequence friendlist_seq;
