@@ -15,7 +15,7 @@
 </td>
 </tr>
 
-<c:forEach items="${fl }" var="f">
+<c:forEach items="${friend }" var="f">
 <tr>
 <td>${f.yourid }</td>
 </tr>
