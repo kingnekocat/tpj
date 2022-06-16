@@ -42,6 +42,9 @@
 			<td>${ac.kakao}</td>
 		</tr>
 
+		<tr>
+			<td colspan="2"><button name="delete" onclick="location.href='Test1DelC?no=${ac.id }'" >친구 삭제하기</button></td>
+		</tr>
 	</table>
 </body>
 </html>

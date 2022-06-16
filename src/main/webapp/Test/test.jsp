@@ -16,9 +16,11 @@
 <c:forEach items="${id }" var="r">
 <tr>
 <td onclick="location.href='TestAddC?no=${r.id}'">친구추가 ${r.id }</td>
-<td onclick="location.href='TestViewC'">친구목록보기</td>
 </tr>
 </c:forEach>
+<tr>
+<td onclick="location.href='TestViewC'">친구목록보기</td>
+</tr>
 </table>
 
 </body>

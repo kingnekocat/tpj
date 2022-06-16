@@ -100,7 +100,6 @@ public static void addFriend(HttpServletRequest request) {
 	String sql = "insert into friendlist values(friendlist_seq.nextval, ?, ?)";
 	Account a = (Account)request.getSession().getAttribute("accountInfo");
 	
-	
 	try {
 		con = DBManager.connect();
 		pstmt = con.prepareStatement(sql);
@@ -173,6 +172,35 @@ public static void YourDetail(HttpServletRequest request) {
 }
 
 
+}
+
+public static void DeleteFriend(HttpServletRequest request) {
+	Connection con = null;
+	PreparedStatement pstmt = null;
+	
+	try {
+		con = DBManager.connect();
+		String sql = "delete friendlist where f_yourid=? and f_myid=?";
+		pstmt = con.prepareStatement(sql);
+		
+		Account a = (Account)request.getSession().getAttribute("accountInfo");
+		String myid = a.getId();
+		
+		String id = request.getParameter("no");
+		pstmt.setString(1, id);
+		pstmt.setString(2, myid);
+		
+		if(pstmt.executeUpdate() == 1) {
+			request.setAttribute("r", "삭제 성공");
+		}
+		
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} finally {
+		DBManager.close(con, pstmt, null);
+	}
+	
 }
 
 }

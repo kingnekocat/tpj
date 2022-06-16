@@ -15,6 +15,12 @@
 </td>
 </tr>
 
+<tr>
+<td>
+${r }
+</td>
+</tr>
+
 <c:forEach items="${friend }" var="f">
 <tr>
 <td onclick="location.href='TestDC?no=${f.yourid}'">${f.yourid }</td>
