@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<form action="Menu2UpdateC?no=${menu.m_no }" method="post">
+<form action="Menu2UpdateC?no=${menu.m_no }" method="post" enctype="multipart/form-data">
 	<table border="1" width="500" height="150">
 			<tr>
 				<td><input name="title" value="${menu.m_title }" ></td>
@@ -29,7 +29,9 @@
 			</c:otherwise>
 			</c:choose>
 			<tr>
-				<td colspan="2" ><textarea name="txt">${menu.m_txt }</textarea>  </td>
+				<td><textarea name="txt">${menu.m_txt }</textarea>  </td>
+				<td><input type="file" name="file2"></td>
+				<td><input type="hidden" name="file" value="${menu.m_img }"></td>
 			</tr>
 			<tr>
 				<td><fmt:formatDate value="${menu.m_date }" type="both" dateStyle="short" timeStyle="short"/> 
