@@ -17,8 +17,22 @@
 				<td>${m.m_nickname }</td>
 			</tr>
 			<tr>
+				<td colspan="2" ></td>
+			</tr>
+			
+			<c:choose>
+			<c:when test="${m.m_img eq '사진없음' }">
+			<tr>
+				<td colspan="2" ></td>
+			</tr>
+			</c:when>
+			<c:otherwise>
+			<tr>
 				<td colspan="2" ><img src="img/${m.m_img }" width="300" height="200"></td>
 			</tr>
+			</c:otherwise>
+			</c:choose>
+			
 			<tr>
 				<td colspan="2" >${m.m_txt }</td>
 			</tr>

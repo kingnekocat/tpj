@@ -65,13 +65,18 @@ public class Menu2Dao {
 		   String img = mr.getFilesystemName("file");
 		   Account a = (Account)request.getSession().getAttribute("accountInfo");
 		   String nickname = a.getNickname();
-			
+		   String img2 = "";
 		   
+		   if(img == null) {
+			   img2 = "사진없음";
+		   }else {
+			img2 = img;
+		   }
 		   
 		   pstmt.setString(1, title);
 		   pstmt.setString(2, nickname);
 		   pstmt.setString(3, txt);
-		   pstmt.setString(4, img);
+		   pstmt.setString(4, img2);
 			
 		if(pstmt.executeUpdate()==1) {
 			request.setAttribute("r", "등록성공");
