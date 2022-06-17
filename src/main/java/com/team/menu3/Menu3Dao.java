@@ -206,7 +206,6 @@ public class Menu3Dao {
 			con = DBManager.connect();
 			String sql = "select * from menu3_01 where ? like ?";
 			pstmt = con.prepareStatement(sql);
-			rs = pstmt.executeQuery();
 			
 			String menusearch = request.getParameter("menusearch");
             String search = "%" + request.getParameter("search")+ "%";
@@ -215,6 +214,7 @@ public class Menu3Dao {
 			pstmt.setString(2, search);
 			
 			
+			rs = pstmt.executeQuery();
 			
 			
 			ArrayList<Menu3> menus = new ArrayList<Menu3>();
