@@ -14,6 +14,9 @@
 <h3>상세 페이지</h3>
 </td>
 </tr>
+<tr>
+<td colspan="2"><img src="fileFolder/${rest.img }"></td>
+</tr>
 
 <tr>
 <td> 가게 이름</td>
@@ -28,9 +31,15 @@
 <td>${rest.region }</td>
 </tr>
 <tr>
+<td> 소개</td>
+<td>${rest.inform }</td>
+</tr>
+<tr>
 <td class="d_td3" colspan="2">
 <a href="Menu1C"> 목록으로 </a> 
 <span onclick="history.back()"> 목록으로(js) </span>
+<button onclick="location.href='Menu1DelC?no=${rest.num }'">가게 정보 삭제</button>
+<button onclick="location.href='Menu1UpdateC?no=${rest.num }'">가게 정보 수정</button>
 </td>
 </tr>
 

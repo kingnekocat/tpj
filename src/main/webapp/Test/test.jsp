@@ -8,18 +8,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table border="1">
-<tr>
-<td> 가게 이름 </td><td> 메뉴 </td><td> 지역 </td><td> 소개 </td>
-</tr>
 
-<c:forEach items="${rest }" var="r">
+
+<table border="1">
+
+
+<c:forEach items="${id }" var="r">
 <tr>
-<td onclick="location.href='Menu1DC2?no=${r.num}'">${r.name }</td> <td>${r.food }</td> <td>${r.region }</td> <td>${r.inform }</td>
+<td onclick="location.href='TestAddC?no=${r.id}'">친구추가 ${r.id }</td>
 </tr>
 </c:forEach>
+<tr>
+<td onclick="location.href='TestViewC'">친구목록보기</td>
+</tr>
 </table>
-
 
 </body>
 </html>
