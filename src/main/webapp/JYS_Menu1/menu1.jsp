@@ -26,8 +26,16 @@ ${r }
 <button type="button" onclick="location.href='Menu1UpC'">가게 등록</button>
 </td>
 </tr>
-</table>
 </form>
+
+<form action="Menu1SC">
+<tr>
+<td> <input name="name">  <button>검색</button>
+</td>
+</tr>
+</form>
+
+</table>
 
 </body>
 </html>
