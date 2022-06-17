@@ -53,7 +53,7 @@
 <option value="m_title">제목</option>
 <option value="m_txt">내용</option>
 <option value="m_nickname">작성자</option>
-</select> <input name="aaa"> <button>검색</button> 
+</select> <input name="search"> <button>검색</button> 
 </form>
 </td>
 <td><button onclick="location.href='Menu2RegC'">글쓰기</button></td>

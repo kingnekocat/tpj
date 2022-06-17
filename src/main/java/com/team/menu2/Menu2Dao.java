@@ -221,24 +221,37 @@ public class Menu2Dao {
 		ResultSet rs = null;
 		
 		try {
-		String sql = "select * from menu2_01 where m_title like %sfff%";
+		String menusearch = request.getParameter("menusearch");
+		String sql = "select * from menu2_01 where " + menusearch + " like ?";
 		
 		con = DBManager.connect();
 		pstmt = con.prepareStatement(sql);
 		
 		
-		String title = request.getParameter("menusearch");
-		String aaa = "%" + request.getParameter("aaa")+ "%";
+		String search = "%" + request.getParameter("search")+ "%";
 		
-		System.out.println(title);
-		System.out.println(aaa);
+		System.out.println(menusearch);
+		System.out.println(search);
 		
-		rs = pstmt.executeQuery();
 		
 		
 //		pstmt.setString(1, title);
-//		pstmt.setString(2, aaa);
+		pstmt.setString(1, search);
 		
+		
+		rs = pstmt.executeQuery();
+		
+		ArrayList<Menu2> menus = new ArrayList<Menu2>();
+		Menu2 m = null;
+		
+		while (rs.next()) {
+			m = new Menu2(rs.getInt("m_no"), rs.getString("m_title"),
+			rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"));
+			menus.add(m);	
+			System.out.println(rs.getInt("m_no"));
+					
+		}
+		request.setAttribute("menus", menus);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
