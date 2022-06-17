@@ -21,7 +21,7 @@
 
 			<tr>
 				<td>PW</td>
-				<td><input name="pw" id="pw"></td>
+				<td><input type="password" name="pw" id="pw"></td>
 			</tr>
 			<tr>
 				<td colspan="2"><button class="loginBtn">로그인</button>

@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/delete.js"></script>
 </head>
 <body>
 <table id="regTbl" border="1" width="500px" height="600px">
@@ -43,7 +44,7 @@
 		<tr>
 			<td colspan="2">
 				<button class="loginBtn" onclick="location.href='UpdateAccountController'">수정</button>
-				<button class="loginBtn">탈퇴</button>
+				<button class="loginBtn" onclick="deleteAccount('${sessionScope.accountInfo.id }');">탈퇴</button>
 			</td>
 		</tr>
 

@@ -12,12 +12,15 @@ public class InfoAccountController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		AccountDAO.loginCheck(request);
-		request.setAttribute("contentPage", "SEJ_Account/info.jsp");
+		request.setAttribute("contentPage", "SEJ_Account/pwCheck.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
+		AccountDAO.loginCheck(request);
+		AccountDAO.passwordCheck(request);
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 }

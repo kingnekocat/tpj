@@ -30,11 +30,11 @@
 			</tr>
 			<tr>
 				<td>PW</td>
-				<td><input class="passwordInput" name="pw" placeholder="5글자 이상, 영어 대문자,소문자,특수문자 포함"></td>
+				<td><input type="password" class="passwordInput" name="pw" placeholder="5글자 이상, 영어 대문자,소문자,특수문자 포함"></td>
 			</tr>
 			<tr>
 				<td>PW확인</td>
-				<td><input name="pw2" placeholder="비번 재확인"></td>
+				<td><input type="password" name="pw2" placeholder="비번 재확인"></td>
 			</tr>
 			<tr>
 				<td>이름</td>
@@ -45,8 +45,8 @@
 				<td><input name="nickName" placeholder="필수"></td>
 			</tr>
 			<tr>
-				<td>나이</td>
-				<td><input name="age" placeholder="필수"></td>
+				<td>생년월일(8자리)</td>
+				<td><input name="age" placeholder="필수" maxlength="8"></td>
 			</tr>
 			<tr>
 				<td>성별</td>

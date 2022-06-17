@@ -7,26 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/UpdateAccountController")
-public class UpdateAccountController extends HttpServlet {
+@WebServlet("/DeleteAccountController")
+public class DeleteAccountController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
+		// 삭제하는 일
+		AccountDAO.deleteAccount(request);
+		AccountDAO.logOut(request);
 		AccountDAO.loginCheck(request);
-		request.setAttribute("contentPage", "SEJ_Account/update.jsp");
+		request.setAttribute("contentPage", "home.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		
-		// 수정하는 일
-		AccountDAO.updateAccount(request);
-		AccountDAO.login(request);
-		AccountDAO.loginCheck(request);
-		request.setAttribute("contentPage", "SEJ_Account/info.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-		
-		
+	
 	}
 
 }
