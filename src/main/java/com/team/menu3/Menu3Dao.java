@@ -228,10 +228,10 @@ public class Menu3Dao {
 				
 				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"));
 				menus.add(m);
+				System.out.println(rs.getString("m_title"));
 			}
 			
 			request.setAttribute("menus", menus);
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -240,6 +240,45 @@ public class Menu3Dao {
 		
 		
 		
+		
+	}
+
+	public static void searchTitle2(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			con = DBManager.connect();
+			String menusearch = request.getParameter("menusearch");
+			String sql = "select * from menu3_01 where " + menusearch + " like ?";
+			pstmt = con.prepareStatement(sql);
+			
+           // String search = "%" + request.getParameter("search")+ "%";
+            String search = request.getParameter("search");
+			
+            System.out.println(menusearch);
+            System.out.println(search);
+            
+            pstmt.setString(1, "%"+search+"%");
+            
+            rs = pstmt.executeQuery();
+            
+            ArrayList<Menu3> menus = new ArrayList<Menu3>();
+            Menu3 m = null;
+            
+            while (rs.next()) {
+				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"));
+				menus.add(m);
+				System.out.println(rs.getString("m_title"));
+            }
+            request.setAttribute("menus", menus);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt, rs);
+		}
 		
 	}
 		

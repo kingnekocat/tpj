@@ -14,3 +14,5 @@ insert into menu3_01 values(menu3_01_seq.nextval,'제목2','닉네임2','내용2','카카
 
 
 select * from menu3_01;
+
+select * from menu3_01 where m_title like '%스파%';

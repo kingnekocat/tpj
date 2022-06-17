@@ -11,6 +11,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.team.account.Account;
 import com.team.menu2.DBManager;
+import com.team.menu3.Menu3;
 
 public class Menu4Dao {
 
@@ -216,6 +217,52 @@ public class Menu4Dao {
 		
 		
 	}
+
+	public static void searchMenu(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			con = DBManager.connect();
+			String menusearch = request.getParameter("menusearch");
+			String sql = "select * from menu4_01 where " + menusearch + " like ?";
+			pstmt = con.prepareStatement(sql);
+			
+           // String search = "%" + request.getParameter("search")+ "%";
+            String search = request.getParameter("search");
+			
+            System.out.println(menusearch);
+            System.out.println(search);
+            
+            pstmt.setString(1, "%"+search+"%");
+            
+            rs = pstmt.executeQuery();
+            
+            ArrayList<Menu4> menus = new ArrayList<Menu4>();
+            Menu4 m = null;
+            
+            while (rs.next()) {
+				m = new Menu4(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"));
+            	menus.add(m);
+            	System.out.println(rs.getString("m_title"));
+			}
+            request.setAttribute("menus", menus);
+            
+            
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		
+	}
+		
+		
+		
+		
+	
 		
 		
 		   
