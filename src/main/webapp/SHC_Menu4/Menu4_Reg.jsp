@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-${r }
-<form action="Menu2RegC" method="post" enctype="multipart/form-data" name="menuform" onsubmit="return menuCall2();">
+
+<form action="Menu4RegC" method="post" enctype="multipart/form-data" name="menuform" onsubmit="return menuCall2();">
 	<table border="1" width="500" height="300">
 
 		<tr>
@@ -18,8 +18,7 @@ ${r }
 			<td><textarea name="txt" placeholder="내용을 입력해주세요" ></textarea> </td>
 		</tr>
 		<tr>
-			<td>사진
-			<input type="file" name="file" ></td>
+			<td><input type="file" name="file"></td>
 		</tr>
 		<tr>
 			<td><button>등록하기</button></td>

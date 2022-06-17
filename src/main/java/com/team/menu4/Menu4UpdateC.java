@@ -1,4 +1,4 @@
-package com.team.menu2;
+package com.team.menu4;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -10,28 +10,29 @@ import javax.servlet.http.HttpServletResponse;
 import com.team.account.AccountDAO;
 
 
-@WebServlet("/Menu2RegC")
-public class Menu2RegC extends HttpServlet {
+@WebServlet("/Menu4UpdateC")
+public class Menu4UpdateC extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		AccountDAO.loginCheck(request);
-		request.setAttribute("contentPage", "SHC_Menu2/Menu2_Reg.jsp");
+		Menu4Dao.getMenu(request);
+		request.setAttribute("contentPage", "SHC_Menu4/Menu4_Update.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
-		
 		
 		
 	}
 
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 		AccountDAO.loginCheck(request);
-		Menu2Dao.regMenu(request);
-		Menu2Dao.getAllmenu2(request);
-		request.setAttribute("contentPage", "SHC_Menu2/Menu2.jsp");
+		Menu4Dao.updateMenu(request);
+		Menu4Dao.getAllmenu(request);
+		request.setAttribute("contentPage", "SHC_Menu4/Menu4.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
+		
 	}
 
 }

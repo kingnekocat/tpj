@@ -17,8 +17,22 @@
 				<td>${m.m_nickname }</td>
 			</tr>
 			<tr>
-				<td colspan="2" >${m.m_img }</td>
+				<td colspan="2" ></td>
 			</tr>
+			
+			<c:choose>
+			<c:when test="${m.m_img eq '사진없음' }">
+			<tr>
+				<td colspan="2" ></td>
+			</tr>
+			</c:when>
+			<c:otherwise>
+			<tr>
+				<td colspan="2" ><img src="img/${m.m_img }" width="300" height="200"></td>
+			</tr>
+			</c:otherwise>
+			</c:choose>
+			
 			<tr>
 				<td colspan="2" >${m.m_txt }</td>
 			</tr>
@@ -26,7 +40,7 @@
 				<td><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short"/> 
 				</td>
 				<td><button onclick="location.href='Menu2UpdateC?no=${m.m_no}'">수정</button>
-				<button onclick="location.href='Menu2DelC?no=${m.m_no}'">삭제</button></td>
+				<button onclick="deleteMenu2(${m.m_no})">삭제</button></td>
 			</tr>
 	</table>
 </c:forEach>

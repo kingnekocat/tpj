@@ -18,7 +18,7 @@
 	</tr>
 </c:forEach>
 	<tr>
-			<td><button>글쓰기</button>
+			<td><button onclick="location.href='Menu4RegC'">글쓰기</button>
 			<button onclick="location.href='HomeController'">뒤로가기</button></td>
 	</tr>
 </table>

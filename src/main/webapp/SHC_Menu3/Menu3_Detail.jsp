@@ -16,13 +16,14 @@
 			</tr>
 			<tr>
 				<td>${menu.m_txt }</td>
+				<td>${menu.m_kakao }</td>
 			</tr>
 			<tr>
 				<td><fmt:formatDate value="${menu.m_date }" type="both" timeStyle="short" dateStyle="short" /> </td>
 			</tr>
 			<tr>
-				<td><button>수정</button>
-				<button onclick="location.href='Menu3DelC?no=${menu.m_no}'">삭제</button>
+				<td><button onclick="location.href='Menu3UpdateC?no=${menu.m_no }'">수정</button>
+				<button onclick="deleteMenu3(${menu.m_no})">삭제</button>
 				<button onclick="location.href='Menu3C'">뒤로가기</button>
 				</td>
 			</tr>

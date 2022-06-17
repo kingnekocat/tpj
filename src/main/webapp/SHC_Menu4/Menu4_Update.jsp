@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>   
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,12 +9,11 @@
 </head>
 <body>
 
+<form action="Menu4UpdateC?no=${menu.m_no }" method="post" enctype="multipart/form-data">
 <table border="1" width="500" height="300">
 			<tr>
-				<td>${menu.m_title }</td>
-				<td>${menu.m_nickname }</td>
+				<td><input name="title" value="${menu.m_title }"></td>
 			</tr>
-			
 			<c:choose>
 			<c:when test="${menu.m_img eq '사진없음' }">
 			<tr>
@@ -29,18 +27,19 @@
 			</c:otherwise>
 			</c:choose>
 			<tr>
-				<td>${menu.m_txt }</td>
+				<td><textarea name="txt"> ${menu.m_txt }</textarea></td>
+				<td><input type="file" name="file2"></td>
+				<td><input type="hidden" name="file" value="${menu.m_img }"></td>
 			</tr>
 			<tr>
-				<td><fmt:formatDate value="${menu.m_date }" type="both" timeStyle="short" dateStyle="short" /> </td>
-			</tr>
-			<tr>
-				<td><button onclick="location.href='Menu4UpdateC?no=${menu.m_no }'">수정</button>
-				<button onclick="deleteMenu(${menu.m_no})">삭제</button>
-				<button onclick="location.href='Menu4C'">뒤로가기</button>
+				<td><button>수정</button>
+				<button type="button" onclick="history.back()">뒤로가기</button>
 				</td>
 			</tr>
 	</table>
-	
+</form>
+
+
+
 </body>
 </html>

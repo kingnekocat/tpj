@@ -53,7 +53,7 @@ public class AccountDAO {
 				
 				try {
 					String sql = "select * from account01 where id = ?";
-					con = DBManager.connect();
+					con = com.team.menu2.DBManager.connect();
 					pstmt = con.prepareStatement(sql);
 					pstmt.setString(1, userId);
 					
@@ -96,7 +96,7 @@ public class AccountDAO {
 				} catch (Exception e) {
 					e.printStackTrace();
 				} finally {
-					DBManager.close(con, pstmt, rs);
+					com.team.menu2.DBManager.close(con, pstmt, rs);
 				}
 	}
 
@@ -136,7 +136,7 @@ public class AccountDAO {
 		
 		try {
 			
-		con = DBManager.connect();
+		con = com.team.menu2.DBManager.connect();
 		pstmt = con.prepareStatement(sql);
 
 		String id = request.getParameter("id");
@@ -177,7 +177,7 @@ public class AccountDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBManager.close(con, pstmt, rs);
+			com.team.menu2.DBManager.close(con, pstmt, rs);
 		}
 		
 		
