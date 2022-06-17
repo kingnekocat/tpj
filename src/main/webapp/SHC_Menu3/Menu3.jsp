@@ -18,7 +18,14 @@ ${r }
 	</tr>
 </c:forEach>
 	<tr>
+	
+	
 			<td>
+			<form action="Menu3SearchC">
+			<select name="menusearch"><option value="m_title">제목</option>
+    		<option value="m_txt">내용</option>
+			<option value="m_nickname">작성자</option></select> <input name="search"> <button>검색</button>
+			</form>
 			<button onclick="location.href='Menu3RegC'" >글쓰기</button>
 			<button onclick="location.href='HomeController'">뒤로가기</button>
 			</td>

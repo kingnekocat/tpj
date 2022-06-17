@@ -11,6 +11,7 @@ drop table friendlist;
 
 select * from friendlist where f_myid=4;
 
-insert into frinedlist2 values (frinedlist2_seq.nextval, 'kim', 'park')
-insert into friendlist2 values (friendlist2_seq.nextval, 'eng' , 'kor')
+insert into frinedlist2 values (frinedlist2_seq.nextval, 'kim', 'park');
+insert into friendlist2 values (friendlist2_seq.nextval, 'eng' , 'kor');
+
 SELECT * FROM USER_SEQUENCES;
