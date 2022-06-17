@@ -215,6 +215,38 @@ public class Menu2Dao {
 		
 	}
 
+	public static void search(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+		String sql = "select * from menu2_01 where m_title like %sfff%";
+		
+		con = DBManager.connect();
+		pstmt = con.prepareStatement(sql);
+		
+		
+		String title = request.getParameter("menusearch");
+		String aaa = "%" + request.getParameter("aaa")+ "%";
+		
+		System.out.println(title);
+		System.out.println(aaa);
+		
+		rs = pstmt.executeQuery();
+		
+		
+//		pstmt.setString(1, title);
+//		pstmt.setString(2, aaa);
+		
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}
+
 	
 	
 	

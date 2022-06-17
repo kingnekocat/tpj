@@ -47,6 +47,15 @@
 
 <table>
 <tr>
+<td>
+<form action="Menu2SearchC">
+<select name="menusearch">
+<option value="m_title">제목</option>
+<option value="m_txt">내용</option>
+<option value="m_nickname">작성자</option>
+</select> <input name="aaa"> <button>검색</button> 
+</form>
+</td>
 <td><button onclick="location.href='Menu2RegC'">글쓰기</button></td>
 <td><button onclick="location.href='HomeController'">뒤로가기</button></td>
 </tr>
