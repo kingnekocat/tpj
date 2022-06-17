@@ -20,7 +20,7 @@ public class Menu3SearchC extends HttpServlet {
 			
 		AccountDAO.loginCheck(request);
 		Menu3Dao.searchTitle(request);
-		request.setAttribute("contentPage", "SHC_Menu3/Menu3.jsp");
+		request.setAttribute("contentPage", "SHC_Menu3/menusearch.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}
