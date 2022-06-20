@@ -114,17 +114,17 @@ public static void addFriend(HttpServletRequest request) {
 		
 		rs = pstmt2.executeQuery();
 		
-		if (!rs.next()) {
+		 if (myId.equals(yourid)) {
+			String sql = "insert into friendlist values(friendlist_seq.nextval, ?, ?)";
+			pstmt = con.prepareStatement(sql);
+			request.setAttribute("flr", "자기자신은 추가할 수 없음");
+			System.out.println("2");
+		} else if (!rs.next()) {
 			String sql = "insert into friendlist values(friendlist_seq.nextval, ?, ?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, myId);
 			pstmt.setString(2, yourid);
 			System.out.println("1");
-		} else if (myId.equals(yourid)) {
-			String sql = "insert into friendlist values(friendlist_seq.nextval, ?, ?)";
-			pstmt = con.prepareStatement(sql);
-			request.setAttribute("flr", "자기자신은 추가할 수 없음");
-			System.out.println("2");
 		} else {
 			String sql = "insert into friendlist values(friendlist_seq.nextval, ?, ?)";
 			pstmt = con.prepareStatement(sql);
