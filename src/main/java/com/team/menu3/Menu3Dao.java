@@ -32,7 +32,7 @@ public class Menu3Dao {
 			
 			while (rs.next()) {
 				
-				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"));
+				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"), rs.getString("m_id"));
 				menus.add(m);
 			}
 			
@@ -65,7 +65,7 @@ public class Menu3Dao {
 		
 		Menu3 m = null;
 		if(rs.next()) {
-		m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"));	
+		m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"), rs.getString("m_id"));	
 				request.setAttribute("menu", m);
 		}
 			
@@ -91,13 +91,14 @@ public class Menu3Dao {
 		try {
 			request.setCharacterEncoding("utf-8");
 			con = DBManager.connect();
-			String sql = "insert into menu3_01 values(menu3_01_seq.nextval,?,?,?,?,sysdate)";
+			String sql = "insert into menu3_01 values(menu3_01_seq.nextval,?,?,?,?,sysdate,?)";
 			pstmt = con.prepareStatement(sql);
 			
 			String title = request.getParameter("title");	
 			String txt = request.getParameter("txt");	
 			
 			Account a = (Account)request.getSession().getAttribute("accountInfo");
+			String id = a.getId();
 			String nickname = a.getNickname();
 			String kakao = a.getKakao();
 			
@@ -105,6 +106,7 @@ public class Menu3Dao {
 			pstmt.setString(2, nickname);
 			pstmt.setString(3, txt);
 			pstmt.setString(4, kakao);
+			pstmt.setString(5, id);
 		   
 			
 		   
@@ -226,7 +228,7 @@ public class Menu3Dao {
 			
 			while (rs.next()) {
 				
-				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"));
+				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"), rs.getString("m_id"));
 				menus.add(m);
 				System.out.println(rs.getString("m_title"));
 			}
@@ -268,7 +270,7 @@ public class Menu3Dao {
             Menu3 m = null;
             
             while (rs.next()) {
-				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"));
+				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"), rs.getString("m_id"));
 				menus.add(m);
 				System.out.println(rs.getString("m_title"));
             }

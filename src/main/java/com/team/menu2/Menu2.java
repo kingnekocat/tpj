@@ -9,13 +9,14 @@ public class Menu2 {
 	private String m_nickname; 
 	private String m_txt; 
 	private String m_img; 
-	private Date m_date ;
+	private Date m_date;
+	private String m_id;
 	
 	public Menu2() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Menu2(int m_no, String m_title, String m_nickname, String m_txt, String m_img, Date m_date) {
+	public Menu2(int m_no, String m_title, String m_nickname, String m_txt, String m_img, Date m_date, String m_id) {
 		super();
 		this.m_no = m_no;
 		this.m_title = m_title;
@@ -23,6 +24,7 @@ public class Menu2 {
 		this.m_txt = m_txt;
 		this.m_img = m_img;
 		this.m_date = m_date;
+		this.m_id = m_id;
 	}
 
 	public int getM_no() {
@@ -71,6 +73,14 @@ public class Menu2 {
 
 	public void setM_date(Date m_date) {
 		this.m_date = m_date;
+	}
+
+	public String getM_id() {
+		return m_id;
+	}
+
+	public void setM_id(String m_id) {
+		this.m_id = m_id;
 	}
 	
 	

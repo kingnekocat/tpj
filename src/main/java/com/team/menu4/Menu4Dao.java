@@ -31,7 +31,7 @@ public class Menu4Dao {
 			Menu4 m = null;
 			
 			while (rs.next()) {
-				m = new Menu4(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"));
+				m = new Menu4(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"), rs.getString("m_id"));
 				menus.add(m);
 			}
 			request.setAttribute("menus", menus);
@@ -68,7 +68,7 @@ public class Menu4Dao {
 		
 		if(rs.next()) {
 			
-			m = new Menu4(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"));
+			m = new Menu4(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"), rs.getString("m_id"));
 			request.setAttribute("menu", m);
 		}
 			
@@ -95,7 +95,7 @@ public class Menu4Dao {
 		
 		try {
 			con = DBManager.connect();
-			String sql = "insert into menu4_01 values(menu2_01_seq.nextval,?,?,?,?,sysdate)";
+			String sql = "insert into menu4_01 values(menu2_01_seq.nextval,?,?,?,?,sysdate,?)";
 			pstmt = con.prepareStatement(sql);
 			//insert into menu4_01 values(menu4_01_seq.nextval,'제목1','닉네임1','내용1','사진1',sysdate);
 			String path = request.getServletContext().getRealPath("img");
@@ -108,6 +108,7 @@ public class Menu4Dao {
 		   String img = mr.getFilesystemName("file");
 		   Account a = (Account)request.getSession().getAttribute("accountInfo");
 		   String nickname = a.getNickname();
+		   String id = a.getId();
 		   String img2 = "";
 		   
 		   if(img == null) {
@@ -120,6 +121,7 @@ public class Menu4Dao {
 		   pstmt.setString(2, nickname);
 		   pstmt.setString(3, txt);
 		   pstmt.setString(4, img2);
+		   pstmt.setString(5, id);
 			
 		if(pstmt.executeUpdate()==1) {
 			request.setAttribute("r", "등록성공");
@@ -244,7 +246,7 @@ public class Menu4Dao {
             Menu4 m = null;
             
             while (rs.next()) {
-				m = new Menu4(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"));
+				m = new Menu4(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"), rs.getString("m_id"));
             	menus.add(m);
             	System.out.println(rs.getString("m_title"));
 			}
