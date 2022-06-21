@@ -287,6 +287,46 @@ public class Menu3Dao {
 		}
 		
 	}
+
+	public static void sameRegion(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			con = DBManager.connect();
+			String sql = "select * from menu3_01 where m_region = ?";
+			pstmt = con.prepareStatement(sql);
+			
+			Account a = (Account)request.getSession().getAttribute("accountInfo");
+			String region = a.getRegion();
+          
+            pstmt.setString(1, region);
+			
+            rs = pstmt.executeQuery();
+            
+            ArrayList<Menu3> menus = new ArrayList<Menu3>();
+            Menu3 m = null;
+            
+            while (rs.next()) {
+				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"), rs.getString("m_id"), rs.getString("m_region"), rs.getString("m_gender"));
+				menus.add(m);
+				System.out.println(rs.getString("m_title"));
+            }
+            request.setAttribute("menus", menus);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		
+		
+		
+		
+		
+	}
 		
 		
 	

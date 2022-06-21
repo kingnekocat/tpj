@@ -30,6 +30,8 @@ ${r }
 			<button onclick="location.href='Menu3RegC'" >글쓰기</button>
 			<button onclick="location.href='HomeController'">뒤로가기</button>
 			</td>
+			<td><button onclick="location.href='Menu3sameRC'" >같은 지역</button>
+			<button onclick="location.href='Menu3sameAC'">같은 성별</button></td>
 	</tr>
 </table>
 
