@@ -249,7 +249,7 @@ public class Menu2Dao {
 		
 		while (rs.next()) {
 			m = new Menu2(rs.getInt("m_no"), rs.getString("m_title"),
-			rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"));
+			rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"), rs.getString("m_id"));
 			menus.add(m);	
 			System.out.println(rs.getInt("m_no"));
 					
