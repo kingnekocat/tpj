@@ -143,13 +143,19 @@ public class Menu1DAO {
 				String region = mr.getParameter("region");
 				String inform = mr.getParameter("inform");
 				String img = mr.getFilesystemName("img");
+				String img2 = "";
 				
+				if(img == null) {
+					img2 = "사진없음";
+				}else {
+					img2 = img;
+				}
 				
 				pstmt.setString(1, name);
 				pstmt.setString(2, genre);
 				pstmt.setString(3, region);
 				pstmt.setString(4, inform);
-				pstmt.setString(5, img);
+				pstmt.setString(5, img2);
 				
 				if (pstmt.executeUpdate() == 1) {
 					System.out.println("등록성공");

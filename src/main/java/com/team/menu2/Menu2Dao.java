@@ -30,7 +30,7 @@ public class Menu2Dao {
 			
 			while (rs.next()) {
 				
-				m = new Menu2(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"));
+				m = new Menu2(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"), rs.getString("m_id"));
 				menus.add(m);
 			}
 			
@@ -52,7 +52,7 @@ public class Menu2Dao {
 		
 		try {
 			con = DBManager.connect();
-			String sql = "insert into menu2_01 values(menu2_01_seq.nextval,?,?,?,?,sysdate)";
+			String sql = "insert into menu2_01 values(menu2_01_seq.nextval,?,?,?,?,sysdate,?)";
 			pstmt = con.prepareStatement(sql);
 			
 			String path = request.getServletContext().getRealPath("img");
@@ -64,6 +64,7 @@ public class Menu2Dao {
 		   String txt = mr.getParameter("txt");
 		   String img = mr.getFilesystemName("file");
 		   Account a = (Account)request.getSession().getAttribute("accountInfo");
+		   String id = a.getId();
 		   String nickname = a.getNickname();
 		   String img2 = "";
 		   
@@ -77,9 +78,11 @@ public class Menu2Dao {
 		   pstmt.setString(2, nickname);
 		   pstmt.setString(3, txt);
 		   pstmt.setString(4, img2);
+		   pstmt.setString(5, id);
 			
 		if(pstmt.executeUpdate()==1) {
 			request.setAttribute("r", "등록성공");
+			System.out.println(id);
 		}
 		   
 			
@@ -113,7 +116,7 @@ public class Menu2Dao {
 		
 		Menu2 m = null;
 		if(rs.next()) {
-			m = new Menu2(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"));
+			m = new Menu2(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"), rs.getString("m_id"));
 		request.setAttribute("menu", m);
 		}
 		
@@ -213,6 +216,51 @@ public class Menu2Dao {
 		
 		
 		
+	}
+
+	public static void search(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+		String menusearch = request.getParameter("menusearch");
+		String sql = "select * from menu2_01 where " + menusearch + " like ?";
+		
+		con = DBManager.connect();
+		pstmt = con.prepareStatement(sql);
+		
+		
+		String search = "%" + request.getParameter("search")+ "%";
+		
+		System.out.println(menusearch);
+		System.out.println(search);
+		
+		
+		
+//		pstmt.setString(1, title);
+		pstmt.setString(1, search);
+		
+		
+		rs = pstmt.executeQuery();
+		
+		ArrayList<Menu2> menus = new ArrayList<Menu2>();
+		Menu2 m = null;
+		
+		while (rs.next()) {
+			m = new Menu2(rs.getInt("m_no"), rs.getString("m_title"),
+			rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_img"), rs.getDate("m_date"), rs.getString("m_id"));
+			menus.add(m);	
+			System.out.println(rs.getInt("m_no"));
+					
+		}
+		request.setAttribute("menus", menus);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt, rs);
+		}
 	}
 
 	

@@ -14,6 +14,7 @@
 		</tr>
 		<tr>
 			<td>
+				<button class="loginBrn" onclick="location.href='FriendlistController'">친구목록</button>
 				<button class="loginBtn" onclick="location.href='InfoAccountController'">회원정보</button>
 				<button class="loginBtn" onclick="location.href='LoginController'">로그아웃</button>
 			</td>

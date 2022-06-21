@@ -93,6 +93,7 @@ public static void ViewFriendList(HttpServletRequest request) {
 }
 
 public static void addFriend(HttpServletRequest request) {
+<<<<<<< HEAD
 	Connection con = null;
 	PreparedStatement pstmt = null;
 	PreparedStatement pstmt2 = null;
@@ -146,7 +147,63 @@ public static void addFriend(HttpServletRequest request) {
 		DBManager.close(con, pstmt, rs);
 	}
 	
+=======
+    Connection con = null;
+    PreparedStatement pstmt = null;
+    PreparedStatement pstmt2 = null;
+
+    ResultSet rs = null;
+    String sql2 = "select * from friendlist where f_myid=? and f_yourid=?";
+    Account a = (Account)request.getSession().getAttribute("accountInfo");
+
+    try {
+        con = DBManager.connect();
+        pstmt2 = con.prepareStatement(sql2);
+
+        String myId = a.getId();
+
+        String yourid = request.getParameter("no");
+
+        pstmt2.setString(1, myId);
+        pstmt2.setString(2, yourid);
+
+        rs = pstmt2.executeQuery();
+
+         if (myId.equals(yourid)) {
+            String sql = "insert into friendlist values(friendlist_seq.nextval, ?, ?)";
+            pstmt = con.prepareStatement(sql);
+            request.setAttribute("flr", "자기자신은 추가할 수 없음");
+            System.out.println("2");
+        } else if (!rs.next()) {
+            String sql = "insert into friendlist values(friendlist_seq.nextval, ?, ?)";
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, myId);
+            pstmt.setString(2, yourid);
+            System.out.println("1");
+        } else {
+            String sql = "insert into friendlist values(friendlist_seq.nextval, ?, ?)";
+            pstmt = con.prepareStatement(sql);
+            request.setAttribute("flr", "이미 등록되어 있는 상대");
+            System.out.println("3");
+
+        }
+
+
+
+
+        if (pstmt.executeUpdate() == 1) {
+            System.out.println("추가성공");
+        } 
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        DBManager.close(con, pstmt, rs);
+    }
+
+>>>>>>> dev
 }
+
 
 
 public static void YourDetail(HttpServletRequest request) {

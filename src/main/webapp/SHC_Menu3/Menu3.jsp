@@ -14,14 +14,27 @@ ${r }
 <c:forEach items="${menus }" var="m">
 	<tr>
 			<td onclick="location.href='Menu3DetailC?no=${m.m_no}'">${m.m_title }</td>
+			<td><a onclick="addCall('${m.m_id }');">${m.m_nickname }(${m.m_id })</a></td>
 			<td><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short" /> </td>
 	</tr>
 </c:forEach>
 	<tr>
+	
+	
 			<td>
+			<form action="Menu3SearchC">
+			<select name="menusearch"><option value="m_title">제목</option>
+    		<option value="m_txt">내용</option>
+			<option value="m_nickname">작성자</option></select> <input name="search"> <button>검색</button>
+			</form>
 			<button onclick="location.href='Menu3RegC'" >글쓰기</button>
 			<button onclick="location.href='HomeController'">뒤로가기</button>
 			</td>
+			<td>
+			<form action="Menu3sameRC">
+			지역<input name="check" value="region" type="checkbox"> 성별<input name="check" value="gender" type="checkbox">
+            <button>확인</button>
+            </form></td>
 	</tr>
 </table>
 

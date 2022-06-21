@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/delete.js"></script>
 </head>
 <body>
 
@@ -43,8 +44,9 @@
 		</tr>
 
 		<tr>
-			<td colspan="2"><button name="delete" onclick="location.href='Test1DelC?no=${ac.id }'" >친구 삭제하기</button></td>
+			<td colspan="2"><button name="delete" onclick="deleteFriend('${ac.id}')">친구 삭제하기</button></td>
 		</tr>
 	</table>
+	
 </body>
 </html>

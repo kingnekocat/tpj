@@ -1,4 +1,4 @@
-package com.team.friend;
+package com.team.menu3;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,20 +9,25 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.team.account.AccountDAO;
 
-@WebServlet("/TestAddC")
-public class TestAddC extends HttpServlet {
+
+@WebServlet("/Menu3sameRC")
+public class Menu3sameRC extends HttpServlet {
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AccountDAO.loginCheck(request);
-		frinedlistDAO.addFriend(request);
-
-		frinedlistDAO.ViewFriendList(request);
-		request.setAttribute("contentPage", "Test/test_list.jsp");
-
 		
+		AccountDAO.loginCheck(request);
+		Menu3Dao.sameCheck(request);
+		request.setAttribute("contentPage", "SHC_Menu3/Menu3.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
+	}
 
-		request.getRequestDispatcher("index.jsp").forward(request, response);	}
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
+		
 	}
 
 }
