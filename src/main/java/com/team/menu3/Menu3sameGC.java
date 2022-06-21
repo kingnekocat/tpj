@@ -10,25 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import com.team.account.AccountDAO;
 
 
-@WebServlet("/Menu3SearchC")
-public class Menu3SearchC extends HttpServlet {
+@WebServlet("/Menu3sameGC")
+public class Menu3sameGC extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
-	
-			
 		AccountDAO.loginCheck(request);
-		//Menu3Dao.searchTitle(request);
-		Menu3Dao.searchTitle2(request);
+		Menu3Dao.sameGender(request);
 		request.setAttribute("contentPage", "SHC_Menu3/Menu3.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
-		
 	}
 
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		
 		
 		

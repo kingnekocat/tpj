@@ -14,7 +14,7 @@ public class TestAddC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AccountDAO.loginCheck(request);
 		frinedlistDAO.addFriend(request);
-		request.setAttribute("contentPage", "Test/test_list.jsp");
+		request.setAttribute("contentPage", "SHC_Menu2/Menu2.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

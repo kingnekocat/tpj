@@ -12,11 +12,11 @@
 	<table border="1" width="500" height="300">
 			<tr>
 				<td>${menu.m_title }</td>
-				<td>${menu.m_nickname }</td>
+				<td><a onclick="addCall('${menu.m_id }');">작성자:${menu.m_nickname }</a></td>
 			</tr>
 			<tr>
 				<td>${menu.m_txt }</td>
-				<td>${menu.m_kakao }</td>
+				<td>카카오톡ID:${menu.m_kakao }</td>
 			</tr>
 			<tr>
 				<td><fmt:formatDate value="${menu.m_date }" type="both" timeStyle="short" dateStyle="short" /> </td>
