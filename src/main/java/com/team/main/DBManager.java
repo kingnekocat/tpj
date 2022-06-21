@@ -10,15 +10,14 @@ public class DBManager {
 
 public static Connection connect() throws SQLException {
 		
-//		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-//		
-//		return DriverManager.getConnection(url, "jys", "jys");
+
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
-//	String url = "jdbc:oracle:thin:@db20220512144543_medium?TNS_ADMIN=C:/Users/user/Downloads/ÇÁ·Î±×·¡¹Ö¼ö¾÷/Wallet_DB20220512144543";
+
 		return DriverManager.getConnection(url, "c##ej1234", "ej1234");
+
 	}
 	
-	// ÇÑ¹ø¿¡ ´İ±â
+	// Ã‡Ã‘Â¹Ã¸Â¿Â¡ Â´ÃÂ±Ã¢
 	public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		try {
 			if ( rs != null) {

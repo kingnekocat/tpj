@@ -8,6 +8,7 @@
 <script type="text/javascript" src="js/menu.js"></script>
 <script type="text/javascript" src="js/menuCheck.js"></script>
 <script type="text/javascript" src="js/menuValid.js"></script>
+<script type="text/javascript" src="js/friendadd.js"></script>
 </head>
 <body>
 
