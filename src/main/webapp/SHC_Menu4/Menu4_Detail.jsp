@@ -13,7 +13,7 @@
 <table border="1" width="500" height="300">
 			<tr>
 				<td>${menu.m_title }</td>
-				<td>${menu.m_nickname }</td>
+				<td><a onclick="addCall('${menu.m_id}');">작성자:${menu.m_nickname }</a></td>
 			</tr>
 			
 			<c:choose>

@@ -14,6 +14,7 @@ ${r }
 <c:forEach items="${menus }" var="m">
 	<tr>
 			<td onclick="location.href='Menu3DetailC?no=${m.m_no}'">${m.m_title }</td>
+			<td><a onclick="addCall('${m.m_id }');">${m.m_nickname }(${m.m_id })</a></td>
 			<td><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short" /> </td>
 	</tr>
 </c:forEach>

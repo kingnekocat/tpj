@@ -32,7 +32,7 @@ public class Menu3Dao {
 			
 			while (rs.next()) {
 				
-				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"), rs.getString("m_id"));
+				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"), rs.getString("m_id"), rs.getString("m_region"), rs.getString("m_gender"));
 				menus.add(m);
 			}
 			
@@ -65,7 +65,7 @@ public class Menu3Dao {
 		
 		Menu3 m = null;
 		if(rs.next()) {
-		m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"), rs.getString("m_id"));	
+		m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"), rs.getString("m_id"), rs.getString("m_region"), rs.getString("m_gender"));	
 				request.setAttribute("menu", m);
 		}
 			
@@ -91,7 +91,7 @@ public class Menu3Dao {
 		try {
 			request.setCharacterEncoding("utf-8");
 			con = DBManager.connect();
-			String sql = "insert into menu3_01 values(menu3_01_seq.nextval,?,?,?,?,sysdate,?)";
+			String sql = "insert into menu3_01 values(menu3_01_seq.nextval,?,?,?,?,sysdate,?,?,?)";
 			pstmt = con.prepareStatement(sql);
 			
 			String title = request.getParameter("title");	
@@ -101,12 +101,16 @@ public class Menu3Dao {
 			String id = a.getId();
 			String nickname = a.getNickname();
 			String kakao = a.getKakao();
+			String region = a.getRegion();
+			String gender = a.getGender();
 			
 			pstmt.setString(1, title);
 			pstmt.setString(2, nickname);
 			pstmt.setString(3, txt);
 			pstmt.setString(4, kakao);
 			pstmt.setString(5, id);
+			pstmt.setString(6, region);
+			pstmt.setString(7, gender);
 		   
 			
 		   
@@ -228,7 +232,7 @@ public class Menu3Dao {
 			
 			while (rs.next()) {
 				
-				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"), rs.getString("m_id"));
+				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"), rs.getString("m_id"), rs.getString("m_region"), rs.getNString("m_gender"));
 				menus.add(m);
 				System.out.println(rs.getString("m_title"));
 			}
@@ -270,7 +274,7 @@ public class Menu3Dao {
             Menu3 m = null;
             
             while (rs.next()) {
-				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"), rs.getString("m_id"));
+				m = new Menu3(rs.getInt("m_no"), rs.getString("m_title"), rs.getString("m_nickname"), rs.getString("m_txt"), rs.getString("m_kakao"), rs.getDate("m_date"), rs.getString("m_id"), rs.getString("m_region"), rs.getString("m_gender"));
 				menus.add(m);
 				System.out.println(rs.getString("m_title"));
             }
