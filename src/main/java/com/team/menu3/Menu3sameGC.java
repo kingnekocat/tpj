@@ -10,21 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import com.team.account.AccountDAO;
 
 
-@WebServlet("/Menu3sameRC")
-public class Menu3sameRC extends HttpServlet {
+@WebServlet("/Menu3sameGC")
+public class Menu3sameGC extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		AccountDAO.loginCheck(request);
-		Menu3Dao.sameCheck(request);
+		Menu3Dao.sameGender(request);
 		request.setAttribute("contentPage", "SHC_Menu3/Menu3.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
-		
 	}
 
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		
 		
 		
