@@ -9,7 +9,7 @@ create sequence friendlist_seq;
 select * from friendlist;
 drop table friendlist;
 
-select * from friendlist where f_myid=4;
+select * from friendlist where f_myid=1;
 
 insert into frinedlist2 values (frinedlist2_seq.nextval, 'kim', 'park');
 insert into friendlist2 values (friendlist2_seq.nextval, 'eng' , 'kor');

@@ -4,11 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.team.friend.FriendB;
 import com.team.main.DBManager;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -343,6 +345,51 @@ public class AccountDAO {
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
+		
+		
+	}
+
+
+
+
+
+	public static void getAllFriendlist(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from friendlist where f_myid=?";
+		
+		try {
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			Account a = (Account) request.getSession().getAttribute("accountInfo");
+			String id = a.getId();
+			
+			System.out.println(id);
+			
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			
+			ArrayList<FriendB> friends = new ArrayList<FriendB>();
+			FriendB f = null;
+			
+			while (rs.next()) {
+				f = new FriendB(rs.getInt("f_num"), rs.getString("f_myid"), rs.getString("f_yourid"));
+				friends.add(f);
+				System.out.println(rs.getInt("f_num"));
+			
+			}
+			request.setAttribute("friends", friends);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		
 		
 		
 	}

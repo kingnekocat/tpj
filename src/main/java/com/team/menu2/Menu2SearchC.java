@@ -1,4 +1,4 @@
-package com.team.friend;
+package com.team.menu2;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,18 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.team.account.AccountDAO;
 
-@WebServlet("/TestAddC")
-public class TestAddC extends HttpServlet {
+@WebServlet("/Menu2SearchC")
+public class Menu2SearchC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AccountDAO.loginCheck(request);
-		frinedlistDAO.addFriend(request);
-
-		frinedlistDAO.ViewFriendList(request);
-		request.setAttribute("contentPage", "Test/test_list.jsp");
-
-		
-
-		request.getRequestDispatcher("index.jsp").forward(request, response);	}
+	
+	AccountDAO.loginCheck(request);
+	// 검색하는일
+	Menu2Dao.search(request);
+	request.setAttribute("contentPage", "SHC_Menu2/Menu2_Search.jsp");
+	request.getRequestDispatcher("index.jsp").forward(request, response);
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}

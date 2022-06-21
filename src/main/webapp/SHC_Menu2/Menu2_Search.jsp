@@ -1,23 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
-<script type="text/javascript" src="js/friendadd.js"></script>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
 </head>
 <body>
-
-<c:forEach items="${menus }" var="m">
-
+<c:forEach items="${menus}" var="m">
 	<table border="1" width="500" height="150">
 			<tr>
 				<td>${m.m_title }</td>
-				<td><a onclick="addCall('${m.m_id }');">${m.m_nickname }(${m.m_id })</a></td>
+				<td>${m.m_nickname }</td>
 			</tr>
 			<tr>
 				<td colspan="2" ></td>
@@ -60,9 +56,8 @@
 </form>
 </td>
 <td><button onclick="location.href='Menu2RegC'">글쓰기</button></td>
-<td><button onclick="location.href='HomeController'">뒤로가기</button></td>
+<td><button onclick="location.href='Menu2C'">뒤로가기</button></td>
 </tr>
 </table>
-
 </body>
 </html>
