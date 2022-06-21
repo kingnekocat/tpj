@@ -14,6 +14,7 @@ public class TestAddC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AccountDAO.loginCheck(request);
 		frinedlistDAO.addFriend(request);
+		frinedlistDAO.ViewFriendList(request);
 		request.setAttribute("contentPage", "Test/test_list.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);	}
 
