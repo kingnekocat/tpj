@@ -6,3 +6,11 @@ function deleteAccount(id){
 	}
 	
 }
+
+function deleteFriend(id){
+	let ok = confirm('친구가 삭제됩니다.\n정말 삭제 하시겠습니까?');
+	console.log(ok);
+	if(ok){
+		location.href='Test1DelC?no=' + id
+	}
+}
