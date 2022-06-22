@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+#ReviewBtn {
+	
+	margin-top: 75px;
+	margin-left: 150px;
+	width:100px;
+	height:30px;
+	background-color:white;
+	border: solid 1px;
+}
+
+
+.ReviewIMG {
+	
+	margin-top: 30px;
+
+	
+}
+
+.ReviewBtn2{
+	
+	width: 85px;
+	height:35px;
+	background-color:white;
+	border: solid 1px;
+	color: white;
+	background-color: rgb(235, 84, 84);
+	font-size: 11pt;
+}
+
+.ReviewA {
+	
+	font-weight: 1000;
+	color: rgb(82, 82, 82);
+}
+
+
+
+
