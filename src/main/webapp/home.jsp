@@ -6,9 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-
 <link href="css/Review.css" rel="stylesheet">
-
 <link rel="stylesheet" href="css/SEJ_Home.css">
 <script type="text/javascript" src="js/jquery.js"></script>
  <script>
