@@ -13,7 +13,7 @@
 <body>
 
 
-<table border="1" width="1000" height="300">
+<table border="1" width="100%" height="300">
 	<tr>
 		<td><a href="HomeController">홈메뉴</a></td>
 	</tr>

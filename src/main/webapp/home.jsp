@@ -5,58 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-#main_slide img {
-	width:100%;
-}
-#main_slide {
-    width:100%;
-    height:800px;
-    overflow:hidden;
-}
-#main_slide > div {
-    width:100%;
-    height:100%;
-}
-#main_banner {
-	background-color: #FF5C5C;
-	width: 1600px;
-	height: 273px;
-}
-#footer {
-	border-top: 2px solid #353535;
-}
-.inner {
-	width: 1200px;
-	color: #353535;
-	margin-left: auto;
-	margin-right: auto;
-	display: flex;
-	padding-left: 200px;
-	padding-right: 200px;
-	padding-top: 37px;
-	padding-bottom: 37px;
-}
-.left_inner {
-	font-size: 17px;
-	color: #888888; 
-	width: 400px;
-}
-.right_inner {
-	border-left: 1px solid #e5e5e5;
-	padding-left: 34px;
-	width: 400px;
-}
-.footer_logo img {
-	width:100px;
-	heigh:100px;
-	margin-bottom: 12px;
-}
-.phone_number {
-	font-size: 55px;
-	color: #FF5C5C;
-}
-</style>
+<link rel="stylesheet" href="css/SEJ_Home.css">
 <script type="text/javascript" src="js/jquery.js"></script>
  <script>
         $('#main_slide > div:gt(0)').hide();
@@ -74,17 +23,33 @@
 </head>
 <body>
 	<div id="main_slide">
-		<div>
+	
+		<div class="imgBox">
 			<img class="MainImg" src="img/img_one.jpg">
 		</div>
-		<div>
+		<div class="imgBox">
 			<img class="MainImg" src="img/img_two.jpg">
 		</div>
 	</div>
 	<div id="main_banner">
-	<!-- 콘텐츠 넣을지 말지 고민 중 -->
-	</div>
+
+	<a class="main_banner_left" href="https://www.naver.com/">
+		<div >
+				<p class="main_banner_title">내 근처 맛집</p>
+				<span>내 근처 맛집을 확인해보세요!</span>
+				<img class="arrowImg" src="img/arrow.png">
+		</div>
+	</a>
+	<a class="main_banner_right" href="https://www.naver.com/">
+		<div >
+				<p class="main_banner_title">나와 맞을 것 같은 친구는?</p>
+				<span>전국 여러 지역에서 친구를 만날 수 있어요!</span>
+				<img class="arrowImg" src="img/arrow.png">	
+		</div>
+	</a>
 	
+	</div>
+
 	<div id="footer">
 	
 	<div class="inner">
