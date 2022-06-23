@@ -23,3 +23,6 @@ insert into team_restaurant values (team_restaurant_seq.nextval, '가게8', '양식'
 -- 취급음식 1:중식 2:일식 3:한식 4:양식 = --
 
 select * from team_restaurant;
+
+
+select * from team_restaurant where tr_name like '%가게%'
