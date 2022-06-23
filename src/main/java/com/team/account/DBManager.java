@@ -14,8 +14,7 @@ public class DBManager {
 	// db작업시엔 어쨋든 연결 해야됨
 	public static Connection connect() throws SQLException {
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		
-		return DriverManager.getConnection(url, "jys", "jys");
+		return DriverManager.getConnection(url,"shc","shc");
 	}
 	
 	
