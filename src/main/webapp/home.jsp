@@ -28,8 +28,8 @@ $(document).ready(function(){
         touchEnabled:false,
         nextSelector: '#slider-next',
   	  prevSelector: '#slider-prev',
-  	  nextText: '<img alt="point" src="fileFolder/dd.gif">',
-  	  prevText: '<img alt="point" src="fileFolder/ee.gif">'
+  	  nextText: '앞으로',
+  	  prevText: '이전'
     });
     
 
