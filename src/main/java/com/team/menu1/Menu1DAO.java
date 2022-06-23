@@ -146,7 +146,7 @@ public class Menu1DAO {
                 String img2 = "";
 
                 if(img == null) {
-                    img2 = "荤柳绝澜";
+                    img2 = "靷鞐嗢潓";
                 }else {
                     img2 = img;
                 }
@@ -158,7 +158,7 @@ public class Menu1DAO {
                 pstmt.setString(5, img2);
 
                 if (pstmt.executeUpdate() == 1) {
-                    System.out.println("殿废己傍");
+                    System.out.println("霌彪靹标车");
                 } 
 
             } catch (SQLException e) {
@@ -169,6 +169,7 @@ public class Menu1DAO {
 
 
         }
+
 	
 	public static void delRest(HttpServletRequest request) {
 		Connection con = null;
@@ -183,7 +184,7 @@ public class Menu1DAO {
 			pstmt.setInt(1, no);
 			
 			if(pstmt.executeUpdate() == 1) {
-				request.setAttribute("r", "昏力 己傍");
+				request.setAttribute("r", "靷牅 靹标车");
 			}
 			
 		} catch (SQLException e) {
@@ -241,7 +242,7 @@ public class Menu1DAO {
 				
 				
 				if (pstmt.executeUpdate() == 1) {
-					System.out.println("荐沥己傍");
+					System.out.println("靾橃爼靹标车");
 				} 
 				
 				
@@ -252,5 +253,53 @@ public class Menu1DAO {
 			
 		}		
 	}
+
+	public static void SearchRest(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			
+			con = DBManager.connect();
+			String name = "%" + request.getParameter("name")+ "%";
+			
+			System.out.println(name);
+			
+			Account a = (Account)request.getSession().getAttribute("accountInfo");
+
+			
+
+				String sql = "select * from team_restaurant where tr_name like ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, name);
+				
+
+			
+			
+			rs = pstmt.executeQuery();
+			
+		ArrayList<Menu1B> rest = new ArrayList<Menu1B>();
+		Menu1B r = null;
+		while (rs.next()) {
+			r = new Menu1B();
+			r.setNum(rs.getInt("tr_num"));
+			r.setName(rs.getString("tr_name"));
+			r.setFood(rs.getString("tr_food"));
+			r.setRegion(rs.getString("tr_region"));
+			r.setInform(rs.getString("tr_information"));
+			r.setImg(rs.getString("tr_img"));
+				rest.add(r);
+			}
+				
+			request.setAttribute("rest", rest);
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+	}
 		
 	}
+}
