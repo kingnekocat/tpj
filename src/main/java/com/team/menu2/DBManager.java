@@ -6,20 +6,22 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-// DB°ü·Ã ÀÛ¾÷À» ÇÒ¶§ ¸Å¹ø ¿¬°áÄÚµå¸¦ ¾´ ÀÌÈÄ ÀÛ¾÷ ÇØ¿È
+// DBê´€ë ¨ ì‘ì—…ì„ í• ë•Œ ë§¤ë²ˆ ì—°ê²°ì½”ë“œë¥¼ ì“´ ì´í›„ ì‘ì—… í•´ì˜´
 
-// ±×°Å AOP ÇÏÀÚ
+// ê·¸ê±° AOP í•˜ì
 public class DBManager {
 
-	// dbÀÛ¾÷½Ã¿£ ¾îÂ·µç ¿¬°á ÇØ¾ßµÊ
+	// dbì‘ì—…ì‹œì—” ì–´ì¨Œë“  ì—°ê²° í•´ì•¼ë¨
 	public static Connection connect() throws SQLException {
+
 		
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		
 		return DriverManager.getConnection(url, "jys", "jys");
+
 	}
 	
-	// ´İÀ»°Å ¸¹Àºµ¥ ÇÑ¹ø¿¡ ´İ±â
+	// ë‹«ì„ê±° ë§ì€ë° í•œë²ˆì— ë‹«ê¸°
 	
 	public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		

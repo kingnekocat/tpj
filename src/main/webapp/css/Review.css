@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+#ReviewBtn {
+	
+	margin-top: 75px;
+	margin-left: 190px;
+	width:100px;
+	height:30px;
+	background-color:white;
+	border: solid 1px;
+}
+
+
+.ReviewIMG {
+	
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	
+}
+
+.ReviewBtn2{
+	
+	width: 85px;
+	height:35px;
+	background-color:white;
+	border: solid 1px;
+	color: white;
+	background-color: rgb(235, 84, 84);
+	font-size: 11pt;
+	margin-bottom: 10px;
+}
+
+.ReviewA {
+	
+	font-weight: 1000;
+	color: rgb(82, 82, 82);
+}
+
+#ReviewTbl {
+	
+	margin-right: auto;
+	margin-left: auto;
+	
+	
+}
+
+.ThirdTD{
+	
+	height:70px;
+	
+	
+}
+
+.ColorTD {
+	
+
+
+}
+
+.ReviewTD {
+	
+	box-shadow : 2px 2px 10px silver
+
+}
+
+.ReviewTD2{
+	
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
