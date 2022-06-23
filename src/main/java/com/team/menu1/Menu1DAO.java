@@ -121,54 +121,55 @@ public class Menu1DAO {
 
 	public static void regRest(HttpServletRequest request) throws IOException {
 
-		Connection con = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
-			String sql = "insert into team_restaurant values(team_restaurant_seq.nextval, ?, ?, ?, ?, ?)";
-			
-			
-			
-			try {
-				con = DBManager.connect();
-				pstmt = con.prepareStatement(sql);
+        Connection con = null;
+            PreparedStatement pstmt = null;
+            ResultSet rs = null;
+            String sql = "insert into team_restaurant values(team_restaurant_seq.nextval, ?, ?, ?, ?, ?)";
 
-				String path = request.getSession().getServletContext().getRealPath("fileFolder");
-				System.out.println(path);
-				MultipartRequest mr;
-				mr = new MultipartRequest(request, path, 20*1024*1024, "utf-8", new DefaultFileRenamePolicy());
-				
-				
-				String name = mr.getParameter("name");
-				String genre = mr.getParameter("genre");
-				String region = mr.getParameter("region");
-				String inform = mr.getParameter("inform");
-				String img = mr.getFilesystemName("img");
-				String img2 = "";
-				
-				if(img == null) {
-					img2 = "荤柳绝澜";
-				}else {
-					img2 = img;
-				}
-				
-				pstmt.setString(1, name);
-				pstmt.setString(2, genre);
-				pstmt.setString(3, region);
-				pstmt.setString(4, inform);
-				pstmt.setString(5, img2);
-				
-				if (pstmt.executeUpdate() == 1) {
-					System.out.println("殿废己傍");
-				} 
-				
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-				DBManager.close(con, pstmt, rs);
-			}
-			
-			
-		}
+
+
+            try {
+                con = DBManager.connect();
+                pstmt = con.prepareStatement(sql);
+
+                String path = request.getSession().getServletContext().getRealPath("fileFolder");
+                System.out.println(path);
+                MultipartRequest mr;
+                mr = new MultipartRequest(request, path, 2010241024, "utf-8", new DefaultFileRenamePolicy());
+
+
+                String name = mr.getParameter("name");
+                String genre = mr.getParameter("genre");
+                String region = mr.getParameter("region");
+                String inform = mr.getParameter("inform");
+                String img = mr.getFilesystemName("img");
+                String img2 = "";
+
+                if(img == null) {
+                    img2 = "靷鞐嗢潓";
+                }else {
+                    img2 = img;
+                }
+
+                pstmt.setString(1, name);
+                pstmt.setString(2, genre);
+                pstmt.setString(3, region);
+                pstmt.setString(4, inform);
+                pstmt.setString(5, img2);
+
+                if (pstmt.executeUpdate() == 1) {
+                    System.out.println("霌彪靹标车");
+                } 
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                DBManager.close(con, pstmt, rs);
+            }
+
+
+        }
+
 	
 	public static void delRest(HttpServletRequest request) {
 		Connection con = null;
@@ -183,7 +184,7 @@ public class Menu1DAO {
 			pstmt.setInt(1, no);
 			
 			if(pstmt.executeUpdate() == 1) {
-				request.setAttribute("r", "昏力 己傍");
+				request.setAttribute("r", "靷牅 靹标车");
 			}
 			
 		} catch (SQLException e) {
@@ -241,7 +242,7 @@ public class Menu1DAO {
 				
 				
 				if (pstmt.executeUpdate() == 1) {
-					System.out.println("荐沥己傍");
+					System.out.println("靾橃爼靹标车");
 				} 
 				
 				
