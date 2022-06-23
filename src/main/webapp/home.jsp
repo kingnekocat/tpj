@@ -16,7 +16,7 @@
 
 
 
-	<table border="1" id="ReviewTbl" width="1000px">
+	<table border="1" id="ReviewTbl" width="1200px">
 	<tr>
 		<td></td>
 		<td id="SecondTR" colspan="4" style="text-align: center;" ><img alt="" src="review_tit.png"><br>
@@ -27,21 +27,21 @@
 		<td colspan="7" style="text-align: center;" height="15px" ></td>
 	</tr>
 	<tr>
-		<td class="ReviewTD" style="text-align: center;"><img class="ReviewIMG" src="css/음식.jpg" width="220px" height="170px">
+		<td class="ReviewTD" style="text-align: center;"><img class="ReviewIMG" src="css/음식.jpg" width="265px" height="220px">
 		
 		
 		<td width="12px"></td>
-		<td class="ReviewTD" style="text-align: center;"><img class="ReviewIMG" src="css/음식1.jpg" width="220px" height="170px">
+		<td class="ReviewTD" style="text-align: center;"><img class="ReviewIMG" src="css/음식1.jpg" width="265px" height="220px">
 		
 		
 		</td>
 		<td width="12px"></td>
-		<td class="ReviewTD" style="text-align: center;"><img class="ReviewIMG" src="css/음식2.jpg" width="220px" height="170px">
+		<td class="ReviewTD" style="text-align: center;"><img class="ReviewIMG" src="css/음식2.jpg" width="265px" height="220px">
 		
 		
 		</td>
 		<td width="12px"></td>
-		<td class="ReviewTD" style="text-align: center;"><img class="ReviewIMG" src="css/음식3.jpg" width="220px" height="170px">
+		<td class="ReviewTD" style="text-align: center;"><img class="ReviewIMG" src="css/음식3.jpg" width="265px" height="220px">
 		
 		
 		</td>
@@ -72,21 +72,21 @@
 		</td>
 	</tr>
 	<tr>
-		<td>
+		<td class="ThirdTD">
 		<button class="ReviewBtn2" onclick="location.href='Menu2C'">더보기</button>
 		
 		<td></td>
-		<td>
-		<button class="ReviewBtn2" onclick="location.href='Menu2C'">더보기</button>
-		
-		</td>
-		<td></td>
-		<td>
+		<td class="ThirdTD">
 		<button class="ReviewBtn2" onclick="location.href='Menu2C'">더보기</button>
 		
 		</td>
 		<td></td>
-		<td>
+		<td class="ThirdTD">
+		<button class="ReviewBtn2" onclick="location.href='Menu2C'">더보기</button>
+		
+		</td>
+		<td></td>
+		<td class="ThirdTD">
 		<button class="ReviewBtn2" onclick="location.href='Menu2C'">더보기</button>
 		
 		</td>
