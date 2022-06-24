@@ -8,6 +8,7 @@ import java.sql.SQLException;
 
 public class DBManager {
 
+
 public static Connection connect() throws SQLException {
 		
 
@@ -16,9 +17,9 @@ public static Connection connect() throws SQLException {
 	return DriverManager.getConnection(url,"c##ej1234","ej1234");
 
 
-	}
+
 	
-	// ÇÑ¹ø¿¡ ´Ý±â
+	
 	public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		try {
 			if ( rs != null) {

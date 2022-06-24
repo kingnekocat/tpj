@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 public class DBManager {
 
 public static Connection connect() throws SQLException {
@@ -18,7 +19,7 @@ public static Connection connect() throws SQLException {
 
 	}
 	
-	// ÇÑ¹ø¿¡ ´Ý±â
+
 	public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		try {
 			if ( rs != null) {
