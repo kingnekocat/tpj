@@ -9,7 +9,7 @@
 <body>
 ${r }
 <form action="Menu2RegC" method="post" enctype="multipart/form-data" name="menuform" onsubmit="return menuCall2();">
-	<table border="1" width="500" height="300">
+	<table border="1" width="500" height="300" id="Menu2RegTbl">
 
 		<tr>
 			<td><input name="title" placeholder="글 제목을 입력해주세요"></td>

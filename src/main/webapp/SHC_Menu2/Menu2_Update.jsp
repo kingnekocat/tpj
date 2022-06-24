@@ -11,7 +11,7 @@
 <body>
 
 <form action="Menu2UpdateC?no=${menu.m_no }" method="post" enctype="multipart/form-data">
-	<table border="1" width="500" height="150">
+	<table border="1" width="500" height="150" id="Menu2UpdateTbl">
 			<tr>
 				<td><input name="title" value="${menu.m_title }" ></td>
 				<td>${menu.m_nickname }</td>
