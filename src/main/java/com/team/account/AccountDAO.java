@@ -22,7 +22,7 @@ public class AccountDAO {
 		
 		
 		if (a == null) {
-			req.setAttribute("loginPage", "SEJ_Account/login.jsp");
+			req.setAttribute("loginPage", "SEJ_Account/loginGo.jsp");
 		}else {
 			req.setAttribute("loginPage", "SEJ_Account/loginOK.jsp");
 		}

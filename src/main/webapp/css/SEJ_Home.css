@@ -1,4 +1,10 @@
 @charset "UTF-8";
+@font-face {
+    font-family: 'MainFonts';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 #body {
 	margin: 0px;
 	padding: 0px;
@@ -79,4 +85,72 @@
 .phone_number {
 	font-size: 55px;
 	color: #FF5C5C;
+}
+/* #loginAreaTbl {
+	font-family: 'MainFonts';
+	color: #FF5C5C;
+	font-size: 20px;
+}
+#loginAreaTbl input{
+	background-color: #F8F8F8;
+	border: none;
+	margin-left: 10px;
+	width: 120px;
+	height: 20px;
+	box-shadow: 2px 2px 2px #c8c8c8;
+	border-radius: 5px 5px 5px 5px;
+}
+#loginAreaTbl input:focus {
+	outline: none;
+}
+#button_Td {
+	padding-left: 30px;
+}
+#button_Td button {
+	background-color: #FFF5F4;
+	border: none;
+	width: 80px;
+	height: 28px;
+} */
+#login_box {
+	margin-top: 135px;
+	color: #FF5C5C;
+	font-family: 'MainFonts';
+	font-size: 22px;
+}
+#login_ok_box {
+	margin-top: 110px;
+	color: #FF5C5C;
+	font-family: 'MainFonts';
+	font-size: 22px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+#login_ok_box a{
+	text-decoration: none;
+	color: #FF5C5C;
+	font-size: 18px;
+	padding-right: 15px;
+}
+#login_ok_box a:hover {
+	color: #ffe4e1;
+}
+#login_ok_box span {
+	padding-bottom: 20px;
+}
+#login_ok_box button{
+	border: none;
+}
+.logOut_a {
+	margin-left: 65px;
+}
+#login_box a {
+	text-decoration: none;
+	color: #FF5C5C;
+	font-family: 'MainFonts';
+	font-size: 22px;
+	padding-left: 20px;
+}
+#login_box a:hover {
+	color: #ffe4e1;
 }

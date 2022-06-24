@@ -12,7 +12,7 @@
 
 	<form action="LoginController" name="loginForm" method="post"
 		onsubmit="return loginCall();">
-		<table id="loginAreaTbl">
+		<%-- <table id="loginAreaTbl">
 			<span>${rr }</span> 
 			<tr>
 				<td>ID</td>
@@ -24,18 +24,32 @@
 				<td><input type="password" name="pw" id="pw"></td>
 			</tr>
 			<tr>
-				<td colspan="2"><button class="loginBtn">로그인</button>
+				<td id="button_Td" colspan="2">
+					<button class="loginBtn">로그인</button>
 					<button type="button" class="loginBtn"
 						onclick="location.href='RegAccountController'">회원가입</button></td>
 			</tr>
 
-		</table>
-
+		</table> --%>
+		<div id="login_area">
+		
+		<div>
+			<span>로그인</span>
+		</div>
+		
+		<div>
+			<input name="id" id="id" placeholder="아이디">
+			<input type="password" name="pw" id="pw" placeholder="비밀번호">
+		</div>
+		
+		<button class="loginBtn">로그인</button>
+		
+		
+		</div>
 
 
 
 	</form>
-
-
+	
 </body>
 </html>
