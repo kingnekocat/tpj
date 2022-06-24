@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.team.account.Account;
+import com.team.main.DBManager;
 
 public class Menu2Dao {
 
