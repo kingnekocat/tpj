@@ -16,6 +16,7 @@ public static Connection connect() throws SQLException {
 
 	return DriverManager.getConnection(url,"c##ej1234","ej1234");
 
+}
 
 
 	
