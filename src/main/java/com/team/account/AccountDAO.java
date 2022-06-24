@@ -12,8 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import com.team.friend.FriendB;
 import com.team.main.DBManager;
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class AccountDAO {
 	
@@ -57,7 +55,7 @@ public class AccountDAO {
 				
 				try {
 					String sql = "select * from account01 where id = ?";
-					con = com.team.menu2.DBManager.connect();
+					con = com.team.main.DBManager.connect();
 					pstmt = con.prepareStatement(sql);
 					pstmt.setString(1, userId);
 					
@@ -100,7 +98,7 @@ public class AccountDAO {
 				} catch (Exception e) {
 					e.printStackTrace();
 				} finally {
-					com.team.menu2.DBManager.close(con, pstmt, rs);
+					com.team.main.DBManager.close(con, pstmt, rs);
 				}
 	}
 
@@ -140,7 +138,7 @@ public class AccountDAO {
 		
 		try {
 			
-		con = com.team.menu2.DBManager.connect();
+		con = com.team.main.DBManager.connect();
 		pstmt = con.prepareStatement(sql);
 
 		String id = request.getParameter("id");
@@ -202,7 +200,7 @@ public class AccountDAO {
 		catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			com.team.menu2.DBManager.close(con, pstmt, rs);
+			com.team.main.DBManager.close(con, pstmt, rs);
 		}
 		
 		
