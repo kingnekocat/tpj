@@ -50,8 +50,8 @@
 			<tr>
 				<td><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short"/> 
 				</td>
-				<td><button onclick="location.href='Menu2UpdateC?no=${m.m_no}'">수정</button>
-				<button onclick="deleteMenu2(${m.m_no})">삭제</button></td>
+				<td><button class="Menu2Btn" onclick="location.href='Menu2UpdateC?no=${m.m_no}'">수정</button>
+				<button class="Menu2Btn" onclick="deleteMenu2(${m.m_no})">삭제</button></td>
 			</tr>
 	</table>
 </c:forEach>
