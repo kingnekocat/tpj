@@ -11,18 +11,24 @@
 
 </head>
 <body>
-
+<table></table>
 <c:forEach items="${menus }" var="m">
 
-	<table id="Menu2Tbl" width="550" height="150" style="text-align: center;">
+		<table id="Menu2Tbl4" width="550" height="20" style="text-align: center;">
 			<tr>
-				<td>${m.m_title }</td>
-				<td><a onclick="addCall('${m.m_id }');">${m.m_nickname }(${m.m_id })</a></td>
+				<td width="380" style="color:black; font-weight:1000; font-size:17pt"></td>
+				<td id="Menu2Td"></td>
 			</tr>
+			</table>
+		<table id="Menu2Tbl" width="550" height="50" style="text-align: center;">
+		
 			<tr>
-				<td colspan="2" ></td>
+				<td width="380" style="color:black; font-weight:1000; font-size:17pt">${m.m_title }</td>
+				<td id="Menu2Td"><a onclick="addCall('${m.m_id }');">${m.m_nickname }(${m.m_id })</a></td>
 			</tr>
+			</table>
 			
+			<table id="Menu2Tbl2" width="550" height="150" style="text-align: center;">
 			<c:choose>
 			<c:when test="${m.m_img eq '사진없음' }">
 			<tr>
@@ -35,7 +41,9 @@
 			</tr>
 			</c:otherwise>
 			</c:choose>
+			</table>
 			
+			<table id="Menu2Tbl3" width="550" height="150" style="text-align: center;">
 			<tr>
 				<td colspan="2" style="text-align: center;">${m.m_txt }</td>
 			</tr>
