@@ -14,7 +14,7 @@
 
 <c:forEach items="${menus }" var="m">
 
-	<table border="1" width="500" height="150">
+	<table id="Menu2Tbl" width="550" height="150" style="text-align: center;">
 			<tr>
 				<td>${m.m_title }</td>
 				<td><a onclick="addCall('${m.m_id }');">${m.m_nickname }(${m.m_id })</a></td>
@@ -31,13 +31,13 @@
 			</c:when>
 			<c:otherwise>
 			<tr>
-				<td colspan="2" ><img src="img/${m.m_img }" width="300" height="200"></td>
+				<td colspan="2" style="text-align: center;"><img id="Menu2IMG"src="img/${m.m_img }" width="520" height="300"></td>
 			</tr>
 			</c:otherwise>
 			</c:choose>
 			
 			<tr>
-				<td colspan="2" >${m.m_txt }</td>
+				<td colspan="2" style="text-align: center;">${m.m_txt }</td>
 			</tr>
 			<tr>
 				<td><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short"/> 
@@ -48,7 +48,7 @@
 	</table>
 </c:forEach>
 
-<table>
+<table id="Menu2Tbl2">
 <tr>
 <td>
 <form action="Menu2SearchC">

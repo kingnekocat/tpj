@@ -53,11 +53,6 @@
 	
 }
 
-.ColorTD {
-	
-
-
-}
 
 .ReviewTD {
 	
@@ -65,11 +60,28 @@
 
 }
 
-.ReviewTD2{
+
+
+
+
+
+
+
+#Menu2Tbl {
 	
-    
+	margin-top: 35px;
+	margin-right: auto;
+	margin-left: auto;
+	
 }
 
+#Menu2Tbl2 {
+	
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
 
 
 
