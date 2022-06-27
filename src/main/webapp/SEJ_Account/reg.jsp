@@ -20,7 +20,7 @@
 <body>
 	<form action="RegAccountController" name="myForm" method="post" onsubmit="return Regcall()">
 
-		<table border="1" id="regTbl" width="500px" height="600px">
+		<!-- <table id="regTbl" width="500px" height="600px">
 			<tr>
 				<td colspan="2">회원가입</td>
 			</tr>
@@ -73,9 +73,49 @@
 			</tr>
 
 
-		</table>
+		</table> -->
 
-
+		<div id="regTbl">
+		<div>
+			<label>회원가입</label>
+		</div>
+		<div>
+			<label>아이디</label>
+		</div>
+		<div>
+			<label>비밀번호</label>
+		</div>
+		<div>
+			<label>비밀번호 확인</label>
+		</div>
+		<div>
+			<label>이름</label>
+		</div>
+		<div>
+			<label>닉네임</label>
+		</div>
+		<div>
+			<label>생년월일(8자리)</label>
+		</div>
+		<div>
+			<label>성별</label>
+		</div>
+		<div>
+			<label>지역</label>
+		</div>
+		<div>
+			<label>카카오톡 아이디</label>
+		</div>
+		<div>
+			<button>회원가입</button>
+		</div>
+		
+		
+		
+		
+		
+		
+		</div>
 
 
 
