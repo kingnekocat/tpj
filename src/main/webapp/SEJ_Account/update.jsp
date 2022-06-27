@@ -78,7 +78,7 @@ onsubmit="return UpdateCall()">
 		</div>
 		
 		<div class="update_btn_box">
-			<button class="updateBtn">수정</button>
+			<button class="updateBtn">수정완료</button>
 		</div>
 		
 	</form>

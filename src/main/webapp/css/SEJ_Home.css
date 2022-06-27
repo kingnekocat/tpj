@@ -181,6 +181,9 @@
 	color: white;
 	margin-top: 50px;
 }
+.loginBtn:hover {
+	cursor:pointer;
+}
 #login_area ul {
 	margin-left: -20px;
 	margin-right: auto;

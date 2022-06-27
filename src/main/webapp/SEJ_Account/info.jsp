@@ -56,9 +56,9 @@
 		
 		</div>
 		
-		<div class="update_delete_btn_box">
+		<div class="update_btn_box">
 			<button class="updateBtn" onclick="location.href='UpdateAccountController'">수정</button>
-			<button class="exitBtn" onclick="deleteAccount('${sessionScope.accountInfo.id }');">탈퇴</button>
+			<%-- <button class="exitBtn" onclick="deleteAccount('${sessionScope.accountInfo.id }');">탈퇴</button> --%>
 		</div>	
 		
 		

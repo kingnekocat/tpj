@@ -28,7 +28,7 @@
 		내 친구 목록
 		</div>
 		</a>
-		<a href="DeleteAccountController">
+		<a href="DeleteGoAccountController">
 		<div class="exit_menu_box">
 		<img src="img/회원탈퇴로고.png"> <br>
 		회원 탈퇴
