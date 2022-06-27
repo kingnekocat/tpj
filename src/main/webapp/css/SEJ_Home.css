@@ -87,32 +87,7 @@
 	font-size: 55px;
 	color: #FF5C5C;
 }
-/* #loginAreaTbl {
-	font-family: 'MainFonts';
-	color: #FF5C5C;
-	font-size: 20px;
-}
-#loginAreaTbl input{
-	background-color: #F8F8F8;
-	border: none;
-	margin-left: 10px;
-	width: 120px;
-	height: 20px;
-	box-shadow: 2px 2px 2px #c8c8c8;
-	border-radius: 5px 5px 5px 5px;
-}
-#loginAreaTbl input:focus {
-	outline: none;
-}
-#button_Td {
-	padding-left: 30px;
-}
-#button_Td button {
-	background-color: #FFF5F4;
-	border: none;
-	width: 80px;
-	height: 28px;
-} */
+
 #login_box {
 	margin-top: 135px;
 	color: #FF5C5C;
@@ -339,4 +314,5 @@
 	font-size: 15px;
 	
 }
+
 

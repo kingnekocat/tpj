@@ -25,7 +25,7 @@
 		<span>${sessionScope.accountInfo.id }
 				(${sessionScope.accountInfo.nickname }) 님 환영합니다!</span><br>
 		<a class="logOut_a" href="LoginController">로그아웃</a>
-		<a href="InfoAccountController">마이페이지</a>
+		<a href="MyPageController">마이페이지</a>
 	</div>
 </body>
 </html>
