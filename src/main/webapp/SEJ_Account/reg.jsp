@@ -76,48 +76,76 @@
 		</table> -->
 
 		<div id="regTbl">
-		<div>
-			<label>회원가입</label>
+		
+		<div id="regBox">
+		<div class="reg_title">
+			<p>정보입력</p>
 		</div>
-		<div>
+		
+		<div class="id_input_box">
 			<label>아이디</label>
+			<input name="id" placeholder="한글x, 5글자 이상">
+			<button class="id_check_btn" type="button" onclick="location.href=''">중복확인</button>
 		</div>
-		<div>
+		
+		<div class="pw_input_box">
 			<label>비밀번호</label>
+			<input type="password" class="passwordInput" name="pw" placeholder="5글자 이상, 영어 대문자,소문자,특수문자 포함">
 		</div>
-		<div>
+		
+		<div class="pw_input_box">
 			<label>비밀번호 확인</label>
+			<input type="password" name="pw2" placeholder="비번 재확인">
 		</div>
-		<div>
+		
+		<div class="name_input_box">
 			<label>이름</label>
+			<input name="name" placeholder="필수">
 		</div>
-		<div>
+		
+		<div class="nickname_input_box">
 			<label>닉네임</label>
+			<input name="nickName" placeholder="필수">
 		</div>
-		<div>
+		
+		<div class="birth_input_box">
 			<label>생년월일(8자리)</label>
+			<input name="age" placeholder="필수" maxlength="8">
 		</div>
-		<div>
+		
+		<div class="gender_input_box">
 			<label>성별</label>
+			남<input class="gender_input_box_input" checked="checked" type="radio" name="gender"
+					value="남"> 여<input class="gender_input_box_input"  type="radio" name="gender" value="여">
 		</div>
-		<div>
+		
+		<div class="region_input_box">
 			<label>지역</label>
+			<input list="region" name="region"> <datalist id="region"
+						style="width: 120px">
+						<option value="서울">서울</option>
+						<option value="경기">경기</option>
+						<option value="대전">대전</option>
+						<option value="대구">대구</option>
+						<option value="부산">부산</option>
+					</datalist>
 		</div>
-		<div>
+		
+		<div class="kakao_input_box">
 			<label>카카오톡 아이디</label>
-		</div>
-		<div>
-			<button>회원가입</button>
+			<input name="kakao" placeholder="필수">
 		</div>
 		
 		
 		
-		
+		</div>
 		
 		
 		</div>
 
-
+		<div class="sign_in_btn_box">
+			<button class="sign_in_btn">회원가입</button>
+		</div>
 
 
 
