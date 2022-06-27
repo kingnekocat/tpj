@@ -20,6 +20,7 @@
 <table width="1000" height="100" id="menu4tbl1">
 <c:forEach items="${menus }" var="m">
 	<tr>
+			<td width="10"></td>
 			<td width="600" onclick="location.href='Menu4DetailC?no=${m.m_no}'">${m.m_title }</td>
 			<td style="text-align: center; "><a onclick="addCall('${m.m_id}');">${m.m_nickname }(${m.m_id})</a></td>
 			<td style="text-align: center;"><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short" /> </td>
