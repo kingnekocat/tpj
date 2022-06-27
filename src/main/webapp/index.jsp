@@ -11,6 +11,7 @@
 <script type="text/javascript" src="js/friendadd.js"></script>
 <link href="css/index.css" rel="stylesheet">
 <link href="css/Review.css" rel="stylesheet">
+<link href="css/MenuDesign.css" rel="stylesheet">
 </head>
 <body>
 
