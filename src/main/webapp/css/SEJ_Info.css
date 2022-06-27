@@ -6,7 +6,6 @@
     font-style: normal;
 }
 #infoTbl {
-	/* border: 1px solid #dbdbdb; */
 	width: 980px;
 	margin-top: 50px;
 	color: #888888;
@@ -22,6 +21,19 @@
 	margin-right: auto;
 	font-family: 'MainFonts';	
 }
+#UpdateInfoBox {
+	width : 778px;
+	height: 730px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'MainFonts';
+}
+#infoBox input:focus {
+	outline: none;
+}
+#UpdateInfoBox input:focus {
+	outline: none;
+}
 #infoBox label {
 	display: block;
 	width: 184px;
@@ -29,7 +41,22 @@
 	line-height: 35px;
 	font-size: 18px;
 }
+#UpdateInfoBox label {
+	display: block;
+	width: 184px;
+	height: 37px;
+	line-height: 35px;
+	font-size: 18px;
+}
 #infoBox span {
+	width: 334px;
+	height: 38px;
+	line-height: 30px;
+	font-size: 18px;
+	display: block;
+	color: #a5a5a5;
+}
+#UpdateInfoBox span {
 	width: 334px;
 	height: 38px;
 	line-height: 30px;
@@ -52,8 +79,32 @@
 	display: flex;
 	margin-bottom: 23px;
 }
+.name_info_box input, .id_info_box input, .nickname_info_box input,
+ .age_info_box input,  .region_info_box input,
+ .kakao_info_box input {
+	width: 330px;
+	height: 35px;
+	border: none; 
+	border-bottom: 1px solid #dbdbdb;
+	background-color: #FFF5F4;
+	font-size: 18px;
+	font-family: 'MainFonts';
+	color: #a5a5a5;
+}
+.id_info_box input::placeholder {
+	color: #a5a5a5;
+}
+.gender_info_box {
+	line-height: 35px;
+}
 .update_delete_btn_box {
 	width: 320px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 35px;
+}
+.update_btn_box {
+	width: 144px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 35px;
@@ -68,6 +119,17 @@
 	font-size: 18px;
 	line-height: 45px;
 	margin-right: 10px;
+	border-radius: 3px;
+}
+.update_btn_box button{
+	width: 144px;
+	height: 45px;
+	border: none;
+	background-color: #FF5C5C;
+	color: #fff;
+	font-family: 'MainFonts';
+	font-size: 18px;
+	line-height: 45px;
 	border-radius: 3px;
 }
 .update_delete_btn_box button:last-child {
