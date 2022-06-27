@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'MainFonts';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+#pwBox {
+	border: 1px solid #dbdbdb;
+	width: 250px;
+	height: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	text-align: center;
+	font-family: 'MainFonts';
+    background-color: #FFF5F4;
+}
+#pwBox p {
+	font-size: 20px;
+	color: #FF5C5C;
+	margin-top: 23px;
+}
+#pwBox input {
+	width: 177px;
+	height: 22px;
+	margin-bottom: 15px;
+	font-size: 18px;
+	color: #FF5C5C;
+	border: 1px solid #cecece;
+}
+#pwBox input:focus {
+	outline: none;
+}
+#pwBox span {
+	color: black;
+}
+#pwBox button {
+	width: 50px;
+	height: 25px;
+	border: none;
+	color: #fff;
+	background-color: #FF5C5C;
+	font-size: 17px;
+	line-height: 30px;
+	font-family: 'MainFonts';
+	border-radius: 3px;
+}

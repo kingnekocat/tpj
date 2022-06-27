@@ -12,6 +12,8 @@
 <link href="css/index.css" rel="stylesheet">
 <link rel="stylesheet" href="css/SEJ_Home.css">
 <link rel="stylesheet" href="css/SEJ_Mypage.css">
+<link rel="stylesheet" href="css/SEJ_Pwcheck.css">
+<link rel="stylesheet" href="css/SEJ_Info.css">
 </head>
 <body>
 
