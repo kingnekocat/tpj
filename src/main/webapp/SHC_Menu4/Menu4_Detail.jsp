@@ -10,9 +10,15 @@
 </head>
 <body>
 
-<table border="1" width="500" height="300">
+<table width="700" height="30" id="menu4tbl2">
+<tr>
+<td></td>
+</tr>
+</table>
+
+<table width="700" height="500" id="m4Detailtbl1">
 			<tr>
-				<td>${menu.m_title }</td>
+				<td width="500" height="30">${menu.m_title }</td>
 				<td><a onclick="addCall('${menu.m_id}');">작성자:${menu.m_nickname }</a></td>
 			</tr>
 			
@@ -24,20 +30,18 @@
 			</c:when>
 			<c:otherwise>
 			<tr>
-				<td colspan="2" ><img src="img/${menu.m_img }" width="300" height="200"></td>
+				<td colspan="2" ><img id="m4Detailimg" src="img/${menu.m_img }" width="500" height="300"></td>
 			</tr>
 			</c:otherwise>
 			</c:choose>
 			<tr>
-				<td>${menu.m_txt }</td>
+				<td colspan="2" id="m4Detailtxt">${menu.m_txt }</td>
 			</tr>
 			<tr>
-				<td><fmt:formatDate value="${menu.m_date }" type="both" timeStyle="short" dateStyle="short" /> </td>
-			</tr>
-			<tr>
-				<td><button onclick="location.href='Menu4UpdateC?no=${menu.m_no }'">수정</button>
-				<button onclick="deleteMenu(${menu.m_no})">삭제</button>
-				<button onclick="location.href='Menu4C'">뒤로가기</button>
+				<td width="250"><fmt:formatDate value="${menu.m_date }" type="both" timeStyle="short" dateStyle="short" /> </td>
+			
+				<td><button class="m4Detailbtn" onclick="location.href='Menu4UpdateC?no=${menu.m_no }'">수정</button>
+				<button class="m4Detailbtn" onclick="deleteMenu(${menu.m_no})">삭제</button>
 				</td>
 			</tr>
 	</table>
