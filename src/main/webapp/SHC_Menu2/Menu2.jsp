@@ -56,7 +56,7 @@
 	</table>
 </c:forEach>
 
-<table id="Menu2Tbl2">
+<table id="Menu2Tbl5">
 <tr>
 <td>
 <form action="Menu2SearchC">
@@ -64,11 +64,11 @@
 <option value="m_title">제목</option>
 <option value="m_txt">내용</option>
 <option value="m_nickname">작성자</option>
-</select> <input name="search"> <button>검색</button> 
+</select> <input id="Menu2inP" name="search"> <button class="Menu2Btn2">검색</button> 
 </form>
 </td>
-<td><button onclick="location.href='Menu2RegC'">글쓰기</button></td>
-<td><button onclick="location.href='HomeController'">뒤로가기</button></td>
+<td><button class="Menu2Btn2" onclick="location.href='Menu2RegC'">글쓰기</button></td>
+<td><button class="Menu2Btn2" onclick="location.href='HomeController'">뒤로가기</button></td>
 </tr>
 </table>
 

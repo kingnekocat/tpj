@@ -9,20 +9,20 @@
 <body>
 ${r }
 <form action="Menu2RegC" method="post" enctype="multipart/form-data" name="menuform" onsubmit="return menuCall2();">
-	<table border="1" width="500" height="300" id="Menu2RegTbl">
+	<table width="700" height="500" id="Menu2RegTbl">
 
 		<tr>
-			<td><input name="title" placeholder="글 제목을 입력해주세요"></td>
+			<td><input id="Reginp" name="title" placeholder="글 제목을 입력해주세요"></td>
 		</tr>
 		<tr>
-			<td><textarea name="txt" placeholder="내용을 입력해주세요" ></textarea> </td>
+			<td><textarea id="Regtxt" name="txt" placeholder="내용을 입력해주세요" ></textarea> </td>
 		</tr>
 		<tr>
 			<td>사진
-			<input type="file" name="file" ></td>
+			<input id="RegFile" type="file" name="file" ></td>
 		</tr>
 		<tr>
-			<td><button>등록하기</button></td>
+			<td><button id="RegBTN">등록하기</button></td>
 		</tr>
 
 	</table>
