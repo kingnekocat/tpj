@@ -12,7 +12,9 @@
 ${r }
 <table id="Menu3tbl2" width="1000" height="30">
 	<tr>
-		<td></td>
+		<td class="M3TD" width="600">제목</td>
+		<td class="M3TD">작성자</td>
+		<td class="M3TD">작성일</td>
 	</tr>
 </table>
 
