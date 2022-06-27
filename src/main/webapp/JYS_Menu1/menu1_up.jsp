@@ -25,7 +25,11 @@
 <option value="중식">중식</option>
 <option value="일식">일식</option>
 <option value="양식">양식</option>
-<option value="퓨전">퓨전</option></select></td>
+<option value="퓨전">아시안</option>
+<option value="퓨전">카페</option>
+<option value="퓨전">분식</option>
+<option value="퓨전">치킨</option>
+</select></td>
 </tr>
 <tr>
 <td>가게 위치</td>

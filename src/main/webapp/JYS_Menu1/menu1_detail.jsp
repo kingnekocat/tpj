@@ -6,24 +6,33 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="css/Menu1.css" rel="stylesheet">
 </head>
 <body>
-<table border="1">
-<tr>
-<td> 가게 이름 </td><td> 메뉴 </td><td> 지역 </td><td> 소개 </td>
-</tr>
 
+<div>
+
+가게 이름 메뉴 지역  소개 
+
+</div>
+<div>
 <c:forEach items="${rest }" var="r">
-<tr>
-<td onclick="location.href='Menu1DC2?no=${r.num}'">${r.name }</td> <td>${r.food }</td> <td>${r.region }</td> <td>${r.inform }</td>
-</tr>
+
+<li onclick="location.href='Menu1DC2?no=${r.num}'">${r.name }</li>
+<div>
+<img src="fileFolder/${r.img }" width="200px"; height="100px">
+${r.food }<br>${r.region }<br>${r.inform }
+</div>
+
 </c:forEach>
+<ul></ul>
+</div>
+
+<div>
 <form action="">
-<tr>
-<td> <input name="gg">  <button onclick="location.href='Menu1SC'">검색</button>
-</td>
-</tr>
+<input name="gg">  <button onclick="location.href='Menu1SC'">검색</button>
 </form>
+</div>
 
 </table>
 

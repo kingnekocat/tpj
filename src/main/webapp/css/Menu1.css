@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+body{
+	width:100%;
+}
+
+ul #menu1{
+	width: 1000px;
+	list-style:none;
+	display:inline;
+	text-align: center;
+	margin-left: 20px;
+}
+
+
+li #menu1{
+	text-align: center;
+	margin-left: 20px;
+}
+
+div #menu1Div {
+	text-align: center;
+	
+}
+
+div #Contents_box{
+
+		background-color: #FFF5F4;
+	}
+	
+
+
+@font-face {
+    font-family: 'MainFonts';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+div #menu1Div{
+	color: #FF5C5D;
+	font-family: 'MainFonts';
+	font-size: 18pt;
+}
