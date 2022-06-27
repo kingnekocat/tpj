@@ -8,24 +8,25 @@
 <title>Insert title here</title>
 <link href="css/Menu1.css" rel="stylesheet">
 </head>
-<body>
+<body style="text-align: center">
 
 <div>
 
-가게 이름 메뉴 지역  소개 
 
 </div>
 <div>
 <c:forEach items="${rest }" var="r">
-
-<li onclick="location.href='Menu1DC2?no=${r.num}'">${r.name }</li>
-<div>
-<img src="fileFolder/${r.img }" width="200px"; height="100px">
-${r.food }<br>${r.region }<br>${r.inform }
+<br>
+<div style="display: inline-block;" id="M1img">
+<img src="fileFolder/${r.img }" width="200px"; height="100px" onclick="location.href='Menu1DC2?no=${r.num}'">
 </div>
+<div style="display: inline-block;" id="M1content">
+<span onclick="location.href='Menu1DC2?no=${r.num}'">가게명 : ${r.name }</span><br>
+음식 : ${r.food }<br>지역 : ${r.region }<br>${r.inform }
+</div>
+<br>
 
 </c:forEach>
-<ul></ul>
 </div>
 
 <div>
@@ -34,7 +35,6 @@ ${r.food }<br>${r.region }<br>${r.inform }
 </form>
 </div>
 
-</table>
 
 
 </body>

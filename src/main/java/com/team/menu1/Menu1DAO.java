@@ -147,7 +147,7 @@ public class Menu1DAO {
                 String img2 = "";
 
                 if(img == null) {
-                    img2 = "사진없음";
+                    img2 = "없음";
                 }else {
                     img2 = img;
                 }
@@ -186,7 +186,7 @@ public class Menu1DAO {
 			pstmt.setInt(1, no);
 			
 			if(pstmt.executeUpdate() == 1) {
-				request.setAttribute("r", "삭제 성공");
+				request.setAttribute("r", "삭제성공");
 			}
 			
 		} catch (SQLException e) {
@@ -244,7 +244,7 @@ public class Menu1DAO {
 				
 				
 				if (pstmt.executeUpdate() == 1) {
-					System.out.println("수정성공");
+					System.out.println("갱신성공");
 				} 
 				
 				

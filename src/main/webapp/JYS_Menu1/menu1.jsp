@@ -52,11 +52,11 @@ ${r }
 </div>
 </form>
 
+<br><br>
 <form action="Menu1SC">
 <div id="menu1Div">
 <input name="name">  <button>검색</button>
 </div>
-
 </form>
 
 

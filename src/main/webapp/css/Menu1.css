@@ -12,6 +12,15 @@ ul #menu1{
 	margin-left: 20px;
 }
 
+ul{
+	list-style:none;
+	
+}
+
+li{
+	list-style:none;
+	
+}
 
 li #menu1{
 	text-align: center;
@@ -41,4 +50,19 @@ div #menu1Div{
 	color: #FF5C5D;
 	font-family: 'MainFonts';
 	font-size: 18pt;
+}
+
+
+
+#M1img{
+	width: 200px;
+	height: 100px;
+}
+
+#M1content{
+	width: 200px;
+	height: 100px;
+	vertical-align: top;
+	font-family: 'MainFonts';
+	font-size: 14pt;
 }
