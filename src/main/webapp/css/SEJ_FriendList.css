@@ -1,0 +1,62 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'MainFonts';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+#friend_list_box {
+	width: 980px;
+	height: 400px;
+	margin-top: 50px;
+	color: #888888;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FFF5F4;
+	box-shadow: 2px 2px 2px #d3d3d3;
+	font-family: 'MainFonts';
+}
+#friend_list_Tbl {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #FF5C5C;
+	text-align: center;
+	margin-top: 40px;
+}
+#friend_list_Tbl .friend_list_span2 {
+	border-bottom: 1px solid #FF5C5C;
+	display: block;
+	width: 400px;
+	height: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 30px;
+	font-size: 25px;
+}
+#friend_list_Tbl .friend_list_span2:last-child {
+	border-bottom: none;
+}
+#friend_list_Tbl .friend_list_span2:hover {
+	background-color: #FF5C5C;
+	cursor:pointer;
+}
+.friend_list_span {
+	border-bottom: 1px solid #ff7777;
+	display: block;
+	width: 400px;
+	height: 50px;
+	font-size: 20px;
+	line-height: 50px;
+}
+.friend_list_title {
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 15px;
+}
+.friend_list_title p {
+	text-align: center;
+	font-size: 30px;
+	color: #FF5C5C;
+}

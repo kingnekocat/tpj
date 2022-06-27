@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="css/SEJ_Pwcheck.css">
 <link rel="stylesheet" href="css/SEJ_Info.css">
 <link rel="stylesheet" href="css/SEJ_Delete.css">
+<link rel="stylesheet" href="css/SEJ_FriendList.css">
 </head>
 <body>
 
