@@ -221,6 +221,7 @@ public class Menu2Dao {
 		
 	}
 
+	
 	public static void search(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -235,6 +236,7 @@ public class Menu2Dao {
 		
 		
 		String search = "%" + request.getParameter("search")+ "%";
+		String search1 =  request.getParameter("search");
 		
 		System.out.println(menusearch);
 		System.out.println(search);
@@ -247,7 +249,7 @@ public class Menu2Dao {
 		
 		rs = pstmt.executeQuery();
 		
-		ArrayList<Menu2> menus = new ArrayList<Menu2>();
+		menus = new ArrayList<Menu2>();
 		Menu2 m = null;
 		
 		while (rs.next()) {
@@ -258,6 +260,8 @@ public class Menu2Dao {
 					
 		}
 		request.setAttribute("menus", menus);
+		request.setAttribute("menusearch", menusearch);
+		request.setAttribute("search", search1);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -288,6 +292,9 @@ public class Menu2Dao {
 		req.setAttribute("menus", items);
 		
 	}
+	
+	
+
 	
 	
 	
