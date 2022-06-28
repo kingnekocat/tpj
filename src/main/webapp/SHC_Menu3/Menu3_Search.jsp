@@ -52,7 +52,7 @@
 	<table id="m2pageTbl">
 <tr>
 <td><c:forEach var="i" begin="1" end="${pageCount }" >
-              <a href="Menu3SearchPageC?p=${i }&menusearch=${menusearch }$search=${search }">[${i }]</a>
+              <a href="Menu3SearchPageC?p=${i }&menusearch=${menusearch }&search=${search }">[${i }]</a>
 </c:forEach></td>
 </tr>
 </table>
