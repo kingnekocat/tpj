@@ -74,3 +74,46 @@ div #menu1Div{
 	height : 150px;
 	outline: solid 0.1px gray;
 }
+
+	
+#detail2{
+	margin: auto;
+	width : 700px;
+	height : 550px;
+	outline: solid 0.1px gray;
+}
+
+#detail2img{
+	text-align : center;
+	height : 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+#detail2table{
+	text-align : center;
+	font-family: 'MainFonts';
+	font-size: 14pt;
+	vertical-align: top;
+}
+
+#detailcont{
+	float:left;
+	text-align: right;
+	margin-left: auto;
+	margin-right: auto;
+	width : 270px;
+}
+
+#detailcont2{
+	float:left;
+	text-align: center;
+	width : 350px;
+}
+
+#detail2intro{
+	width : 700px;
+	height : 200px;
+}
+

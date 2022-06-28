@@ -24,5 +24,4 @@ insert into team_restaurant values (team_restaurant_seq.nextval, '가게8', '양식'
 
 select * from team_restaurant;
 
-
 select * from team_restaurant where tr_name like '%가게%'

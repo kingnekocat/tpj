@@ -7,44 +7,51 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<link href="css/Menu1.css" rel="stylesheet">
+
 <body>
 
-<table border="1">
-<tr>
-<td colspan="2" align="center" class="d_td1">
-<h3>상세 페이지</h3>
-</td>
-</tr>
-<tr>
-<td colspan="2"><img src="fileFolder/${rest.img }"></td>
-</tr>
+<br>
+<div id="detail2Title">
 
-<tr>
-<td> 가게 이름</td>
-<td> ${rest.name }</td>
-</tr>
-<tr>
-<td> 음식종류</td>
-<td> ${rest.food }</td>
-</tr>
-<tr>
-<td> 지역</td>
-<td>${rest.region }</td>
-</tr>
-<tr>
-<td> 소개</td>
-<td>${rest.inform }</td>
-</tr>
-<tr>
-<td class="d_td3" colspan="2">
+<div id="detail2">
+
+<div id="detail2img">
+<img src="fileFolder/${rest.img }" width="510px" height="250px">
+</div>
+<div id="detail2table">
+<div id="detailcont">가게 이름</div> <div id="detailcont2">${rest.name }</div> <div></div>
+<div id="detailcont">음식</div> <div id="detailcont2">${rest.food }</div> <div></div>
+<div id="detailcont">지역</div> <div id="detailcont2">${rest.region }</div> <div></div>
+<br>
+<br>
+<div id="detail2intro">
+<br>
+<br>
+<div>가게 정보</div>
+<div>${rest.inform }</div>
+</div>
+</div>
+
+
+</div>
+ 
+        
+
+
+<br>
+<br>
+<br>
+<div>
 <a href="Menu1C"> 목록으로 </a> 
 <span onclick="history.back()"> 목록으로(js) </span>
 <button onclick="location.href='Menu1DelC?no=${rest.num }'">가게 정보 삭제</button>
 <button onclick="location.href='Menu1UpdateC?no=${rest.num }'">가게 정보 수정</button>
-</td>
-</tr>
+</div>
 
-</table>
+
+
+</div>
 
 </body>
 </html>

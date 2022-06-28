@@ -9,12 +9,14 @@
 </head>
 <body>
 
+<table>
 <h2>검색 결과</h2>
 <c:forEach items="${rest }" var="r">
 <tr>
 <td onclick="location.href='Menu1DC2?no=${r.num}'">${r.name }</td> <td>${r.food }</td> <td>${r.region }</td> <td>${r.inform }</td>
 </tr>
 </c:forEach>
+</table>
 
 </body>
 </html>
