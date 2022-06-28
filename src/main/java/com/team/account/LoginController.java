@@ -22,12 +22,21 @@ public class LoginController extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		Account a = (Account) request.getSession().getAttribute("accountInfo");
+		
+		if (a == null) {
+			AccountDAO.loginCheck(request);
+			request.setAttribute("contentPage", "SEJ_Account/login.jsp");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		} else {
 		// 로그인 하는 일
 		AccountDAO.login(request);
 		// 가는 곳
 		AccountDAO.loginCheck(request);
 		request.setAttribute("contentPage", "home.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
+		
 	}
 
 }
