@@ -30,7 +30,13 @@
 </c:forEach>
 
 <br>
-페이징칸
+<div>
+<a href="Menu1PageC?p=${1 }">처음으로</a>
+<c:forEach var="i" begin="1" end="${pageCount }">
+<a href="Menu1PageC?p=${i }">[${i }]</a>
+</c:forEach>
+<a href="Menu1PageC?p=${pageCount }">끝으로</a>
+</div>
 <br>
 <br>
 <div>

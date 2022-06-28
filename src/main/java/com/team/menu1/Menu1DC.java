@@ -16,6 +16,7 @@ public class Menu1DC extends HttpServlet {
 		
 		AccountDAO.loginCheck(request);
 		Menu1DAO.ViewGenreDetail(request);
+		Menu1DAO.paging(1, request);
 		request.setAttribute("contentPage", "JYS_Menu1/menu1_detail.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	

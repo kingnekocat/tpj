@@ -22,6 +22,7 @@ import com.team.main.DBManager;
 
 public class Menu1DAO {
 
+	private static ArrayList<Menu1B> menu1s;
 
 	public static void ViewAll(HttpServletRequest request) {
 		Connection con = null;
@@ -93,11 +94,10 @@ public class Menu1DAO {
 				pstmt.setString(1, gen);
 				
 			}
-			
-			
+						
 			rs = pstmt.executeQuery();
 			
-		ArrayList<Menu1B> rest = new ArrayList<Menu1B>();
+			menu1s = new ArrayList<Menu1B>();
 		Menu1B r = null;
 		while (rs.next()) {
 			r = new Menu1B();
@@ -107,10 +107,10 @@ public class Menu1DAO {
 			r.setRegion(rs.getString("tr_region"));
 			r.setInform(rs.getString("tr_information"));
 			r.setImg(rs.getString("tr_img"));
-				rest.add(r);
+				menu1s.add(r);
 			}
 				
-			request.setAttribute("rest", rest);
+			request.setAttribute("rest", menu1s);
 		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -322,7 +322,7 @@ public class Menu1DAO {
 			
 			rs = pstmt.executeQuery();
 			
-		ArrayList<Menu1B> rest = new ArrayList<Menu1B>();
+			menu1s = new ArrayList<Menu1B>();
 		Menu1B r = null;
 		while (rs.next()) {
 			r = new Menu1B();
@@ -332,10 +332,10 @@ public class Menu1DAO {
 			r.setRegion(rs.getString("tr_region"));
 			r.setInform(rs.getString("tr_information"));
 			r.setImg(rs.getString("tr_img"));
-				rest.add(r);
+				menu1s.add(r);
 			}
 				
-			request.setAttribute("rest", rest);
+			request.setAttribute("rest", menu1s);
 		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -344,5 +344,26 @@ public class Menu1DAO {
 			DBManager.close(con, pstmt, null);
 	}
 		
+	}
+
+
+	public static void paging(int page, HttpServletRequest request) {
+		request.setAttribute("CurPageNo", page);
+		int cnt = 3; // 한페이지당 보여줄 개수
+		int total = menu1s.size(); // 총 데이터 개수
+		int pageCount = (int) Math.ceil((double)total/cnt);
+		
+		request.setAttribute("pageCount", pageCount);
+		
+		int start = total - (cnt * (page-1)); // 시작데이터번호2 -역순연산
+		int end = (page == pageCount) ? -1 : start - (cnt+1); // 끝데이터번호 2 - 역순연산
+		
+		
+		ArrayList<Menu1B> items = new ArrayList<Menu1B>(); 
+		for (int i = start-1; i > end; i--) {
+			items.add(menu1s.get(i));
+		}
+		
+		request.setAttribute("rest", items);
 	}
 }

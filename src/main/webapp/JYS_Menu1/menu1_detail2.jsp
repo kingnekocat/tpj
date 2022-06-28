@@ -53,11 +53,12 @@ function delConfirm()  {
 <button onclick="Menu1C"> 목록으로 </button> 
 </div>
 
+<c:if test="${sessionScope.accountInfo.id eq 'admin'}">
 <div style="text-align:right;">
 <button onclick="delConfirm()">가게 정보 삭제</button>
 <button onclick="location.href='Menu1UpdateC?no=${rest.num }'">가게 정보 수정</button>
 </div>
-
+</c:if>
 
 
 </div>
