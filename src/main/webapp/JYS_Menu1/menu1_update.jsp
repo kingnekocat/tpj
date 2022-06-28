@@ -5,52 +5,64 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="css/Menu1.css" rel="stylesheet">
 </head>
 <body>
-<form action="Menu1UpdateC" method="post" onsubmit="return call()" enctype="multipart/form-data">
-<table border="1">
-<tr>
-<td colspan="2">가게 정보 등록</td>
-</tr>
 
-<tr>
-<td>가게 이름</td>
-<td><input name="name" placeholder="필수" required></td>
-</tr>
-<tr>
-<td>음식 종류</td>
-<td><select name="genre">
+
+<form action="Menu1UpdateC" method="post" onsubmit="return call()" enctype="multipart/form-data">
+
+
+<div>
+
+<div>
+<div>가게 이름</div>
+<div>
+<input name="name" placeholder="필수" required>
+</div>
+</div>
+
+
+<div>음식 종류</div>
+<div><select name="genre">
 <option value="한식">한식</option>
 <option value="중식">중식</option>
 <option value="일식">일식</option>
 <option value="양식">양식</option>
-<option value="퓨전">퓨전</option></select></td>
-</tr>
-<tr>
-<td>가게 위치</td>
-<td><select name="region">
+<option value="퓨전">아시안</option>
+<option value="퓨전">카페</option>
+<option value="퓨전">분식</option>
+<option value="퓨전">치킨</option>
+</select></div>
+<div>
+<div>가게 위치</div>
+<div><select name="region">
 <option value="서울">서울</option>
 <option value="경기">경기</option>
 <option value="부산">부산</option>
 <option value="대구">대구</option>
 <option value="대전">대전</option>
-</select></td>
-</tr>
-<tr>
-<td>소개</td>
-<td><textarea name="inform" placeholder="필수" required ></textarea></td>
-</tr>
-<tr>
-<td>사진</td>
-<td><input type="file" name="img"></input></td>
-<td><input type="hidden" name="img2" value="${rest.img }"></td>
-</tr>
+</select></div>
+</div>
+<div>
+<div>소개</div>
+<div><textarea name="inform" placeholder="필수" required></textarea></div>
+</div>
+<div>
+<div>사진</div>
+<div><input type="file" name="img"></input></div>
+<div><input type="hidden" name="img2" value="${rest.img }"></input></div>
+</div>
 
 
-<tr>
-<td colspan="2"><button value="${rest.num }" name="no">수정</button></td>
-</tr>
-</table>
+<div>
+<div><button value="${rest.num }" name="no">수정</button></div>
+</div>
+
+
+</div>
 </form>
+
+
 </body>
 </html>

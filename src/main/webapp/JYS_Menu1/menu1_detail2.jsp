@@ -6,6 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+function delConfirm()  {
+  let like = confirm("삭제하시겠습니까?");
+  if ( like ) {
+	  location.href='Menu1DelC?no=${rest.num }';
+  }
+}
+</script>
+
 </head>
 <link href="css/Menu1.css" rel="stylesheet">
 
@@ -38,14 +47,14 @@
  
         
 
+<br>
+<br>
+<div style="text-align:center;">
+<button onclick="Menu1C"> 목록으로 </button> 
+</div>
 
-<br>
-<br>
-<br>
-<div>
-<a href="Menu1C"> 목록으로 </a> 
-<span onclick="history.back()"> 목록으로(js) </span>
-<button onclick="location.href='Menu1DelC?no=${rest.num }'">가게 정보 삭제</button>
+<div style="text-align:right;">
+<button onclick="delConfirm()">가게 정보 삭제</button>
 <button onclick="location.href='Menu1UpdateC?no=${rest.num }'">가게 정보 수정</button>
 </div>
 

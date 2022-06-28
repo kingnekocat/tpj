@@ -26,7 +26,7 @@ public class Menu1UpC extends HttpServlet {
 		
 		AccountDAO.loginCheck(request);
 		// ¾îµð·Î
-		request.setAttribute("contentPage", "home.jsp");
+		request.setAttribute("contentPage", "JYS_Menu1/menu1.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);	
 	
 	}

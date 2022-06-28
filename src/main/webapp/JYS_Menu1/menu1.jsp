@@ -47,19 +47,18 @@ ${r }
 
 <br>
 
-<div id="menu1Div">
-<button type="button" onclick="location.href='Menu1UpC'">가게 등록</button>
-</div>
 </form>
-
-<br><br>
+<br>
 <form action="Menu1SC">
 <div id="menu1Div">
 <input name="name">  <button>검색</button>
 </div>
 </form>
 
-
+<br>
+<div style="text-align:right;">
+<button type="button" onclick="location.href='Menu1UpC'">가게 등록</button>
+</div>
 
 </body>
 </html>
