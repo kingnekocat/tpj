@@ -243,7 +243,7 @@ public class Menu4Dao {
             
             rs = pstmt.executeQuery();
             
-            ArrayList<Menu4> menus = new ArrayList<Menu4>();
+            menus = new ArrayList<Menu4>();
             Menu4 m = null;
             
             while (rs.next()) {
@@ -252,7 +252,8 @@ public class Menu4Dao {
             	System.out.println(rs.getString("m_title"));
 			}
             request.setAttribute("menus", menus);
-            
+            request.setAttribute("menusearch", menusearch);
+    		request.setAttribute("search", search);
             
 		} catch (Exception e) {
 			e.printStackTrace();
