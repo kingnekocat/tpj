@@ -228,7 +228,7 @@ public class Menu3Dao {
 			
 			rs = pstmt.executeQuery();
 			
-			ArrayList<Menu3> menus = new ArrayList<Menu3>();
+			menus = new ArrayList<Menu3>();
 			Menu3 m = null;
 			
 			while (rs.next()) {
@@ -271,7 +271,7 @@ public class Menu3Dao {
             
             rs = pstmt.executeQuery();
             
-            ArrayList<Menu3> menus = new ArrayList<Menu3>();
+            menus = new ArrayList<Menu3>();
             Menu3 m = null;
             
             while (rs.next()) {
@@ -280,6 +280,8 @@ public class Menu3Dao {
 				System.out.println(rs.getString("m_title"));
             }
             request.setAttribute("menus", menus);
+            request.setAttribute("menusearch", menusearch);
+    		request.setAttribute("search", search);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
