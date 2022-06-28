@@ -45,7 +45,7 @@
 		<button class="loginBtn">로그인</button>
 		
 		<ul>
-			<li> <a href="https://www.naver.com/">아이디찾기</a> </li>
+			<li> <a href="IdFindController">아이디찾기</a> </li>
 			<li> <a href="https://www.naver.com/">비밀번호찾기</a> </li>
 		</ul>
 		<br>

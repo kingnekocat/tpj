@@ -391,6 +391,57 @@ public class AccountDAO {
 		
 		
 	}
+
+
+
+
+
+	public static void idCheck(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select id \r\n"
+				+ "from ACCOUNT01 \r\n"
+				+ "where name = ? and kakao = ?";
+		
+		try {
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			String name = request.getParameter("name");
+			String kakao = request.getParameter("kakao");
+			
+
+			System.out.println(name);
+			System.out.println(kakao);
+			
+			pstmt.setString(1, name);
+			pstmt.setString(2, kakao);
+			
+			rs = pstmt.executeQuery();
+			
+			
+			if (rs.next()) {
+				request.setAttribute("id", rs.getString("id"));
+			} else {
+				request.setAttribute("wrong", "존재하지 않는 회원입니다.");
+			}
+	
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		
+		
+		
+		
+		
+		
+	}
 	
 	
 	

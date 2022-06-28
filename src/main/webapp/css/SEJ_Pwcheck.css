@@ -47,3 +47,92 @@
 	font-family: 'MainFonts';
 	border-radius: 3px;
 }
+
+
+
+/* 아이디 찾기 CSS */
+#IdFindBox {
+	border: 1px solid #dbdbdb;
+	width: 500px;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	text-align: center;
+	font-family: 'MainFonts';
+    background-color: #FFF5F4;
+    box-shadow: 2px 2px 2px #d3d3d3;
+}
+#IdFindBox p {
+	font-size: 30px;
+	color: #FF5C5C;
+	margin-top: 30px;
+}
+#IdFindBox input {
+	width: 350px;
+	height: 30px;
+	margin-bottom: 15px;
+	font-size: 18px;
+	font-family: 'MainFonts';
+	color: gray;
+	background-color: #FFF5F4;
+	border: none;
+	border-bottom: 1px solid #cecece;
+}
+#IdFindBox input::placeholder {
+	font-size: 18px;
+	color: gray;
+	font-family: 'MainFonts';
+	opacity: 0.5;
+}
+#IdFindBox input:focus {
+	outline: none;
+	border-bottom: 1px solid #FF5C5C;
+}
+.wrongResult {
+	color: black;
+}
+.checkingBtn {
+	width: 350px;
+	height: 35px;
+	border: none;
+	color: #fff;
+	background-color: #FF5C5C;
+	font-size: 17px;
+	line-height: 35px;
+	font-family: 'MainFonts';
+	border-radius: 3px;
+	margin-top: 18px;
+}
+.checkOutBtn {
+	width: 350px;
+	height: 35px;
+	border: none;
+	color: #fff;
+	background-color: #FF5C5C;
+	font-size: 17px;
+	line-height: 35px;
+	font-family: 'MainFonts';
+	border-radius: 3px;
+	margin-top: 30px;
+}
+.FoundId {
+	font-size: 30px;
+	font-family: 'MainFonts';
+	color: gray;
+	display: block;
+	margin-top: 60px;
+}
+.wrongResult2 {
+	font-size: 30px;
+	font-family: 'MainFonts';
+	color: gray;
+	display: block;
+	margin-top: -20px;
+}
+
+
+
+
+
+
