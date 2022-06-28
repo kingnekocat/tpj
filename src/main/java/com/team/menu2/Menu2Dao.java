@@ -24,7 +24,7 @@ public class Menu2Dao {
 		
 		try {
 			con = DBManager.connect();
-			String sql = "select * from menu2_01 order by m_date desc";
+			String sql = "select * from menu2_01 order by m_date";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			

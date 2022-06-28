@@ -10,20 +10,20 @@
 </head>
 <body>
 
-<table width="1000" height="30" id="menu4tbl2">
+<table width="800" height="30" id="menu4tbl2">
 <tr>
-<td class="M3TD" width="600">제목</td>
+<td class="M3TD" width="400">제목</td>
 		<td class="M3TD">작성자</td>
 		<td class="M3TD">작성일</td>
 </tr>
 </table>
 
 
-<table width="1000" height="100" id="menu4tbl1">
+<table width="800" height="100" id="menu4tbl1">
 <c:forEach items="${menus }" var="m">
 	<tr>
 			<td height="30" width="10"></td>
-			<td width="600" onclick="location.href='Menu4DetailC?no=${m.m_no}'">${m.m_title }</td>
+			<td width="400" onclick="location.href='Menu4DetailC?no=${m.m_no}'">${m.m_title }</td>
 			<td style="text-align: center; "><a onclick="addCall('${m.m_id}');">${m.m_nickname }(${m.m_id})</a></td>
 			<td style="text-align: center;"><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short" /> </td>
 	</tr>
@@ -42,6 +42,14 @@
 			<td>
 			<button class="m4btn" onclick="location.href='Menu4RegC'">글쓰기</button>
 			</td>
+</tr>
+</table>
+
+<table id="m2pageTbl">
+<tr>
+<td><c:forEach var="i" begin="1" end="${pageCount }" >
+              <a href="Menu4PageC?p=${i }">[${i }]</a>
+</c:forEach></td>
 </tr>
 </table>
 

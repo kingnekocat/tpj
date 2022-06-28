@@ -9,11 +9,19 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
 <c:forEach items="${menus}" var="m">
-	<table border="1" width="500" height="150">
+<table id="Menu2Tbl4" width="550" height="20" style="text-align: center;">
 			<tr>
-				<td>${m.m_title }</td>
-				<td>${m.m_nickname }</td>
+				<td width="380" style="color:black; font-weight:1000; font-size:17pt"></td>
+				<td id="Menu2Td"></td>
+			</tr>
+			</table>
+	<table id="Menu2Tbl" width="550" height="50" style="text-align: center;">
+			<tr>
+				<td width="380" style="color:black; font-weight:1000; font-size:17pt">${m.m_title }</td>
+				<td id="Menu2Td"><a onclick="addCall('${m.m_id }');">${m.m_nickname }(${m.m_id })</a></td>
 			</tr>
 			<tr>
 				<td colspan="2" ></td>
@@ -27,13 +35,15 @@
 			</c:when>
 			<c:otherwise>
 			<tr>
-				<td colspan="2" ><img src="img/${m.m_img }" width="300" height="200"></td>
+				<td colspan="2" style="text-align: center;"><img id="Menu2IMG" src="img/${m.m_img }" width="520" height="300"></td>
 			</tr>
 			</c:otherwise>
 			</c:choose>
+			</table>
 			
+			<table id="Menu2Tbl3" width="550" height="150" style="text-align: center;">
 			<tr>
-				<td colspan="2" >${m.m_txt }</td>
+				<td colspan="2" style="text-align: center;" >${m.m_txt }</td>
 			</tr>
 			<tr>
 				<td><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short"/> 

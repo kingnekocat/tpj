@@ -23,7 +23,7 @@ public class Menu3Dao {
 		
 		try {
 			con = DBManager.connect();
-			String sql = "select * from menu3_01 order by m_date desc";
+			String sql = "select * from menu3_01 order by m_date";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			

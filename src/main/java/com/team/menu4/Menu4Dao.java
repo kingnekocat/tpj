@@ -11,10 +11,11 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.team.account.Account;
 import com.team.main.DBManager;
-import com.team.menu3.Menu3;
 
 public class Menu4Dao {
 
+	private static ArrayList<Menu4> menus;
+	
 	public static void getAllmenu(HttpServletRequest request) {
 		
 		Connection con = null;
@@ -23,11 +24,11 @@ public class Menu4Dao {
 		
 		try {
 			con = DBManager.connect();
-			String sql = "select * from menu4_01 order by m_date desc";
+			String sql = "select * from menu4_01 order by m_date";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
-			ArrayList<Menu4> menus = new ArrayList<Menu4>();
+			menus = new ArrayList<Menu4>();
 			Menu4 m = null;
 			
 			while (rs.next()) {
@@ -263,7 +264,27 @@ public class Menu4Dao {
 		
 		
 		
+public static void paging(int page, HttpServletRequest req) {
 		
+		req.setAttribute("curPageNo", page);
+		
+		//전체 페이지 수 계산
+		int cnt = 20;      // 한 페이지당 보여줄 개수
+		int total = menus.size();	  //총 데이터 개수
+		int pageCount = (int)Math.ceil((double)total / cnt);
+		req.setAttribute("pageCount", pageCount);	
+		
+		int start = total - (cnt * (page - 1));
+		int end = (page == pageCount) ? -1 : start - (cnt + 1);
+		
+		ArrayList<Menu4> items = new ArrayList<Menu4>();
+		for (int i = start-1; i > end; i--) {
+			items.add(menus.get(i));
+		}
+		
+		req.setAttribute("menus", items);
+		
+	}
 	
 		
 		
