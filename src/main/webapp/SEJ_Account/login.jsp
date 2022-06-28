@@ -41,7 +41,7 @@
 			<input class="ID_input" name="id" id="id" placeholder="아이디"> <br>
 			<input type="password" name="pw" id="pw" placeholder="비밀번호">
 		</div>
-		
+		<span class="loginResult">${rr }</span> 
 		<button class="loginBtn">로그인</button>
 		
 		<ul>
