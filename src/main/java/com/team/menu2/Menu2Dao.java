@@ -14,6 +14,8 @@ import com.team.main.DBManager;
 
 public class Menu2Dao {
 
+	private static ArrayList<Menu2> menus;
+	
 	public static void getAllmenu2(HttpServletRequest request) {
 		
 		Connection con = null;
@@ -26,7 +28,7 @@ public class Menu2Dao {
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
-			ArrayList<Menu2> menus = new ArrayList<Menu2>();
+			menus = new ArrayList<Menu2>();
 			Menu2 m = null;
 			
 			while (rs.next()) {
@@ -265,7 +267,27 @@ public class Menu2Dao {
 	}
 
 	
-	
+	public static void paging(int page, HttpServletRequest req) {
+		
+		req.setAttribute("curPageNo", page);
+		
+		//전체 페이지 수 계산
+		int cnt = 5;      // 한 페이지당 보여줄 개수
+		int total = menus.size();	  //총 데이터 개수
+		int pageCount = (int)Math.ceil((double)total / cnt);
+		req.setAttribute("pageCount", pageCount);	
+		
+		int start = total - (cnt * (page - 1));
+		int end = (page == pageCount) ? -1 : start - (cnt + 1);
+		
+		ArrayList<Menu2> items = new ArrayList<Menu2>();
+		for (int i = start-1; i > end; i--) {
+			items.add(menus.get(i));
+		}
+		
+		req.setAttribute("menus", items);
+		
+	}
 	
 	
 	

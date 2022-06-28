@@ -72,5 +72,14 @@
 </tr>
 </table>
 
+
+<table id="m2pageTbl">
+<tr>
+<td><c:forEach var="i" begin="1" end="${pageCount }" >
+              <a style="text-align: center; " href="ReviewPageC?p=${i }">[${i }]</a>
+</c:forEach></td>
+</tr>
+</table>
+
 </body>
 </html>

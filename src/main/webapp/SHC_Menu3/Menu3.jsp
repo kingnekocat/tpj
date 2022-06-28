@@ -21,7 +21,7 @@ ${r }
 <table id="Menu3tbl" width="1000" height="100">
 <c:forEach items="${menus }" var="m">
 	<tr>
-			<td width="10"></td>
+			<td height="30" width="10"></td>
 			<td onclick="location.href='Menu3DetailC?no=${m.m_no}'" width="600">${m.m_title }</td>
 			<td style="text-align: center;"><a onclick="addCall('${m.m_id }');">${m.m_nickname }(${m.m_id })</a></td>
 			<td style="text-align: center;"><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short" /> </td>

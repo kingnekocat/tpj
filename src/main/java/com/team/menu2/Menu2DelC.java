@@ -18,6 +18,7 @@ public class Menu2DelC extends HttpServlet {
 		AccountDAO.loginCheck(request);
 		Menu2Dao.deleteMenu(request);
 		Menu2Dao.getAllmenu2(request);
+		Menu2Dao.paging(1, request);
 		request.setAttribute("contentPage", "SHC_Menu2/Menu2.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
