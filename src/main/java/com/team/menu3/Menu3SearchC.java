@@ -21,6 +21,7 @@ public class Menu3SearchC extends HttpServlet {
 		AccountDAO.loginCheck(request);
 		//Menu3Dao.searchTitle(request);
 		Menu3Dao.searchTitle2(request);
+		Menu3Dao.paging(1, request);
 		request.setAttribute("contentPage", "SHC_Menu3/Menu3.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		

@@ -49,6 +49,13 @@ ${r }
 	</tr>
 	</table>
 
+	<table id="m2pageTbl">
+<tr>
+<td><c:forEach var="i" begin="1" end="${pageCount }" >
+              <a href="Menu3PageC?p=${i }">[${i }]</a>
+</c:forEach></td>
+</tr>
+</table>
 
 
 </body>

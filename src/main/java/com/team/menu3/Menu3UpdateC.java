@@ -29,6 +29,7 @@ public class Menu3UpdateC extends HttpServlet {
 		AccountDAO.loginCheck(request);
 		Menu3Dao.updateMenu(request);
 		Menu3Dao.getAllmenu(request);
+		Menu3Dao.paging(1, request);
 		request.setAttribute("contentPage", "SHC_Menu3/Menu3.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
