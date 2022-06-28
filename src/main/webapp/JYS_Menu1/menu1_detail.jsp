@@ -28,12 +28,19 @@
 
 </c:forEach>
 
-
+<br>
+페이징칸
+<br>
+<br>
 <div>
-<form action="">
-<input name="gg">  <button onclick="location.href='Menu1SC'">검색</button>
+<form action="Menu1SC">
+<input name="name">  <button onclick="location.href='Menu1SC'">검색</button>
 </form>
+<br>
+<Br>
+<br>
 </div>
+
 
 
 

@@ -23,6 +23,46 @@ import com.team.main.DBManager;
 public class Menu1DAO {
 
 
+	public static void ViewAll(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			
+			con = DBManager.connect();
+			
+			
+			
+			String	sql = "select * from team_restaurant";
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			ArrayList<Menu1B> rest = new ArrayList<Menu1B>();
+			Menu1B r = null;
+			while (rs.next()) {
+				r = new Menu1B();
+				r.setNum(rs.getInt("tr_num"));
+				r.setName(rs.getString("tr_name"));
+				r.setFood(rs.getString("tr_food"));
+				r.setRegion(rs.getString("tr_region"));
+				r.setInform(rs.getString("tr_information"));
+				r.setImg(rs.getString("tr_img"));
+				rest.add(r);
+			}
+			
+			request.setAttribute("rest", rest);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+		
+		
 	public static void ViewGenreDetail(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -256,6 +296,7 @@ public class Menu1DAO {
 		}		
 	}
 
+	
 	public static void SearchRest(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;

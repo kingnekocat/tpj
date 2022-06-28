@@ -15,6 +15,7 @@ public class Menu1SC extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AccountDAO.loginCheck(request);
+		Menu1DAO.ViewAll(request);
 		Menu1DAO.SearchRest(request);
 		request.setAttribute("contentPage", "JYS_Menu1/menu1_search.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
