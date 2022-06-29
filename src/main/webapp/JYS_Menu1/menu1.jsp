@@ -22,25 +22,31 @@ ${r }
 <div id="menu1Div">
 
 <ul id="menu1">
-<li id="menu1"><a href="Menu1DC?gen=한식"> <img src="fileFolder/aa.jpg" alt="img6" width="100px" height="100px"></a></li>
-<li id="menu1"><a href="Menu1DC?gen=중식"> <img src="fileFolder/aa.jpg" alt="img6" width="100px" height="100px"></a></li>
-<li id="menu1"><a href="Menu1DC?gen=일식"> <img src="fileFolder/aa.jpg" alt="img6" width="100px" height="100px"></a></li>
-<li id="menu1"><a href="Menu1DC?gen=양식"> <img src="fileFolder/aa.jpg" alt="img6" width="100px" height="100px"></a></li>
-<li id="menu1"><a href="Menu1DC?gen=아시안"> <img src="fileFolder/aa.jpg" alt="img6" width="100px" height="100px"></a></li>
+<li id="menu1"><a href="Menu1DC?gen=한식"> <img src="fileFolder/한식.png" alt="img6" width="100px" height="100px"></a></li>
+<li id="menu1"><a href="Menu1DC?gen=중식"> <img src="fileFolder/중식.png" alt="img6" width="100px" height="100px"></a></li>
+<li id="menu1"><a href="Menu1DC?gen=일식"> <img src="fileFolder/일식.png" alt="img6" width="100px" height="100px"></a></li>
+<li id="menu1"><a href="Menu1DC?gen=양식"> <img src="fileFolder/양식.png" alt="img6" width="100px" height="100px"></a></li>
+<li id="menu1"><a href="Menu1DC?gen=아시안"> <img src="fileFolder/아시안.png" alt="img6" width="100px" height="100px"></a></li>
 </ul>
 </div>
 
 <br>
 <div id="menu1Div">
 <ul id="menu1">
-<li id="menu1"><a href="Menu1DC?gen=카페"> <img src="fileFolder/aa.jpg" alt="img6" width="100px" height="100px"></a></li>
-<li id="menu1"><a href="Menu1DC?gen=분식"> <img src="fileFolder/aa.jpg" alt="img7" width="100px" height="100px"></a></li>
-<li id="menu1"><a href="Menu1DC?gen=치킨"> <img src="fileFolder/aa.jpg" alt="img8" width="100px" height="100px"></a></li>
-<li id="menu1"><a href="Menu1DC?gen=region"> <img src="fileFolder/aa.jpg" alt="img9" width="100px" height="100px"></a></li>
-<li id="menu1"><a href="Menu1DC?gen=${sessionScope.accountInfo.region }"> <img src="fileFolder/aa.jpg" alt="img10" width="100px" height="100px"></a></li>
+<li id="menu1"><a href="Menu1DC?gen=패스트푸드"> <img src="fileFolder/패스트푸드.png" alt="img6" width="100px" height="100px"></a></li>
+<li id="menu1"><a href="Menu1DC?gen=치킨"> <img src="fileFolder/치킨.png" alt="img7" width="100px" height="100px"></a></li>
+<li id="menu1"><a href="Menu1DC?gen=분식"> <img src="fileFolder/분식.png" alt="img8" width="100px" height="100px"></a></li>
+<li id="menu1"><a href="Menu1DC?gen=카페"> <img src="fileFolder/카페.png" alt="img9" width="100px" height="100px"></a></li>
+<li id="menu1"><a href="Menu1DC?gen=디저트"> <img src="fileFolder/디저트.png" alt="img10" width="100px" height="100px"></a></li>
 </ul>
 </div>
-
+<br>
+<div id="menu1Div">
+<ul id="menu1">
+<li id="menu1"><a href="Menu1DC?gen=region"> <img src="fileFolder/지역별.png" alt="img11" width="100px" height="100px"></a></li>
+<li id="menu1"><a href="Menu1DC?gen=${sessionScope.accountInfo.region }"> <img src="fileFolder/주변.png" alt="img12" width="100px" height="100px"></a></li>
+</ul>
+</div>
 <br>
 
 </form>
