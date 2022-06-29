@@ -70,60 +70,56 @@ $(document).ready(function(){
 			<img class="MainImg" src="img/img_two.jpg">
 		</div>
 	</div>
+	<div id="main_banner_test">
 	<div id="main_banner">
-
-	<a class="main_banner_left" href="https://www.naver.com/">
-		<div >
-				<p class="main_banner_title">내 근처 맛집</p>
-				<span>내 근처 맛집을 확인해보세요!</span>
+	
+	
+	<a class="main_banner_left" href="Menu1DC?gen=${sessionScope.accountInfo.region }">
+		<div>
+				<img class="forkImg" src="img/fork_white.png">
+				<span class="main_banner_title">내 근처 맛집</span><br>
+				<span class="main_banner_second_title">내 근처 맛집을 확인해보세요!</span>
 				<img class="arrowImg" src="img/arrow.png">
 		</div>
 	</a>
-	<a class="main_banner_right" href="https://www.naver.com/">
-		<div >
-				<p class="main_banner_title">나와 맞을 것 같은 친구는?</p>
-				<span>전국 여러 지역에서 친구를 만날 수 있어요!</span>
-				<img class="arrowImg" src="img/arrow.png">	
+	<a class="main_banner_right" href="Menu3C">
+		<div>
+				<img class="friend_main_Img" src="img/friend_white.png">
+				<span class="main_banner_title_two">나와 맞을 것 같은 친구는?</span><br>
+				<span class="main_banner_second_title_two">전국 여러 지역에서 친구를 만날 수 있어요!</span>
+				<img class="arrowImg2" src="img/arrow.png">	
 		</div>
 	</a>
-	
-	</div>
 
-	<div id="footer">
-	
-	<div class="inner">
-	
-	<div class="left_inner">
-	<div class="footer_logo"><img src="img/logo.png"></div>
-	<span>법인명 : 밥메이트</span> <br>
-	<span>팀리더 : 송한찬</span><br>
-	<span>팀원 : 장윤수, 손은주</span><br>
-	<span>전화 : 010-0000-0000 팩스 : 0000-0000</span><br>
-	<span>주소 : 찾아봐</span><br>
-	<span>Copyright © <strong>밥메이트</strong>. All rights reserved.</span>
-	</div>
-	
-	<div class="right_inner">
-	<span>고객 상담 전화</span><br>
-	<span class="phone_number">0000-0000</span><br>
-	<span>평일 토.일.공휴일 모두 휴무</span>
-	</div>
 	
 	</div>
 	
 	</div>
 	
+	<table id="contentTb1" style="text-align:center;">
+    <tr>
+     <td class="contentTb1TD2">
+   
+     <ul class="slider">
+  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/aa.jpg" alt="img1"> </a></li>
+  <li><img src="fileFolder/bb.jpg" alt="img2"></li>
+  <li><img src="fileFolder/cc.jpg" alt="img3"></li>
+  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/aa.jpg" alt="img1"> </a></li>
+  <li><img src="fileFolder/bb.jpg" alt="img2"></li>
+  <li><img src="fileFolder/cc.jpg" alt="img3"></li>
+	</ul>
+	
+	<div class="outside">
+  	<p><span id="slider-prev"></span> | <span id="slider-next"></span></p>
+	</div>
+ 	 </td>
+  	 </tr>
+</table>
 	
 	
-
-
-
-
-
-
-
-
-
+	
+	
+	
 
 	<table  id="ReviewTbl" width="1200px">
 	<tr>
@@ -203,30 +199,35 @@ $(document).ready(function(){
 	</table>
 
 
-
-
-
         
-<table id="contentTb1" style="text-align:center;">
-    <tr>
-     <td class="contentTb1TD2">
-   
-     <ul class="slider">
-  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/aa.jpg" alt="img1"> </a></li>
-  <li><img src="fileFolder/bb.jpg" alt="img2"></li>
-  <li><img src="fileFolder/cc.jpg" alt="img3"></li>
-  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/aa.jpg" alt="img1"> </a></li>
-  <li><img src="fileFolder/bb.jpg" alt="img2"></li>
-  <li><img src="fileFolder/cc.jpg" alt="img3"></li>
-	</ul>
-	
-	<div class="outside">
-  	<p><span id="slider-prev"></span> | <span id="slider-next"></span></p>
-	</div>
- 	 </td>
-  	 </tr>
-</table>
 
+
+<div id="footer">
+	
+	<div class="inner">
+	
+	<div class="left_inner">
+	<a href="https://github.com/kingnekocat/tpj" class="footer_logo"><img src="img/밥메이트로고2.png"></a>
+	<br>
+	<span>법인명 : 밥메이트</span> <br>
+	<span>팀리더 : 송한찬</span><br>
+	<span>팀원 : 장윤수, 손은주</span><br>
+	<span>전화 : 010-0000-0000 팩스 : 0000-0000</span><br>
+	<span class="last_space">주소 : 찾아봐</span><br>
+	<span>Copyright © <strong>밥메이트</strong>. All rights reserved.</span>
+	</div>
+	
+	<div class="right_inner">
+	<span class="strong_title">고객 상담 전화</span><br>
+	<span class="phone_number">0000-0000</span><br>
+	<span>평일 토.일.공휴일 모두 휴무</span><br>
+	<span class="github_link_title">밥메이트 github</span><br>
+	<a class="github_link" href="https://github.com/kingnekocat/tpj">누르면 이동해요</a>
+	</div>
+	
+	</div>
+	
+	</div>
 
 </body>
 

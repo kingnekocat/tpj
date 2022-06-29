@@ -20,14 +20,20 @@ public class LoginController extends HttpServlet {
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
 		// 로그인 하는 일
 		AccountDAO.login(request);
-		// 가는 곳
+		
+		// 로그인 페이지 표시할 것
 		AccountDAO.loginCheck(request);
-		request.setAttribute("contentPage", "home.jsp");
+		
+		Account a = (Account)request.getSession().getAttribute("accountInfo");
+		if (a == null) {
+			request.setAttribute("contentPage", "SEJ_Account/login.jsp");			
+		} else {
+			request.setAttribute("contentPage", "home.jsp");						
+		}
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

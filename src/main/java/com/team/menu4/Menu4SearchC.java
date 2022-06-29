@@ -18,7 +18,8 @@ public class Menu4SearchC extends HttpServlet {
 		
 		AccountDAO.loginCheck(request);
 		Menu4Dao.searchMenu(request);
-		request.setAttribute("contentPage", "SHC_Menu4/Menu4.jsp");
+		Menu4Dao.paging(1, request);
+		request.setAttribute("contentPage", "SHC_Menu4/Menu4_Search.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 		

@@ -8,19 +8,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<table border="1">
-		<tr>
-			<td>내 친구 목록</td>
-		</tr>
-
-		<c:forEach items="${friends }" var="f">
-			<tr>
-				<td onclick="location.href='TestDC?no=${f.yourid}'">${f.yourid }</td>
-			</tr>
-		</c:forEach>
-
-	</table>
-
+	<div id="friend_list_box">
+		<div class="friend_list_title">
+			<p>내 친구 목록</p>
+		</div>
+		
+		<div id="friend_list_Tbl">
+			<span class="friend_list_span">
+				친구 아이디
+			</span>
+			<c:forEach items="${friends }" var="f">
+					<span class="friend_list_span2" onclick="location.href='TestDC?no=${f.yourid}'">${f.yourid }</span>
+			</c:forEach>
+		</div>
+		
+	</div>
 </body>
 </html>

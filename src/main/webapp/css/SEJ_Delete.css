@@ -1,0 +1,56 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'MainFonts';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.deleteGo_box {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	font-family: 'MainFonts';
+	text-align: center;
+}
+.deleteGo_box h1 {
+	text-align: center;
+	font-size: 45px;
+	color: #333333;
+	font-family: 'MainFonts';
+	letter-spacing: 2px;
+}
+.deleteGo_box p {
+	font-size: 25px;
+}
+.deleteGo_box span {
+	margin-top: 70px;
+	display: block;
+}
+.delete_btn_box {
+	width: 320px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 35px;
+}
+.delete_btn_box button{
+	width: 144px;
+	height: 45px;
+	border: none;
+	background-color: #FF5C5C;
+	color: #fff;
+	font-family: 'MainFonts';
+	font-size: 18px;
+	line-height: 45px;
+	margin-right: 10px;
+	border-radius: 3px;
+}
+.delete_btn_box button:hover {
+	cursor:pointer;
+}
+.delete_ask {
+	color: gray;
+}
+.delete_ask_two {
+	color: red;
+}

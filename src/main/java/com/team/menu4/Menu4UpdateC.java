@@ -29,6 +29,7 @@ public class Menu4UpdateC extends HttpServlet {
 		AccountDAO.loginCheck(request);
 		Menu4Dao.updateMenu(request);
 		Menu4Dao.getAllmenu(request);
+		Menu4Dao.paging(1, request);
 		request.setAttribute("contentPage", "SHC_Menu4/Menu4.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		

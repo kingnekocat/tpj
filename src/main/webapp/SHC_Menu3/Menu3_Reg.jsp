@@ -9,16 +9,15 @@
 <body>
 
 <form action="Menu3RegC" method="post" name="menuform" onsubmit="return menuCall();" >
-<table border="1" width="500" height="300">
+<table id="Menu3Reg" width="500" height="300">
 			<tr>
-				<td><input name="title" placeholder="글 제목을 입력해 주세요" ></td>
+				<td><input name="title" placeholder="글 제목을 입력해 주세요" id="Menu3Reginp" ></td>
 			</tr>
 			<tr>
-				<td><textarea name="txt" placeholder="내용을 입력해 주세요" ></textarea> </td>
+				<td><textarea name="txt" placeholder="내용을 입력해 주세요" id="Menu3Regtxt"></textarea> </td>
 			</tr>
 			<tr>
-				<td><button>작성하기</button>
-				<button type="button" onclick="history.back()">뒤로가기</button>
+				<td><button id="Menu3Regbtn">작성하기</button>
 				</td>
 			</tr>
 	</table>

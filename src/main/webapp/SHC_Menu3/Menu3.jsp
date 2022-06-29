@@ -10,34 +10,52 @@
 </head>
 <body>
 ${r }
-<table border="1" width="1000" height="100">
+<table id="Menu3tbl2" width="800" height="30">
+	<tr>
+		<td class="M3TD" width="400">제목</td>
+		<td class="M3TD">작성자</td>
+		<td class="M3TD">작성일</td>
+	</tr>
+</table>
+
+<table id="Menu3tbl" width="800" height="100">
 <c:forEach items="${menus }" var="m">
 	<tr>
-			<td onclick="location.href='Menu3DetailC?no=${m.m_no}'">${m.m_title }</td>
-			<td><a onclick="addCall('${m.m_id }');">${m.m_nickname }(${m.m_id })</a></td>
-			<td><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short" /> </td>
+			<td height="30" width="10"></td>
+			<td onclick="location.href='Menu3DetailC?no=${m.m_no}'" width="400">${m.m_title }</td>
+			<td style="text-align: center;"><a onclick="addCall('${m.m_id }');">${m.m_nickname }(${m.m_id })</a></td>
+			<td style="text-align: center;"><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short" /> </td>
 	</tr>
 </c:forEach>
+</table>
+
+	<table id="Menu3tbl3" width="800" height="50">
 	<tr>
-	
-	
 			<td>
 			<form action="Menu3SearchC">
-			<select name="menusearch"><option value="m_title">제목</option>
+			<select id="Menu3select" name="menusearch"><option value="m_title">제목</option>
     		<option value="m_txt">내용</option>
-			<option value="m_nickname">작성자</option></select> <input name="search"> <button>검색</button>
+			<option value="m_nickname">작성자</option></select> <input id="Menu3inp" name="search"> <button id="Menu3btn">검색</button>
 			</form>
-			<button onclick="location.href='Menu3RegC'" >글쓰기</button>
-			<button onclick="location.href='HomeController'">뒤로가기</button>
+			</td>
+			<td>
+			<button id="Menu3btn1" onclick="location.href='Menu3RegC'" >글쓰기</button>
 			</td>
 			<td>
 			<form action="Menu3sameRC">
 			지역<input name="check" value="region" type="checkbox"> 성별<input name="check" value="gender" type="checkbox">
-            <button>확인</button>
+            <button id="Menu3btn2">확인</button>
             </form></td>
 	</tr>
-</table>
+	</table>
 
+	<table id="m2pageTbl">
+<tr>
+<td><c:forEach var="i" begin="1" end="${pageCount }" >
+              <a href="Menu3PageC?p=${i }">[${i }]</a>
+</c:forEach></td>
+</tr>
+</table>
 
 
 </body>

@@ -14,6 +14,8 @@ import com.team.main.DBManager;
 
 public class Menu2Dao {
 
+	private static ArrayList<Menu2> menus;
+	
 	public static void getAllmenu2(HttpServletRequest request) {
 		
 		Connection con = null;
@@ -22,11 +24,11 @@ public class Menu2Dao {
 		
 		try {
 			con = DBManager.connect();
-			String sql = "select * from menu2_01 order by m_date desc";
+			String sql = "select * from menu2_01 order by m_date";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
-			ArrayList<Menu2> menus = new ArrayList<Menu2>();
+			menus = new ArrayList<Menu2>();
 			Menu2 m = null;
 			
 			while (rs.next()) {
@@ -219,6 +221,7 @@ public class Menu2Dao {
 		
 	}
 
+	
 	public static void search(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -233,6 +236,7 @@ public class Menu2Dao {
 		
 		
 		String search = "%" + request.getParameter("search")+ "%";
+		String search1 =  request.getParameter("search");
 		
 		System.out.println(menusearch);
 		System.out.println(search);
@@ -245,7 +249,7 @@ public class Menu2Dao {
 		
 		rs = pstmt.executeQuery();
 		
-		ArrayList<Menu2> menus = new ArrayList<Menu2>();
+		menus = new ArrayList<Menu2>();
 		Menu2 m = null;
 		
 		while (rs.next()) {
@@ -256,6 +260,8 @@ public class Menu2Dao {
 					
 		}
 		request.setAttribute("menus", menus);
+		request.setAttribute("menusearch", menusearch);
+		request.setAttribute("search", search1);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -265,7 +271,30 @@ public class Menu2Dao {
 	}
 
 	
+	public static void paging(int page, HttpServletRequest req) {
+		
+		req.setAttribute("curPageNo", page);
+		
+		//전체 페이지 수 계산
+		int cnt = 5;      // 한 페이지당 보여줄 개수
+		int total = menus.size();	  //총 데이터 개수
+		int pageCount = (int)Math.ceil((double)total / cnt);
+		req.setAttribute("pageCount", pageCount);	
+		
+		int start = total - (cnt * (page - 1));
+		int end = (page == pageCount) ? -1 : start - (cnt + 1);
+		
+		ArrayList<Menu2> items = new ArrayList<Menu2>();
+		for (int i = start-1; i > end; i--) {
+			items.add(menus.get(i));
+		}
+		
+		req.setAttribute("menus", items);
+		
+	}
 	
+	
+
 	
 	
 	
