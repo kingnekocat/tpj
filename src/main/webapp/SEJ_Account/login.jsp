@@ -12,25 +12,7 @@
 
 	<form action="LoginController" name="loginForm" method="post"
 		onsubmit="return loginCall();">
-		<%-- <table id="loginAreaTbl">
-			<span>${rr }</span> 
-			<tr>
-				<td>ID</td>
-				<td><input name="id" id="id"></td>
-			</tr>
-
-			<tr>
-				<td>PW</td>
-				<td><input type="password" name="pw" id="pw"></td>
-			</tr>
-			<tr>
-				<td id="button_Td" colspan="2">
-					<button class="loginBtn">로그인</button>
-					<button type="button" class="loginBtn"
-						onclick="location.href='RegAccountController'">회원가입</button></td>
-			</tr>
-
-		</table> --%>
+		
 		<div id="login_area">
 		
 		<div class="login_title">
@@ -46,7 +28,7 @@
 		
 		<ul>
 			<li> <a href="IdFindController">아이디찾기</a> </li>
-			<li> <a href="https://www.naver.com/">비밀번호찾기</a> </li>
+			<li> <a href="PwFindController">비밀번호찾기</a> </li>
 		</ul>
 		<br>
 		<div class="Reg_go">

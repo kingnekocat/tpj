@@ -442,6 +442,51 @@ public class AccountDAO {
 		
 		
 	}
+
+
+
+
+
+	public static void pwCheck(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select pw \r\n"
+				+ "from ACCOUNT01 \r\n"
+				+ "where id = ? and kakao = ?";
+		
+		try {
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			String id = request.getParameter("id");
+			String kakao = request.getParameter("kakao");
+			
+
+			System.out.println(id);
+			System.out.println(kakao);
+			
+			pstmt.setString(1, id);
+			pstmt.setString(2, kakao);
+			
+			rs = pstmt.executeQuery();
+			
+			
+			if (rs.next()) {
+				request.setAttribute("pw", rs.getString("pw"));
+			} else {
+				request.setAttribute("wrong", "아이디와 카카오톡 아이디를 다시 확인해주세요");
+			}
+	
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}
 	
 	
 	
