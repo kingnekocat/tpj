@@ -386,11 +386,18 @@ public class Menu3Dao {
 			String region = a.getRegion();
 			String gender = a.getGender();
 			
+			String check2 = request.getParameter("aaa");
+			
+			System.out.println(check2);
+			
 			String aaa = "";
-			for (String s : check) {
-				
-				System.out.println(s);
-				aaa += s;
+			
+			if(check2!=null) {
+				aaa = check2;
+			}else {
+				for (String s : check) {
+					aaa += s;
+				}
 			}
 			
 			if(aaa.equals("region")) {
