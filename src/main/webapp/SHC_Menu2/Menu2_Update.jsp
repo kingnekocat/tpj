@@ -11,10 +11,9 @@
 <body>
 
 <form action="Menu2UpdateC?no=${menu.m_no }" method="post" enctype="multipart/form-data">
-	<table border="1" width="500" height="150">
+	<table width="550" height="500" id="Menu2UpdateTbl">
 			<tr>
-				<td><input name="title" value="${menu.m_title }" ></td>
-				<td>${menu.m_nickname }</td>
+				<td colspan="2"><input id="UPinp" name="title" value="${menu.m_title }" ></td>
 			</tr>
 			<c:choose>
 			<c:when test="${menu.m_img eq '사진없음' }">
@@ -24,20 +23,22 @@
 			</c:when>
 			<c:otherwise>
 			<tr>
-				<td colspan="2" ><img src="img/${menu.m_img }" width="300" height="200"></td>
+				<td colspan="2" ><img src="img/${menu.m_img }" width="520" height="300"></td>
 			</tr>
 			</c:otherwise>
 			</c:choose>
 			<tr>
-				<td><textarea name="txt">${menu.m_txt }</textarea>  </td>
-				<td><input type="file" name="file2"></td>
-				<td><input type="hidden" name="file" value="${menu.m_img }"></td>
+				<td colspan="2" ><textarea id="UPtxt" name="txt">${menu.m_txt }</textarea>  </td>
+			</tr>
+			<tr>
+				<td colspan="2" ><input type="file" name="file2">
+				<input type="hidden" name="file" value="${menu.m_img }"></td>
 			</tr>
 			<tr>
 				<td><fmt:formatDate value="${menu.m_date }" type="both" dateStyle="short" timeStyle="short"/> 
 				</td>
-				<td><button>수정하기</button>
-				<button type="button" onclick="history.back()" >뒤로가기</button><td>
+				<td><button class="UPbtn">수정하기</button>
+				<button class="UPbtn" type="button" onclick="history.back()" >뒤로가기</button><td>
 			</tr>
 	</table>
 </form>

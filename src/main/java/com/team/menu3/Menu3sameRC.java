@@ -17,7 +17,8 @@ public class Menu3sameRC extends HttpServlet {
 		
 		AccountDAO.loginCheck(request);
 		Menu3Dao.sameCheck(request);
-		request.setAttribute("contentPage", "SHC_Menu3/Menu3.jsp");
+		Menu3Dao.paging(1, request);
+		request.setAttribute("contentPage", "SHC_Menu3/Menu3_Same.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}

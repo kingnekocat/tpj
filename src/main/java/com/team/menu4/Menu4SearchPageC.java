@@ -1,4 +1,4 @@
-package com.team.menu3;
+package com.team.menu4;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,29 +8,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.team.account.AccountDAO;
+import com.team.menu3.Menu3Dao;
 
 
-@WebServlet("/Menu3SearchC")
-public class Menu3SearchC extends HttpServlet {
+@WebServlet("/Menu4SearchPageC")
+public class Menu4SearchPageC extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
-	
-			
+		int p = Integer.parseInt(request.getParameter("p"));
 		AccountDAO.loginCheck(request);
-		//Menu3Dao.searchTitle(request);
-		Menu3Dao.searchTitle2(request);
-		Menu3Dao.paging(1, request);
-		request.setAttribute("contentPage", "SHC_Menu3/Menu3_Search.jsp");
+		Menu4Dao.searchMenu(request);
+		Menu4Dao.paging(p, request);
+		request.setAttribute("contentPage", "SHC_Menu4/Menu4_Search.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
 		
 		
 	}

@@ -16,6 +16,7 @@ public class Menu3C extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Menu3Dao.getAllmenu(request);
+		Menu3Dao.paging(1, request);
 		AccountDAO.loginCheck(request);
 		request.setAttribute("contentPage", "SHC_Menu3/Menu3.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);

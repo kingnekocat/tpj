@@ -16,6 +16,7 @@ public class Menu2SearchC extends HttpServlet {
 	AccountDAO.loginCheck(request);
 	// 검색하는일
 	Menu2Dao.search(request);
+	Menu2Dao.paging(1, request);
 	request.setAttribute("contentPage", "SHC_Menu2/Menu2_Search.jsp");
 	request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
