@@ -9,7 +9,7 @@ create table account01(
 	kakao varchar2 (30 char) not null
 );
 
-insert into account01 values ('3','2','3','4','5','6','지역1','8');
+insert into account01 values ('admin','admin','3','4','5','6','서울','8');
 insert into account01 values ('4','5','3','4','5','6','서울','8');
 insert into account01 values ('bb','12bB!','5','4','5','6','서울','8');
 

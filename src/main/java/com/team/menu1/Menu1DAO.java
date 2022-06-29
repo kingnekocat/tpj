@@ -22,7 +22,48 @@ import com.team.main.DBManager;
 
 public class Menu1DAO {
 
+	private static ArrayList<Menu1B> menu1s;
 
+	public static void ViewAll(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			
+			con = DBManager.connect();
+			
+			
+			
+			String	sql = "select * from team_restaurant";
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			ArrayList<Menu1B> rest = new ArrayList<Menu1B>();
+			Menu1B r = null;
+			while (rs.next()) {
+				r = new Menu1B();
+				r.setNum(rs.getInt("tr_num"));
+				r.setName(rs.getString("tr_name"));
+				r.setFood(rs.getString("tr_food"));
+				r.setRegion(rs.getString("tr_region"));
+				r.setInform(rs.getString("tr_information"));
+				r.setImg(rs.getString("tr_img"));
+				rest.add(r);
+			}
+			
+			request.setAttribute("rest", rest);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+		
+		
 	public static void ViewGenreDetail(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -37,6 +78,7 @@ public class Menu1DAO {
 			
 			Account a = (Account)request.getSession().getAttribute("accountInfo");
 			String hsregion = a.getRegion();
+	
 
 //			System.out.println(hsregion);
 			
@@ -53,11 +95,10 @@ public class Menu1DAO {
 				pstmt.setString(1, gen);
 				
 			}
-			
-			
+						
 			rs = pstmt.executeQuery();
 			
-		ArrayList<Menu1B> rest = new ArrayList<Menu1B>();
+			menu1s = new ArrayList<Menu1B>();
 		Menu1B r = null;
 		while (rs.next()) {
 			r = new Menu1B();
@@ -67,10 +108,10 @@ public class Menu1DAO {
 			r.setRegion(rs.getString("tr_region"));
 			r.setInform(rs.getString("tr_information"));
 			r.setImg(rs.getString("tr_img"));
-				rest.add(r);
+				menu1s.add(r);
 			}
 				
-			request.setAttribute("rest", rest);
+			request.setAttribute("rest", menu1s);
 		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -147,7 +188,7 @@ public class Menu1DAO {
                 String img2 = "";
 
                 if(img == null) {
-                    img2 = "사진없음";
+                    img2 = "없음";
                 }else {
                     img2 = img;
                 }
@@ -186,7 +227,7 @@ public class Menu1DAO {
 			pstmt.setInt(1, no);
 			
 			if(pstmt.executeUpdate() == 1) {
-				request.setAttribute("r", "삭제 성공");
+				request.setAttribute("r", "삭제성공");
 			}
 			
 		} catch (SQLException e) {
@@ -244,7 +285,7 @@ public class Menu1DAO {
 				
 				
 				if (pstmt.executeUpdate() == 1) {
-					System.out.println("수정성공");
+					System.out.println("갱신성공");
 				} 
 				
 				
@@ -256,6 +297,7 @@ public class Menu1DAO {
 		}		
 	}
 
+	
 	public static void SearchRest(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -281,7 +323,7 @@ public class Menu1DAO {
 			
 			rs = pstmt.executeQuery();
 			
-		ArrayList<Menu1B> rest = new ArrayList<Menu1B>();
+			menu1s = new ArrayList<Menu1B>();
 		Menu1B r = null;
 		while (rs.next()) {
 			r = new Menu1B();
@@ -291,10 +333,11 @@ public class Menu1DAO {
 			r.setRegion(rs.getString("tr_region"));
 			r.setInform(rs.getString("tr_information"));
 			r.setImg(rs.getString("tr_img"));
-				rest.add(r);
+				menu1s.add(r);
 			}
 				
-			request.setAttribute("rest", rest);
+			request.setAttribute("rest", menu1s);
+			request.setAttribute("result", request.getParameter(name));
 		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -302,6 +345,28 @@ public class Menu1DAO {
 		} finally {
 			DBManager.close(con, pstmt, null);
 	}
+		
+	}
+
+
+	public static void paging(int page, HttpServletRequest request) {
+		request.setAttribute("CurPageNo", page);
+		int cnt = 3; // 한페이지당 보여줄 개수
+		int total = menu1s.size(); // 총 데이터 개수
+		int pageCount = (int) Math.ceil((double)total/cnt);
+		
+		request.setAttribute("pageCount", pageCount);
+		
+		int start = total - (cnt * (page-1)); // 시작데이터번호2 -역순연산
+		int end = (page == pageCount) ? -1 : start - (cnt+1); // 끝데이터번호 2 - 역순연산
+		
+		if (menu1s.size()>=1) {
+			ArrayList<Menu1B> items = new ArrayList<Menu1B>(); 
+			for (int i = start-1; i > end; i--) {
+				items.add(menu1s.get(i));
+				request.setAttribute("rest", items);
+			}
+		}
 		
 	}
 }
