@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table id="loginAreaTbl">
+	<%-- <table id="loginAreaTbl">
 		<tr>
 			<td>${sessionScope.accountInfo.id }
 				(${sessionScope.accountInfo.nickname }) 님 환영합니다!</td>
@@ -15,11 +15,17 @@
 		<tr>
 			<td>
 				<button class="loginBrn" onclick="location.href='FriendlistController'">친구목록</button>
-				<button class="loginBtn" onclick="location.href='InfoAccountController'">회원정보</button>
-				<button class="loginBtn" onclick="location.href='LoginController'">로그아웃</button>
+				
+				
 			</td>
 		</tr>
 
-	</table>
+	</table> --%>
+	<div id="login_ok_box">
+		<span>${sessionScope.accountInfo.id }
+				(${sessionScope.accountInfo.nickname }) 님 환영합니다!</span><br>
+		<a class="logOut_a" href="LoginController">로그아웃</a>
+		<a href="MyPageController">마이페이지</a>
+	</div>
 </body>
 </html>

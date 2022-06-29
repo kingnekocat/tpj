@@ -1,3 +1,52 @@
+$(function() {
+	
+	// $("#iddd").click(function() {
+	$("#idid").keyup(function() {
+		
+		let inputId = $("#idid").val();
+		let id = document.myForm.id;
+		
+		
+		$.ajax({
+		    type : 'post', // 타입 (get, post, put 등등)
+		    url : 'SEJ_Account/idCheck.jsp', // 요청할 서버url
+		    dataType : 'json', // 데이터 타입 (html, xml, json, text 등등)
+		    data : { // 보낼 데이터 (Object , String, Array)
+		      "id" : inputId
+		      },
+		    success : function(result) { // 결과 성공 콜백함수
+		        console.log(result.r);	// 1, 0
+		        if(inputId.length < 5 || containKR(id)){
+					$("#showResult").text("아이디를 바르게 입력해주세요");
+		    		$("#showResult").css("color","#FF0000");
+				}
+		    	else if(result.r == 1){
+		    		$("#showResult").text("이미 사용중인 아이디 입니다");
+		    		$("#showResult").css("color","#FF0000");
+		    	} else if(result.r == 0){
+		    		$("#showResult").text("사용 가능한 아이디 입니다");
+		    		$("#showResult").css("color","green");
+		    	}
+		    
+		    
+		    
+		    },
+		    error : function(request, status, error) { // 결과 에러 콜백함수
+		        console.log(error)
+		    }
+		})
+		
+		
+		
+	});
+	
+
+	
+	
+	
+});
+
+
 function Regcall(){
 	let id = document.myForm.id;
 	let pw = document.myForm.pw;
@@ -8,16 +57,23 @@ function Regcall(){
 	let gender = document.myForm.gender;
 	let region = document.myForm.region;
 	let kakao = document.myForm.kakao;
+	let cc = $("#showResult").css("color");
 	
 	
-	
-	if(containKR(id) || lessThan(id,5)){
+
+	/*if(containKR(id) || lessThan(id,5)){
 		alert('id를 올바르게 입력하세요');
 		id.focus();
 		id.value = "";
 		return false;
+	}*/
+	if(cc == "rgb(255, 0, 0)"){
+		alert('아이디를 확인해주세요');
+		id.focus();
+		id.value = "";
+		
+		return false;
 	}
-	
 	if(lessThan(pw,5) ||
 	 notContains(pw, "QWERTYUIOPASDFGHJKLZXCVBNM")||
 	 notContains(pw, "qwertyuiopasdfghjklzxcvbnm")||

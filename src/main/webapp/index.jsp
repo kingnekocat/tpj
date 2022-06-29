@@ -9,9 +9,19 @@
 <script type="text/javascript" src="js/menuCheck.js"></script>
 <script type="text/javascript" src="js/menuValid.js"></script>
 <script type="text/javascript" src="js/friendadd.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
 <link href="css/index.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/SEJ_Home.css">
+<link rel="stylesheet" href="css/SEJ_Mypage.css">
+<link rel="stylesheet" href="css/SEJ_Pwcheck.css">
+<link rel="stylesheet" href="css/SEJ_Info.css">
+<link rel="stylesheet" href="css/SEJ_Delete.css">
+<link rel="stylesheet" href="css/SEJ_FriendList.css">
+
 <link href="css/Review.css" rel="stylesheet">
 <link href="css/MenuDesign.css" rel="stylesheet">
+
 </head>
 <body>
 

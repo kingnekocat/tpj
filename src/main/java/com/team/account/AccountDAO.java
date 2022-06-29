@@ -22,7 +22,7 @@ public class AccountDAO {
 		
 		
 		if (a == null) {
-			req.setAttribute("loginPage", "SEJ_Account/login.jsp");
+			req.setAttribute("loginPage", "SEJ_Account/loginGo.jsp");
 		}else {
 			req.setAttribute("loginPage", "SEJ_Account/loginOK.jsp");
 		}
@@ -390,6 +390,102 @@ public class AccountDAO {
 		
 		
 		
+	}
+
+
+
+
+
+	public static void idCheck(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select id \r\n"
+				+ "from ACCOUNT01 \r\n"
+				+ "where name = ? and kakao = ?";
+		
+		try {
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			String name = request.getParameter("name");
+			String kakao = request.getParameter("kakao");
+			
+
+			System.out.println(name);
+			System.out.println(kakao);
+			
+			pstmt.setString(1, name);
+			pstmt.setString(2, kakao);
+			
+			rs = pstmt.executeQuery();
+			
+			
+			if (rs.next()) {
+				request.setAttribute("id", rs.getString("id"));
+			} else {
+				request.setAttribute("wrong", "존재하지 않는 회원입니다.");
+			}
+	
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		
+		
+		
+		
+		
+		
+	}
+
+
+
+
+
+	public static void pwCheck(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select pw \r\n"
+				+ "from ACCOUNT01 \r\n"
+				+ "where id = ? and kakao = ?";
+		
+		try {
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			String id = request.getParameter("id");
+			String kakao = request.getParameter("kakao");
+			
+
+			System.out.println(id);
+			System.out.println(kakao);
+			
+			pstmt.setString(1, id);
+			pstmt.setString(2, kakao);
+			
+			rs = pstmt.executeQuery();
+			
+			
+			if (rs.next()) {
+				request.setAttribute("pw", rs.getString("pw"));
+			} else {
+				request.setAttribute("wrong", "아이디와 카카오톡 아이디를 다시 확인해주세요");
+			}
+	
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
 	}
 	
 	

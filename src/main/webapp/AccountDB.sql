@@ -21,3 +21,7 @@ region = '°æ±â', kakao = 'bye'
 where id = 'sdfff';
 
 delete ACCOUNT01 where id = 'aaaaa';
+
+select id 
+from ACCOUNT01 
+where name = 'Â¯±¸' and kakao = 'bobo';

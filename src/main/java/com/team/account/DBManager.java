@@ -17,7 +17,7 @@ public static Connection connect() throws SQLException {
 
 
 }
-	
+
 	
 	public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		try {
