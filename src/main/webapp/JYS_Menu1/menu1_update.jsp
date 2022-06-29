@@ -7,13 +7,14 @@
 <title>Insert title here</title>
 <link href="css/Menu1.css" rel="stylesheet">
 </head>
-<body>
+<body style="text-align:center;">
 
-
+<br>
+<br>
 <form action="Menu1UpdateC" method="post" onsubmit="return call()" enctype="multipart/form-data">
 
 
-<div>
+<div id="m1up">
 
 <div>
 <div>가게 이름</div>
@@ -21,7 +22,7 @@
 <input name="name" placeholder="필수" required>
 </div>
 </div>
-
+<br>
 
 <div>음식 종류</div>
 <div><select name="genre">
@@ -34,6 +35,7 @@
 <option value="퓨전">분식</option>
 <option value="퓨전">치킨</option>
 </select></div>
+<br>
 <div>
 <div>가게 위치</div>
 <div><select name="region">
@@ -44,17 +46,20 @@
 <option value="대전">대전</option>
 </select></div>
 </div>
+<br>
 <div>
 <div>소개</div>
 <div><textarea name="inform" placeholder="필수" required></textarea></div>
 </div>
+<br>
 <div>
 <div>사진</div>
 <div><input type="file" name="img"></input></div>
 <div><input type="hidden" name="img2" value="${rest.img }"></input></div>
 </div>
 
-
+<br>
+<br>
 <div>
 <div><button value="${rest.num }" name="no">수정</button></div>
 </div>

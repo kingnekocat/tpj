@@ -8,16 +8,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.websocket.Session;
 
+import com.team.account.AccountDAO;
+
 
 @WebServlet("/Menu1PageC")
 public class Menu1PageC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		int p = Integer.parseInt(request.getParameter("p"));
-//		Menu1DAO.ViewGenreDetail(Session);
-		Menu1DAO.paging(p, request);
+
 		
-		request.setAttribute("contentPage", "menu4.jsp");
+			AccountDAO.loginCheck(request);
+				Menu1DAO.ViewAll(request);
+				Menu1DAO.paging(p, request);
+				request.setAttribute("contentPage", "JYS_Menu1/menu1_search.jsp");
+//				Menu1DAO.ViewGenreDetail(request);
+//				Menu1DAO.paging(p, request);
+//				request.setAttribute("contentPage", "menu1_detail.jsp");
+				
+			
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

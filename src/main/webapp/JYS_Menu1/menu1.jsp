@@ -47,7 +47,7 @@ ${r }
 <br>
 <form action="Menu1SC">
 <div id="menu1Div">
-<input name="name">  <button>검색</button>
+<input name="name" placeholder="가게 이름 입력" id="searchinput">  <button id="searchbtn">검색</button>
 </div>
 </form>
 

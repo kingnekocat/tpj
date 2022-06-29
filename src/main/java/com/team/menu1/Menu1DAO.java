@@ -78,6 +78,7 @@ public class Menu1DAO {
 			
 			Account a = (Account)request.getSession().getAttribute("accountInfo");
 			String hsregion = a.getRegion();
+	
 
 //			System.out.println(hsregion);
 			
@@ -336,6 +337,7 @@ public class Menu1DAO {
 			}
 				
 			request.setAttribute("rest", menu1s);
+			request.setAttribute("result", request.getParameter(name));
 		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -358,12 +360,13 @@ public class Menu1DAO {
 		int start = total - (cnt * (page-1)); // 시작데이터번호2 -역순연산
 		int end = (page == pageCount) ? -1 : start - (cnt+1); // 끝데이터번호 2 - 역순연산
 		
-		
-		ArrayList<Menu1B> items = new ArrayList<Menu1B>(); 
-		for (int i = start-1; i > end; i--) {
-			items.add(menu1s.get(i));
+		if (menu1s.size()>=1) {
+			ArrayList<Menu1B> items = new ArrayList<Menu1B>(); 
+			for (int i = start-1; i > end; i--) {
+				items.add(menu1s.get(i));
+				request.setAttribute("rest", items);
+			}
 		}
 		
-		request.setAttribute("rest", items);
 	}
 }

@@ -49,9 +49,11 @@ function delConfirm()  {
 
 <br>
 <br>
+<form action="Menu1C">
 <div style="text-align:center;">
-<button onclick="Menu1C"> 목록으로 </button> 
+<button> 목록으로 </button> 
 </div>
+</form>
 
 <c:if test="${sessionScope.accountInfo.id eq 'admin'}">
 <div style="text-align:right;">

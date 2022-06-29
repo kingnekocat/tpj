@@ -117,3 +117,28 @@ div #menu1Div{
 	height : 200px;
 }
 
+
+#searchinput{
+width : 200px;
+height : 20px;	
+  border-color: gray;
+  border-radius: 15px;
+  padding-left: 10px;
+  background-color: white;
+  outline: none;
+}
+
+#searchbtn{
+	width : 60px;
+	background-color: white;
+	border-radius: 15px;
+  border-color: gray;
+  	outline: none;
+}
+
+#m1up{
+	margin: auto;
+	width : 400px;
+	height : 415px;
+	outline: solid 0.1px gray;
+}

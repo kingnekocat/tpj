@@ -30,17 +30,17 @@
 
 <br>
 <div>
-<a href="Menu1PageC?p=${1 }">처음으로</a>
+<a href="Menu1PageC?p=${1 }&&gen=한식">처음으로</a>
 <c:forEach var="i" begin="1" end="${pageCount }">
-<a href="Menu1PageC?p=${i }">[${i }]</a>
+<a href="Menu1PageC?p=${i }&&gen=한식">[${i }]</a>
 </c:forEach>
-<a href="Menu1PageC?p=${pageCount }">끝으로</a>
+<a href="Menu1PageC?p=${pageCount }&&gen=한식">끝으로</a>
 </div>
 <br>
 <br>
 <div>
 <form action="Menu1SC">
-<input name="name">  <button onclick="location.href='Menu1SC'">검색</button>
+<input name="name" placeholder="가게 이름 입력" id="searchinput">  <button onclick="location.href='Menu1SC'" id="searchbtn">검색</button>
 </form>
 <br>
 <Br>

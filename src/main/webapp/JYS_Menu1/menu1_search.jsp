@@ -9,10 +9,9 @@
 <link href="css/Menu1.css" rel="stylesheet">
 </head>
 <body style="text-align: center">
-
+<br>
 <h2>검색 결과</h2>
-
-<br><br>
+<br>
 
 <c:forEach items="${rest }" var="r">
 <div id="M1foreach">
@@ -41,7 +40,7 @@
 <br>
 <div>
 <form action="">
-<input name="name">  <button onclick="location.href='Menu1SC'">검색</button>
+<input name="name" placeholder="가게 이름 입력" id="searchinput">  <button onclick="location.href='Menu1SC'" id="searchbtn">검색</button>
 </form>
 <br>
 <Br>
