@@ -7,52 +7,6 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="js/reg.js"></script>
 <script type="text/javascript" src="js/validCheck.js"></script>
-<script type="text/javascript">
-$(function() {
-	
-	// $("#iddd").click(function() {
-	$("#idid").keyup(function() {
-		
-		let inputId = $("#idid").val();
-		
-		$.ajax({
-		    type : 'post', // 타입 (get, post, put 등등)
-		    url : 'SEJ_Account/idCheck.jsp', // 요청할 서버url
-		    dataType : 'json', // 데이터 타입 (html, xml, json, text 등등)
-		    data : { // 보낼 데이터 (Object , String, Array)
-		      "id" : inputId
-		      },
-		    success : function(result) { // 결과 성공 콜백함수
-		        console.log(result.r);	// 1, 0
-		    	if(result.r == 1){
-		    		$("#showResult").text("사용 불가한 아이디");
-		    		$("#showResult").css("color","red");
-		    	}else{
-		    		$("#showResult").text("사용 가능한 아이디");
-		    		$("#showResult").css("color","green");
-		    	}
-		    
-		    
-		    
-		    },
-		    error : function(request, status, error) { // 결과 에러 콜백함수
-		        console.log(error)
-		    }
-		})
-		
-		
-		
-	});
-	
-
-	
-	
-	
-});
-
-
-
-</script>
 </head>
 <body>
 	<form action="RegAccountController" name="myForm" method="post" onsubmit="return Regcall()">
@@ -69,7 +23,7 @@ $(function() {
 			<label>아이디</label>
 			<input id="idid" name="id" placeholder="한글x, 5글자 이상">
 			<span id="showResult"></span>
-			<button class="id_check_btn" type="button" onclick="location.href=''">중복확인</button>
+			<!-- <button class="id_check_btn" type="button" onclick="location.href=''">중복확인</button> -->
 		</div>
 		
 		<div class="pw_input_box">
