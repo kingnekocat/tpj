@@ -9,6 +9,7 @@
 <script type="text/javascript" src="js/menuCheck.js"></script>
 <script type="text/javascript" src="js/menuValid.js"></script>
 <script type="text/javascript" src="js/friendadd.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
 <link href="css/index.css" rel="stylesheet">
 <link rel="stylesheet" href="css/SEJ_Home.css">
 <link rel="stylesheet" href="css/SEJ_Mypage.css">
