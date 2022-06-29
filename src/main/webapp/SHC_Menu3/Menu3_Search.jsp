@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-${r }
+
 <table id="Menu3tbl2" width="800" height="30">
 	<tr>
 		<td class="M3TD" width="400">제목</td>
@@ -52,11 +52,10 @@ ${r }
 	<table id="m2pageTbl">
 <tr>
 <td><c:forEach var="i" begin="1" end="${pageCount }" >
-              <a href="Menu3PageC?p=${i }">[${i }]</a>
+              <a href="Menu3SearchPageC?p=${i }&menusearch=${menusearch }&search=${search }">[${i }]</a>
 </c:forEach></td>
 </tr>
 </table>
-
 
 </body>
 </html>

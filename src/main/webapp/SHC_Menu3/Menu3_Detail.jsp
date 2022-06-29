@@ -9,22 +9,26 @@
 </head>
 
 <body>
-	<table border="1" width="500" height="300">
+<table id="Menu3Detail2" width="500" height="30" >
+<tr>
+<td></td>
+</tr>
+</table>
+
+	<table id="Menu3Detail" width="500" height="400" style=" text-align: center; ">
 			<tr>
-				<td>${menu.m_title }</td>
-				<td><a onclick="addCall('${menu.m_id }');">작성자:${menu.m_nickname }</a></td>
+				<td  width="300" height="50">${menu.m_title }</td>
+				<td><a onclick="addCall('${menu.m_id }');">작성자:${menu.m_nickname }</a><br>카카오톡ID:${menu.m_kakao }</td>
 			</tr>
 			<tr>
-				<td>${menu.m_txt }</td>
-				<td>카카오톡ID:${menu.m_kakao }</td>
+				<td colspan="2" width="300"  height="300">${menu.m_txt }</td>
 			</tr>
+			
+			
 			<tr>
-				<td><fmt:formatDate value="${menu.m_date }" type="both" timeStyle="short" dateStyle="short" /> </td>
-			</tr>
-			<tr>
-				<td><button onclick="location.href='Menu3UpdateC?no=${menu.m_no }'">수정</button>
-				<button onclick="deleteMenu3(${menu.m_no})">삭제</button>
-				<button onclick="location.href='Menu3C'">뒤로가기</button>
+				<td width="300"><fmt:formatDate value="${menu.m_date }" type="both" timeStyle="short" dateStyle="short" /> </td>
+				<td><button class="Detailbtn" onclick="location.href='Menu3UpdateC?no=${menu.m_no }'">수정</button>
+				<button class="Detailbtn" onclick="deleteMenu3(${menu.m_no})">삭제</button>
 				</td>
 			</tr>
 	</table>

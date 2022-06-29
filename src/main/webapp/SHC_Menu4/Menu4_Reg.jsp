@@ -9,19 +9,19 @@
 <body>
 
 <form action="Menu4RegC" method="post" enctype="multipart/form-data" name="menuform" onsubmit="return menuCall2();">
-	<table border="1" width="500" height="300">
+	<table id="M4Regtbl" width="700" height="500">
 
 		<tr>
-			<td><input name="title" placeholder="글 제목을 입력해주세요"></td>
+			<td><input id="m4upinp" name="title" placeholder="글 제목을 입력해주세요"></td>
 		</tr>
 		<tr>
-			<td><textarea name="txt" placeholder="내용을 입력해주세요" ></textarea> </td>
+			<td><textarea id="m4uptxt" name="txt" placeholder="내용을 입력해주세요" ></textarea> </td>
 		</tr>
 		<tr>
 			<td><input type="file" name="file"></td>
 		</tr>
 		<tr>
-			<td><button>등록하기</button></td>
+			<td><button id="m4upbtn">등록하기</button></td>
 		</tr>
 
 	</table>

@@ -9,17 +9,16 @@
 <body>
 
 <form action="Menu3UpdateC?no=${menu.m_no }" method="post" >
-<table border="1" width="500" height="300">
+<table id="Menu3update" width="450" height="400">
 			<tr>
-				<td><input name="title" value="${menu.m_title }"></td>
-				<td>${menu.m_nickname }</td>
+				<td><input id="m3updateinp" name="title" value="${menu.m_title }"></td>
 			</tr>
 			<tr>
-				<td><textarea name="txt">${menu.m_txt }</textarea></td>
+				<td><textarea id="m3updatetxt" name="txt">${menu.m_txt }</textarea></td>
 			</tr>
 			<tr>
-				<td><button onclick="location.href='Menu3UpdateC'">수정</button>
-				<button type="button" onclick="history.back()">뒤로가기</button>
+				<td><button onclick="location.href='Menu3UpdateC'" class="m3upbtn">수정</button>
+				<button type="button" onclick="history.back()" class="m3upbtn">뒤로가기</button>
 				</td>
 			</tr>
 	</table>
