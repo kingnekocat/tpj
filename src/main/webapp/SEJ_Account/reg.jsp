@@ -58,15 +58,15 @@
 		</div>
 		
 		<div class="region_input_box">
+
 			<label>지역</label>
-			<input list="region" name="region"> <datalist id="region"
-						style="width: 120px">
-						<option value="서울">서울</option>
-						<option value="경기">경기</option>
-						<option value="대전">대전</option>
-						<option value="대구">대구</option>
-						<option value="부산">부산</option>
-					</datalist>
+			<select name="region" style="background-color:#FFF5F4; width: 100px;   border-color: gray; border-radius: 5px;">
+<option value="서울">서울</option>
+<option value="경기">경기</option>
+<option value="부산">부산</option>
+<option value="대구">대구</option>
+<option value="대전">대전</option>
+</select>
 		</div>
 		
 		<div class="kakao_input_box">
