@@ -47,8 +47,8 @@ $(document).ready(function(){
         touchEnabled:false,
         nextSelector: '#slider-next',
   	  prevSelector: '#slider-prev',
-  	  nextText: '앞으로',
-  	  prevText: '이전'
+  	  nextText: '<img alt="right" src="img/right.png" style="width:20px; height:20px">',
+  	  prevText: '<img alt="left" src="img/left.png" style="width:20px; height:20px">'
     });
     
 
@@ -112,7 +112,8 @@ $(document).ready(function(){
 	</ul>
 	
 	<div class="outside">
-  	<p><span id="slider-prev"></span> | <span id="slider-next"></span></p>
+  	<p><span id="slider-prev">
+  	</span><span id="slider-next"></span></p>
 	</div>
  	 </td>
   	 </tr>
