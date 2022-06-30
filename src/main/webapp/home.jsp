@@ -38,7 +38,7 @@ $(document).ready(function(){
         slideWidth: 800,   // 슬라이드 너비
         minSlides: 3,      // 최소 노출 개수
         maxSlides: 3,      // 최대 노출 개수
-        slideMargin: 5,    // 슬라이드간의 간격
+        slideMargin: 1,    // 슬라이드간의 간격
         auto: true,        // 자동 실행 여부
 		controls: true,    // 이전 다음 버튼 노출 여부
         nextSelector: '#next', // 다음 버튼 지정
@@ -74,9 +74,7 @@ $(document).ready(function(){
 	
 	<div id="main_banner_test">
 	<div id="main_banner">
-	
-	
-	<a class="main_banner_left" href="Menu1DC?gen=${sessionScope.accountInfo.region }">
+		<a class="main_banner_left" href="Menu1DC?gen=${sessionScope.accountInfo.region }">
 		<div>
 				<img class="forkImg" src="img/fork_white.png">
 				<span class="main_banner_title">내 근처 맛집</span><br>
@@ -103,12 +101,12 @@ $(document).ready(function(){
      <td class="contentTb1TD2">
    
      <ul class="slider">
-  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/aa.jpg" alt="img1"> </a></li>
-  <li><img src="fileFolder/bb.jpg" alt="img2"></li>
-  <li><img src="fileFolder/cc.jpg" alt="img3"></li>
-  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/aa.jpg" alt="img1"> </a></li>
-  <li><img src="fileFolder/bb.jpg" alt="img2"></li>
-  <li><img src="fileFolder/cc.jpg" alt="img3"></li>
+  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/slide_01.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
+  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/slide_02.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
+  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/slide_03.jpeg" alt="img1" style="width:280px; height:280px"> </a></li>
+  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/slide_04.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
+  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/slide_05.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
+  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/slide_06.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
 	</ul>
 	
 	<div class="outside">
