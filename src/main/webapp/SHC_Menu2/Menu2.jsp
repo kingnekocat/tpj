@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<link href="css/Review.css" rel="stylesheet">
 </head>
 <body>
 <table></table>
@@ -72,7 +72,7 @@
 </tr>
 </table>
 
-
+<br>
 <table id="m2pageTbl">
 <tr>
 <td><c:forEach var="i" begin="1" end="${pageCount }" >

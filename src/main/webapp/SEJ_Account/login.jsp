@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript" src="js/validCheck.js"></script>
+<link rel="stylesheet" href="css/SEJ_Home.css">
 </head>
 <body>
 

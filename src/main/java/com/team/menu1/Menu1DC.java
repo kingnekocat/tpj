@@ -23,7 +23,7 @@ public class Menu1DC extends HttpServlet {
 			request.setAttribute("contentPage", "JYS_Menu1/menu1_detail.jsp");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		} else {
-			request.setAttribute("contentPage", "home.jsp");
+			request.setAttribute("contentPage", "SEJ_Account/login.jsp");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 	
