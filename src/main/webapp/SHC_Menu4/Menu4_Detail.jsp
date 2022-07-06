@@ -35,7 +35,7 @@
 			</c:otherwise>
 			</c:choose>
 			<tr>
-				<td colspan="2" id="m4Detailtxt">${menu.m_txt }</td>
+				<td colspan="2" id="m4Detailtxt"><pre>${menu.m_txt }</pre></td>
 			</tr>
 			<tr>
 				<td width="250"><fmt:formatDate value="${menu.m_date }" type="both" timeStyle="short" dateStyle="short" /> </td>

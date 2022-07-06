@@ -9,6 +9,8 @@ create sequence friendlist_seq;
 select * from friendlist;
 drop table friendlist;
 
+delete from friendlist where f_num=81;
+
 select * from friendlist where f_myid=1;
 
 insert into frinedlist2 values (frinedlist2_seq.nextval, 'kim', 'park');

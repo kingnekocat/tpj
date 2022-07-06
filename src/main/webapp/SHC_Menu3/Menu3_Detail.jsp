@@ -21,7 +21,7 @@
 				<td><a onclick="addCall('${menu.m_id }');">작성자:${menu.m_nickname }</a><br>카카오톡ID:${menu.m_kakao }</td>
 			</tr>
 			<tr>
-				<td colspan="2" width="300"  height="300">${menu.m_txt }</td>
+				<td colspan="2" width="300"  height="300"><pre>${menu.m_txt }</pre></td>
 			</tr>
 			
 			

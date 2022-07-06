@@ -49,7 +49,7 @@
 <br>
 <div>
 <div>소개</div>
-<div><textarea name="inform" placeholder="필수" required></textarea></div>
+<div><textarea name="inform" placeholder="필수" required style="height:100px;"></textarea></div>
 </div>
 <br>
 <div>

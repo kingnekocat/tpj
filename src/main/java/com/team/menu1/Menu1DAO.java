@@ -145,11 +145,13 @@ public class Menu1DAO {
 				rest.setName(rs.getString("tr_name"));
 				rest.setFood(rs.getString("tr_food"));
 				rest.setRegion(rs.getString("tr_region"));
-				rest.setInform(rs.getString("tr_information"));
 				rest.setImg(rs.getString("tr_img"));
+				String content=rs.getString("tr_information");
+				content=content.replace("\r\n","<br>");
+				rest.setInform(content);
 				request.setAttribute("rest", rest);
 				}
-					
+			
 			
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -351,7 +353,7 @@ public class Menu1DAO {
 
 	public static void paging(int page, HttpServletRequest request) {
 		request.setAttribute("CurPageNo", page);
-		int cnt = 3; // 한페이지당 보여줄 개수
+		int cnt = 4; // 한페이지당 보여줄 개수
 		int total = menu1s.size(); // 총 데이터 개수
 		int pageCount = (int) Math.ceil((double)total/cnt);
 		

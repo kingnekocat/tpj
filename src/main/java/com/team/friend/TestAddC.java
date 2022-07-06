@@ -19,8 +19,8 @@ public class TestAddC extends HttpServlet {
 		AccountDAO.loginCheck(request);
 		if (a!=null) {
 			frinedlistDAO.addFriend(request);
-			frinedlistDAO.ViewFriendList(request);
-			request.setAttribute("contentPage", "Test/test_list.jsp");
+			AccountDAO.getAllFriendlist(request);
+			request.setAttribute("contentPage", "SEJ_Account/friend_list.jsp");
 		} else {
 			request.setAttribute("contentPage", "home.jsp");
 			request.getRequestDispatcher("index.jsp").forward(request, response);

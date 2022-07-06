@@ -21,7 +21,7 @@
 </div>
 <div style="display: inline-block;" id="M1content">
 <span onclick="location.href='Menu1DC2?no=${r.num}'">가게명 : ${r.name }</span><br>
-음식 : ${r.food }<br>지역 : ${r.region }<br>${r.inform }
+음식 : ${r.food }<br>지역 : ${r.region }<br>
 </div>
 </div>
 <br>

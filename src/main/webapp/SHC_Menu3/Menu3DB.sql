@@ -18,7 +18,7 @@ insert into menu3_01 values(menu3_01_seq.nextval,'테스트1','닉네임1','내용1','카
 insert into menu3_01 values(menu3_01_seq.nextval,'테스트2','닉네임2','내용2','카카오2',sysdate,'아이디2','서울','여');
 insert into menu3_01 values(menu3_01_seq.nextval,'테스트3','닉네임3','내용3','카카오3',sysdate,'아이디3','대전','남');
 insert into menu3_01 values(menu3_01_seq.nextval,'테스트4','닉네임4','내용4','카카오4',sysdate,'아이디4','대전','여');
-insert into menu3_01 values(menu3_01_seq.nextval,'테스트5','닉네임5','내용5','카카오5',sysdate,'아이디5','경기','여');
+insert into menu3_01 values(menu3_01_seq.nextval,'피와 살 나눕니다(빵이랑 술 먹으러 가자는 뜻)','예수','12명까지만','Jesuschrist',sysdate,'jesu','서울','남');
 
 
 select * from menu3_01;

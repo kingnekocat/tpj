@@ -14,7 +14,8 @@ public class Test1DelC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AccountDAO.loginCheck(request);
 		frinedlistDAO.DeleteFriend(request);
-		request.setAttribute("contentPage", "Test/test_list.jsp");
+		AccountDAO.getAllFriendlist(request);
+		request.setAttribute("contentPage", "SEJ_Account/friend_list.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

@@ -19,7 +19,7 @@
 <div>
 <div>가게 이름</div>
 <div>
-<input name="name" placeholder="필수" required>
+<input name="name" placeholder="필수" required value="${rest.name }">
 </div>
 </div>
 <br>
@@ -50,7 +50,7 @@
 <br>
 <div>
 <div>소개</div>
-<div><textarea name="inform" placeholder="필수" required></textarea></div>
+<div><textarea name="inform" placeholder="필수" required style="height:100px;">${rest.inform }</textarea></div>
 </div>
 <br>
 <div>
