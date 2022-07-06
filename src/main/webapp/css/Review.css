@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+#ReviewBtn {
+	
+	margin-top: 75px;
+	margin-left: 190px;
+	width:100px;
+	height:30px;
+	background-color:white;
+	border: solid 1px;
+}
+
+
+.ReviewIMG {
+	
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	
+}
+
+.ReviewBtn2{
+	
+	width: 85px;
+	height:35px;
+	background-color:white;
+	border: solid 1px;
+	color: white;
+	background-color: rgb(235, 84, 84);
+	font-size: 11pt;
+	margin-bottom: 10px;
+}
+
+.ReviewA {
+	
+	font-weight: 1000;
+	color: rgb(82, 82, 82);
+}
+
+#ReviewTbl {
+	
+	margin-right: auto;
+	margin-left: auto;
+	
+	
+}
+
+.ThirdTD{
+	
+	height:70px;
+	
+	
+}
+
+
+.ReviewTD {
+	
+	box-shadow : 2px 2px 10px silver
+
+}
+
+
+
+
+
+
+
+
+#Menu2Tbl {
+	margin-right: auto;
+	margin-left: auto;
+	border-color: white;
+	border-style:solid;
+	border-width:5px;
+	box-shadow : 2px 2px 10px silver
+}
+#Menu2Tbl2{
+	margin-right: auto;
+	margin-left: auto;
+	box-shadow : 2px 2px 10px silver
+}
+#Menu2Tbl3{
+	margin-top: 5px;
+	margin-right: auto;
+	margin-left: auto;
+	box-shadow : 2px 2px 10px silver
+}
+#Menu2Tbl4{
+	margin-top: 35px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color:#FF5C5D;
+	border-color: white;
+	border-style:solid;
+	border-width:5px;
+	border-color:#FF5C5D;
+}
+
+#Menu2Tbl2 {
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
+
+#Menu2RegTbl {
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+#Menu2UpdateTbl{
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+#Menu2IMG{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#Menu2Td{
+	border-left: 1px;
+	border-left-color: white;
+}
+.Menu2Btn{
+	width:80px;
+	height:30px;
+	color:white;
+	background-color:#FF5C5D;;
+	font-size:12pt;
+	font-weight:1000;
+	border: solid 0px;
+	margin-left: 20px;
+}
+
+#Menu2Tbl5 {
+	margin-top: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	border-color: white;
+	border-style:solid;
+	border-width:5px;
+	box-shadow : 2px 2px 10px silver;
+	height: 50px;
+	width: 550px;
+}
+.Menu2Btn2{
+	
+	width:70px;
+	height:30px;
+	color:black;
+	background-color:white;
+	font-size:10pt;
+	font-weight:1000;
+	border: solid 1px;
+}
+#Menu2inP{
+	width: 200px;
+	height: 20px;
+}
+#Reginp{
+	width: 650px;
+	height: 20px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+#Regtxt{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 650px;
+	height: 450px;
+}
+#RegBTN{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100px;
+	height: 30px;
+	color:white;
+	background-color:#FF5C5D;
+	border: solid 0px;
+	font-weight:1000;
+	font-size:11pt;
+}
+#Menu2RegTbl{
+	margin-top:50px;
+	box-shadow : 2px 2px 12px silver;
+}
+#UPinp{
+	width:510px;
+	height: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#UPtxt{
+	width: 520px;
+	height: 250px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#Menu2UpdateTbl{
+	margin-top:50px;
+	box-shadow : 2px 2px 12px silver;
+}
+.UPbtn{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100px;
+	height: 30px;
+	color:white;
+	background-color:#FF5C5D;
+	border: solid 0px;
+	font-weight:1000;
+	font-size:11pt;
+}
+#m2pageTbl{
+	margin-right: auto;
+	margin-left: auto;
+	
+}
+
+pre {
+    width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }

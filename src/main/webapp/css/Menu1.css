@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+body{
+	width:100%;
+}
+
+ul #menu1{
+	width: 1000px;
+	list-style:none;
+	display:inline;
+	text-align: center;
+	margin-left: 20px;
+}
+
+ul{
+	list-style:none;
+	
+}
+
+li{
+	list-style:none;
+	
+}
+
+li #menu1{
+	text-align: center;
+	margin-left: 20px;
+}
+
+div #menu1Div {
+	text-align: center;
+	
+}
+
+div #Contents_box{
+
+		background-color: #FFF5F4;
+	}
+	
+
+
+@font-face {
+    font-family: 'MainFonts';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+div #menu1Div{
+	color: #FF5C5D;
+	font-family: 'MainFonts';
+	font-size: 18pt;
+}
+
+
+
+#M1img{
+	width: 200px;
+	height: 100px;
+}
+
+#M1content{
+	width: 200px;
+	height: 100px;
+	vertical-align: top;
+	font-family: 'MainFonts';
+	font-size: 14pt;
+}
+
+#M1foreach{
+	margin: auto;
+	text-align : center;
+	width : 500px;
+	height : 150px;
+	outline: solid 0.1px gray;
+}
+
+	
+#detail2{
+	margin: auto;
+	width : 700px;
+	height : 550px;
+	outline: solid 0.1px gray;
+}
+
+#detail2img{
+	text-align : center;
+	height : 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+#detail2table{
+	text-align : center;
+	font-family: 'MainFonts';
+	font-size: 14pt;
+	vertical-align: top;
+}
+
+#detailcont{
+	float:left;
+	text-align: right;
+	margin-left: auto;
+	margin-right: auto;
+	width : 270px;
+}
+
+#detailcont2{
+	float:left;
+	text-align: center;
+	width : 350px;
+}
+
+#detail2intro{
+	width : 700px;
+	height : 200px;
+}
+
+
+#searchinput{
+width : 200px;
+height : 20px;	
+  border-color: gray;
+  border-radius: 15px;
+  padding-left: 10px;
+  background-color: white;
+  outline: none;
+}
+
+#searchbtn{
+	width : 60px;
+	background-color: white;
+	border-radius: 15px;
+  border-color: gray;
+  	outline: none;
+}
+
+#m1up{
+	margin: auto;
+	width : 400px;
+	height : 415px;
+	outline: solid 0.1px gray;
+}
