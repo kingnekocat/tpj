@@ -41,19 +41,20 @@ DB에 등록되어 있는 가게의 정보를 분류해서 받아오고, 가게 
 # 4. 프로젝트 개발 일정
 ![개발일정캡](https://user-images.githubusercontent.com/107029371/177516312-8d7c9dae-c750-47b1-9654-0caec2e1b4b1.PNG)
 
-# 5. 프로젝트 자료 및 참고자료
+# 5. 프로젝트에서 사용된 DB
+![디비들 캡쳐](https://user-images.githubusercontent.com/107029371/177520260-f787a17e-dd25-4254-b7a8-db683863612b.PNG)
 
-설문조사 자료
-직장인 설문조사 결과 대부분이 같이 먹을 사람을 찾는데 어려움이 있다고 한다.
+# 6. 프로젝트 자료 및 참고자료
 
-디자인에 식욕을 돋구는 색 사용
-분홍색은 따뜻하면서도 부드러움이 느껴지는 분홍색은 달콤한 맛과 새콤한 맛을 강하게 느끼게 합니다. 그리고 단맛을 느끼게 하는 강도가 강해서
-분홍색 식탁보를 깔고 차를 마시면 차맛이 달콤하게 느껴진다고 한다.
-
+* 프로젝트 관련 설문 조사 자료 : https://www.khealth.or.kr/kps
+* 디자인 색 참고 (식욕을 돋구는 색) : https://m.dietshin.com/mweb/newcommunity/bbs_view_from_log.asp?idx=147294
+ - 디자인 색 설명 
+분홍색은 따뜻하면서도 부드러움이 느껴지는 분홍색은 달콤한 맛과 새콤한 맛을 강하게 느끼게 합니다. 
+그리고, 단맛을 느끼게 하는 강도가 강해서 분홍색 식탁보를 깔고 차를 마시면 차맛이 달콤하게 느껴진다고 합니다.
 흰색은 깨끗하고 신선한 분위기가 있지만, 맛에서는 짠맛을 느끼게 하고 식욕을 돋구는 색입니다.
-
-디자인 참조 사이트
-http://d.cafe24.com/preview/?productCode=PTMD736399&frame=P
+* 디자인 참조 사이트 : http://d.cafe24.com/preview/?productCode=PTMD736399&frame=P
+* 초기 기획서 : [7411e2aa5b41c7c4.pptx](https://github.com/kingnekocat/tpj/files/9053660/7411e2aa5b41c7c4.pptx)
+* 프로젝트 최종 PPT : [밥메이트 최종 ppt.pdf](https://github.com/kingnekocat/tpj/files/9053712/ppt.pdf)
 
 
 
