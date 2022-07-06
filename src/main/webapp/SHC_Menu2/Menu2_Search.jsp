@@ -43,7 +43,7 @@
 			
 			<table id="Menu2Tbl3" width="550" height="150" style="text-align: center;">
 			<tr>
-				<td colspan="2" style="text-align: center;" >${m.m_txt }</td>
+				<td colspan="2" style="text-align: center;" ><pre>${m.m_txt }</pre></td>
 			</tr>
 			<tr>
 				<td><fmt:formatDate value="${m.m_date }" type="both" dateStyle="short" timeStyle="short"/> 

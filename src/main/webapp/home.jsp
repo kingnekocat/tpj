@@ -101,12 +101,12 @@ $(document).ready(function(){
      <td class="contentTb1TD2">
    
      <ul class="slider">
-  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/slide_01.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
-  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/slide_02.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
-  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/slide_03.jpeg" alt="img1" style="width:280px; height:280px"> </a></li>
-  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/slide_04.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
-  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/slide_05.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
-  <li><a href="Menu1DC2?no=71"> <img src="fileFolder/slide_06.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
+  <li><a href="Menu1DC2?no=85"> <img src="fileFolder/slide_01.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
+  <li><a href="Menu1DC2?no=86"> <img src="fileFolder/slide_02.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
+  <li><a href="Menu1DC2?no=87"> <img src="fileFolder/slide_03.jpeg" alt="img1" style="width:280px; height:280px"> </a></li>
+  <li><a href="Menu1DC2?no=84"> <img src="fileFolder/slide_04.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
+  <li><a href="Menu1DC2?no=83"> <img src="fileFolder/slide_05.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
+  <li><a href="Menu1DC2?no=88"> <img src="fileFolder/slide_06.jpg" alt="img1" style="width:280px; height:280px"> </a></li>
 	</ul>
 	
 	<div class="outside">
