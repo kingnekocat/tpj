@@ -54,7 +54,8 @@ DB에 등록되어 있는 가게의 정보를 분류해서 받아오고, 가게 
 흰색은 깨끗하고 신선한 분위기가 있지만, 맛에서는 짠맛을 느끼게 하고 식욕을 돋구는 색입니다.
 * 디자인 참조 사이트 : http://d.cafe24.com/preview/?productCode=PTMD736399&frame=P
 * 초기 기획서 : [7411e2aa5b41c7c4.pptx](https://github.com/kingnekocat/tpj/files/9053660/7411e2aa5b41c7c4.pptx)
-* 프로젝트 최종 PPT : [밥메이트 최종 ppt.pdf](https://github.com/kingnekocat/tpj/files/9053712/ppt.pdf)
+* 프로젝트 최종 PPT : [밥메이트 최종 ppt(깃허브추가).pdf](https://github.com/kingnekocat/tpj/files/9061949/ppt.pdf)
+
 
 
 
